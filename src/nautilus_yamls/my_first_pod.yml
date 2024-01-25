@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rchristopher-container # YOUR POD NAME HERE
+spec:
+  containers:
+    - name: rchristopher-container # YOUR CONTAINER NAME HERE
+      image: ubuntu:20.04
+      command: ["sh", "-c", "echo 'Im a new pod' && sleep infinity"]
+      resources:
+        limits:
+          memory: 12Gi
+          cpu: 2
+        requests:
+          memory: 10Gi
+          cpu: 2
+      volumeMounts:
+        - mountPath: /data
+          name: rchristopher-pvc # YOUR PVC NAME HERE
+  volumes:
+    - name: rchristopher-pvc # YOUR PVC NAME HERE
+      persistentVolumeClaim:
+        claimName: rchristopher-pvc # YOUR PVC NAME HERE
