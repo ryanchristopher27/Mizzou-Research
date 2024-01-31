@@ -1,0 +1,8 @@
+version: '3'
+services: 
+  cnn-container: 
+    image: rchristopher27/cnn-image:latest
+    build:
+      context: container-1
+      dockerfile: Dockerfile
+    command: "python3 /app/src/practice_notebook.py"

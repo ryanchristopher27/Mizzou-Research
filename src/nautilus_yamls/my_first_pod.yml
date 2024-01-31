@@ -11,6 +11,7 @@ spec:
         limits:
           memory: 12Gi
           cpu: 2
+          gpu: '1'
         requests:
           memory: 10Gi
           cpu: 2
