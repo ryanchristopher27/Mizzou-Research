@@ -48,7 +48,7 @@ def main():
     model.fc = nn.Linear(in_features=2048, out_features=num_classes, bias=True)
 
     # Hyper Parameters
-    n_epochs = 10
+    n_epochs = 20
     lr = 0.0001
 
     # Loss Function and Optimization
@@ -91,7 +91,7 @@ def main():
         ave_train_loss = train_loss_accumulator / n_batches_train
         epoch_train_acc = train_correct_accumulator / train_size
 
-        print(f'Train Loss: {ave_train_loss}, Train Accuracy: {epoch_train_acc}')
+        print(f'Average Batch Train Loss: {ave_train_loss:.4}, Train Accuracy: {(epoch_train_acc * 100):.4}%\n')
 
         n_batches_val = len(val_loader)
         val_loss_accumulator = 0
@@ -121,9 +121,52 @@ def main():
         val_loss[epoch] = ave_val_loss
         val_acc[epoch] = epoch_val_acc
 
-        print(f'Validation Loss: {ave_val_loss}, Validation Accuracy: {epoch_val_acc}\n')
+        print(f'Average Batch Validation Loss: {ave_val_loss:.4}, Validation Accuracy: {(epoch_val_acc * 100):.4}%\n')
 
+    # Testing
+    n_batches_test = len(val_loader)
+    test_loss_accumulator = 0
+    test_correct_accumulator = 0
 
+    with torch.no_grad():
+        for test_batch_idx, (features, labels) in tqdm(enumerate(test_loader), desc='Test', total=n_batches_test):
+            
+            # labels_one_hot = F.one_hot(labels, num_classes)
+            
+            outputs = model(features)
+            outputs_c = torch.max(outputs, 1)
+
+            loss = criterion(outputs, labels)
+
+            correct = (outputs_c.indices == labels).sum().item()
+
+            test_loss_accumulator += loss.item()
+            test_correct_accumulator += correct
+
+        ave_test_loss = test_loss_accumulator / n_batches_test
+        epoch_test_acc = test_correct_accumulator / test_size
+
+        print('==='*30)
+        print(f'\nAverage Batch Test Loss: {ave_test_loss:.4}, Test Accuracy: {(epoch_test_acc * 100):.4}%\n')
+        print('==='*30)
+
+    plt.plot(train_loss, marker='o', linestyle='-', color='b', label='Training Loss')
+    plt.plot(val_loss, marker='x', color='r', label='Validation Loss')
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss')
+    plt.title('Training Loss per Epoch')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+    plt.plot(train_acc, marker='o', linestyle='-', color='b', label='Training Accuracy')
+    plt.plot(val_acc, marker='x', color='r', label='Validation Accuracy')
+    plt.xlabel('Epochs')
+    plt.ylabel('Accuracy')
+    plt.title('Accuracy per Epoch')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
 
 if __name__ == "__main__":
     main()
