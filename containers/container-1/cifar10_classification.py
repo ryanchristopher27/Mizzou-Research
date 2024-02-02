@@ -1,24 +1,21 @@
+# Imports
 from torchvision.models import resnet50, ResNet50_Weights
-from torchvision.io import read_image
-from PIL import Image
 from torchvision.transforms import ToTensor
 import torchvision.datasets as datasets
 from torch.utils.data import DataLoader, Dataset
 from torch.utils.data import random_split
-from torchvision.transforms import transforms
 import numpy as np
 import torch
 from torch import nn
 from tqdm import tqdm
-from skimage.feature import (
-    local_binary_pattern as lbp,
-    hog
-)
 from matplotlib import pyplot as plt
 from torchvision.transforms.functional import to_tensor
 import cv2 as cv
 from sklearn import metrics
 import torch.nn.functional as F
+
+# Links
+    # https://medium.com/@sergioalves94/deep-learning-in-pytorch-with-cifar-10-dataset-858b504a6b54
 
 def main():
     dataset = datasets.CIFAR10(root='data/', download=True, transform=ToTensor())

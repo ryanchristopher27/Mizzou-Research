@@ -6,10 +6,12 @@ COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt && apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
-# COPY practice_notebook.ipynb practice_notebook.ipynb
+COPY practice_notebook.ipynb practice_notebook.ipynb
 
-# COPY Images Images
+COPY Images Images
 
-COPY . .
+# COPY . .
+
+# COPY cifar10_classification.py cifar10_classification.py
 
 RUN jupyter nbconvert --to python practice_notebook.ipynb
