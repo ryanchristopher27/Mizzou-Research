@@ -1,0 +1,34 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rchristopher-sklearn-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: rchristopher-sklearn-container
+        image: gitlab-registry.nrp-nautilus.io/gp-engine/jupyter-stacks/bigdata-2023:latest
+        workingDir: /data
+        env:
+            - name: SK_NUM_TREES
+              value: "1"
+            - name: SK_NUM_JOBS
+              value: "1"
+        command: ["python3", "/data/RandomForestMNIST.py"]
+        volumeMounts:
+            - name: sklearn-pvc
+              mountPath: /data
+        resources:
+            limits:
+              memory: 1Gi
+              cpu: "1"
+            requests:
+              memory: 1Gi
+              cpu: "1"
+      volumes:
+      - name: sklearn-pvc
+        persistentVolumeClaim:
+          claimName: sklearn-pvc
+      restartPolicy: Never
+  backoffLimit: 1
+              

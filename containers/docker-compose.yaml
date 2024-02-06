@@ -5,4 +5,4 @@ services:
     build:
       context: container-1
       dockerfile: Dockerfile
-    command: "python3 /app/src/practice_notebook.py"
+    command: "python3 /data/ucmerced_classification.py"
