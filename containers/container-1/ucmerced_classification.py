@@ -1,4 +1,4 @@
-# Impots
+# Imports
 from torchvision.models import resnet50, ResNet50_Weights
 from torchvision.io import read_image
 from PIL import Image
@@ -116,7 +116,7 @@ def train(model, train_data, train_labels, loss_function, optimizer, normalize=T
 
 def main():
 
-    on_gpu, device = cuda_setup()
+    device, on_gpu = cuda_setup()
 
     total_dataset = datasets.ImageFolder('Images/', transform=None)
     # total_dataset = datasets.ImageFolder('../datasets/UCMerced_LandUse/Images/', transform=None)
@@ -172,6 +172,9 @@ def main():
     # an empty tensor to hold predicted classes
     y_pred = np.empty(len(test_tensors))
 
+    print("---" * 20)
+
+
     # this tells torch that we are only
     # going to perform forward passes
     with torch.no_grad():
@@ -187,7 +190,7 @@ def main():
             # save it to our list
             y_pred[i] = predicted_class.item()
 
-    print(f'Accuracy: {metrics.accuracy_score(test_labels, y_pred)*100:.2f}%')
+    print(f'\nTest Accuracy: {metrics.accuracy_score(test_labels, y_pred)*100:.2f}%')
 
 
 if __name__ == "__main__":

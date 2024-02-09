@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: rchristopher-cnn-pod # YOUR POD NAME HERE
+  name: rchristopher-pvc-pod # YOUR POD NAME HERE
 spec:
   containers:
-    - name: rchristopher-cnn-pod # YOUR CONTAINER NAME HERE
+    - name: rchristopher-pvc-pod # YOUR CONTAINER NAME HERE
       image: ubuntu:20.04
       command: ["sh", "-c", "echo 'Im a new pod' && sleep infinity"]
       resources:

@@ -1,0 +1,50 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: vit-ucmerced-job
+spec:
+  template:
+    spec:
+      containers:
+        - name: vit-train-container
+          image: rchristopher27/cnn-image:latest
+          workingDir: /data
+          env:
+              - name: TORCH_NUM_JOBS
+                value: "8"
+              - name: TORCH_NUM_EPOCHS
+                value: "1"
+          command: ["python3", "/data/Vit_Kfold_UCMerced.py"]
+          resources:
+            limits:
+              memory: 8Gi
+              cpu: 8
+              nvidia.com/gpu: '1'
+            requests:
+              memory: 8Gi
+              cpu: 8
+              nvidia.com/gpu: '1'
+          volumeMounts:
+            - name: rchristopher-pvc
+              mountPath: /data
+            - name: dshm
+              mountPath: /dev/shm
+      volumes:
+        - name: rchristopher-pvc
+          persistentVolumeClaim:
+            claimName: rchristopher-pvc
+        - name: dshm
+          emptyDir:
+            medium: Memory
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: nvidia.com/gpu.product
+                    operator: In
+                    values:
+                      - NVIDIA-A100-80GB-PCIe-MIG-1g.10gb
+      restartPolicy: Never
+  backoffLimit: 1
