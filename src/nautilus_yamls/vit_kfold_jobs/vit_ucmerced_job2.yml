@@ -1,12 +1,12 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: vit-ucmerced-job
+  name: vit-ucmerced-job-2
 spec:
   template:
     spec:
       containers:
-        - name: vit-train-container
+        - name: vit-train-container-2
           image: rchristopher27/cnn-image:latest
           workingDir: /data
           env:
@@ -15,7 +15,7 @@ spec:
               - name: TORCH_NUM_EPOCHS
                 value: "20"
               - name: FOLD_NUM
-                value: "1"
+                value: "2"
           command: ["python3", "/data/Vit_Kfold_UCMerced.py"]
           resources:
             limits:

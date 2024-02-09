@@ -1,4 +1,5 @@
 import torch
+import json
 
 def cuda_setup() -> ():
     if torch.cuda.is_available():
@@ -13,3 +14,10 @@ def cuda_setup() -> ():
     print(f'Device: {device}')
 
     return device, on_gpu
+
+def write_results_to_file(results, filename):
+    
+    json_object = json.dumps(results, indent=4)
+
+    with open(filename, "w") as f:
+        f.write(json_object)

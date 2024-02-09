@@ -6,7 +6,7 @@ spec:
   containers:
     - name: rchristopher-pvc-pod # YOUR CONTAINER NAME HERE
       image: ubuntu:20.04
-      command: ["sh", "-c", "echo 'Im a new pod' && sleep infinity"]
+      command: ["sh", "-c", "echo 'I'm a new PVC Pod' && sleep infinity"]
       resources:
         limits:
           memory: 12Gi

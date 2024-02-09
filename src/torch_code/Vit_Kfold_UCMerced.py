@@ -12,23 +12,17 @@ from torch.utils.data import random_split
 from torchvision.transforms import transforms
 import numpy as np
 from tqdm import tqdm
-from tqdm import trange
-from skimage.feature import (
-    local_binary_pattern as lbp,
-    hog
-)
 from matplotlib import pyplot as plt
-from torchvision.transforms.functional import to_tensor
-import cv2 as cv
 from sklearn import metrics
-from torchvision.transforms.functional import normalize
 from sklearn.metrics import precision_recall_fscore_support as evaluate
+from sklearn.model_selection import KFold
 
 from utils import *
 
 # GLOBAL VARIABLES
 TORCH_NUM_JOBS = int(os.environ.get("TORCH_NUM_JOBS", "4"))
 TORCH_NUM_EPOCHS = int(os.environ.get("TORCH_NUM_EPOCHS", "20"))
+FOLD_NUM = int(os.environ.get("FOLD_NUM", "1"))
 
 # Function to preprocess images
 def preprocess_images(images):
@@ -38,7 +32,7 @@ def preprocess_images(images):
     return torch.cat(tensors, dim=0)
 
 # DATA LOADER
-def get_data(train_batch_size, test_batch_size) -> ():
+def get_data(train_batch_size, test_batch_size, k_folds) -> ():
     # transform = transforms.Compose([
     #     transforms.ToTensor(),
     #     transforms.Resize((256, 256)),
@@ -50,20 +44,36 @@ def get_data(train_batch_size, test_batch_size) -> ():
     # ])
 
     print(os.path.abspath('.'))
-    total_dataset = datasets.ImageFolder('src/torch_code/Images', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
-    # total_dataset = datasets.ImageFolder('Images', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
+    # total_dataset = datasets.ImageFolder('src/torch_code/Images', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
+    total_dataset = datasets.ImageFolder('Images', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
     # total_dataset = datasets.ImageFolder('src/torch_code/Images', transform=transform)
 
-    train_size = int(0.8 * len(total_dataset))
-    test_size = len(total_dataset) - train_size
+    kf = KFold(n_splits=k_folds, shuffle=True)
 
-    train_dataset, test_dataset = random_split(total_dataset, [train_size, test_size])
+    fold_idxs = list(kf.split(total_dataset))
 
-    train_loader = DataLoader(train_dataset, 
-                                batch_size=train_batch_size, 
-                                shuffle=True,
-                                num_workers=TORCH_NUM_JOBS)
-    test_loader = DataLoader(test_dataset, batch_size=test_batch_size)
+    train_idx, test_idx = fold_idxs[FOLD_NUM - 1]
+
+    print(f'Train Indexes: {train_idx}')
+    print(f'Test Indexes: {test_idx}')
+
+    # train_size = int(0.8 * len(total_dataset))
+    # test_size = len(total_dataset) - train_size
+
+    # train_dataset, test_dataset = random_split(total_dataset, [train_size, test_size])
+
+    train_loader = DataLoader(
+        dataset=total_dataset, 
+        batch_size=train_batch_size, 
+        # shuffle=True,
+        num_workers=TORCH_NUM_JOBS,
+        sampler=torch.utils.data.SubsetRandomSampler(train_idx),
+    )
+    test_loader = DataLoader(
+        dataset=total_dataset, 
+        batch_size=test_batch_size,
+        sampler=torch.utils.data.SubsetRandomSampler(test_idx),
+    )
 
     return train_loader, test_loader
 
@@ -76,7 +86,13 @@ def main():
     train_batch_size = 16
     test_batch_size = 16
 
-    train_data_loader, test_data_loader = get_data(train_batch_size=train_batch_size, test_batch_size=test_batch_size)
+    k_folds = 5
+
+    train_data_loader, test_data_loader = get_data(
+        train_batch_size=train_batch_size, 
+        test_batch_size=test_batch_size,
+        k_folds=k_folds
+    )
 
     # num_classes = train_data_loader.dataset.num_classes
 
@@ -100,7 +116,7 @@ def main():
         epoch_loss = 0
         epoch_correct = 0
 
-        for i, (images, labels) in tqdm(enumerate(train_data_loader), total=len(train_data_loader)):
+        for i, (images, labels) in tqdm(enumerate(train_data_loader), total=len(train_data_loader), desc="Training"):
             images = images.cuda()
             labels = labels.cuda()
 
@@ -134,7 +150,7 @@ def main():
     labels = []
     with torch.no_grad():
         print("---" * 30 + f"\nRunning Eval")
-        for i, (images, lb) in tqdm(enumerate(test_data_loader), total=len(test_data_loader)):
+        for i, (images, lb) in tqdm(enumerate(test_data_loader), total=len(test_data_loader), desc="Testing"):
 
             model_outputs = model(images.cuda())
 
@@ -154,6 +170,19 @@ def main():
     Recall  \t{rec*100:.2f}%
     F-1 Score \t{fscore*100:.2f}%
     """)
+
+    # Write Results
+    results = {
+        "Fold_Number": FOLD_NUM,
+        "Accuracy": f"{acc:.6f * 100}%",
+        "Precision": f"{pre:.6f * 100}%",
+        "Recall": f"{rec:.6f * 100}%",
+        "F-1_Score": f"{fscore:.6f * 100}%",
+    }
+
+    file_name = f"results/fold_{FOLD_NUM}.json"
+
+    write_results_to_file(results, file_name)
 
 if __name__ == "__main__":
     main()
