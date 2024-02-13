@@ -1,5 +1,6 @@
 import torch
 import json
+from matplotlib import pyplot as plt
 
 def cuda_setup() -> ():
     if torch.cuda.is_available():
@@ -21,3 +22,26 @@ def write_results_to_file(results, filename):
 
     with open(filename, "w") as f:
         f.write(json_object)
+
+
+def write_1data_plot_to_file(data_1, data_1_label, x_label, y_label, title, filename):
+    fig = plt.figure()
+    plt.plot(data_1, color='blue')
+    plt.legend([data_1_label], loc='upper right')
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    plt.title(title)
+
+    plt.savefig(filename)
+
+
+def write_2data_plot_to_file(data_1, data_1_label, data_2, data_2_label, x_label, y_label, title, filename):
+    fig = plt.figure()
+    plt.plot(data_1, color='blue')
+    plt.plot(data_2, color='red')
+    plt.legend([data_1_label, data_2_label], loc='upper right')
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    plt.title(title)
+
+    plt.savefig(filename)

@@ -23,39 +23,26 @@ from utils import *
 TORCH_NUM_JOBS = int(os.environ.get("TORCH_NUM_JOBS", "4"))
 TORCH_NUM_EPOCHS = int(os.environ.get("TORCH_NUM_EPOCHS", "20"))
 FOLD_NUM = int(os.environ.get("FOLD_NUM", "1"))
-
-# Function to preprocess images
-def preprocess_images(images):
-    tensors = []
-    for img in tqdm(images, desc="Preprocessing"):
-        tensors.append(torch.Tensor(img))
-    return torch.cat(tensors, dim=0)
+TORCH_MODEL_NAME = os.environ.get("TORCH_MODEL_NAME", "vit_b_16")
+TORCH_DATA_NAME = os.environ.get("TORCH_DATA_NAME", "ucmerced_landuse")
 
 # DATA LOADER
 def get_data(train_batch_size, test_batch_size, k_folds) -> ():
-    # transform = transforms.Compose([
-    #     transforms.ToTensor(),
-    #     transforms.Resize((256, 256)),
-    #     transforms.Lambda(lambda x: (torch.Tensor(x[1]).long(),
-    #         torch.nn.functional.one_hot(torch.Tensor(x[1]).long(), num_classes=21))),
-    #     # transforms.Lambda(lambda x: (preprocess_images(x[0]),
-    #     #     torch.Tensor(x[1]).long(),
-    #     #     torch.nn.functional.one_hot(torch.Tensor(x[1]).long(), num_classes=21))),
-    # ])
 
-    print(os.path.abspath('.'))
+    # print(os.path.abspath('.'))
     # total_dataset = datasets.ImageFolder('src/torch_code/Images', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
     total_dataset = datasets.ImageFolder('Images', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
     # total_dataset = datasets.ImageFolder('src/torch_code/Images', transform=transform)
 
-    kf = KFold(n_splits=k_folds, shuffle=True)
+    kf = KFold(n_splits=k_folds, shuffle=True, random_state=42)
 
     fold_idxs = list(kf.split(total_dataset))
 
     train_idx, test_idx = fold_idxs[FOLD_NUM - 1]
 
-    print(f'Train Indexes: {train_idx}')
-    print(f'Test Indexes: {test_idx}')
+    print(f'Fold Number: {FOLD_NUM}')
+    print(f'Train Indexes: {train_idx[0:10]}')
+    print(f'Test Indexes: {test_idx[0:10]}')
 
     # train_size = int(0.8 * len(total_dataset))
     # test_size = len(total_dataset) - train_size
@@ -65,7 +52,6 @@ def get_data(train_batch_size, test_batch_size, k_folds) -> ():
     train_loader = DataLoader(
         dataset=total_dataset, 
         batch_size=train_batch_size, 
-        # shuffle=True,
         num_workers=TORCH_NUM_JOBS,
         sampler=torch.utils.data.SubsetRandomSampler(train_idx),
     )
@@ -76,7 +62,6 @@ def get_data(train_batch_size, test_batch_size, k_folds) -> ():
     )
 
     return train_loader, test_loader
-
 
 
 # MAIN FUNCTION
@@ -109,12 +94,20 @@ def main():
     loss_function = nn.CrossEntropyLoss()
 
     model.cuda()
-    model.train()
+    # model.train()
+
+    train_loss_per_epoch = np.zeros(TORCH_NUM_EPOCHS)
+    train_accuracy_per_epoch = np.zeros(TORCH_NUM_EPOCHS)
+
+    val_loss_per_epoch = np.zeros(TORCH_NUM_EPOCHS)
+    val_accuracy_per_epoch = np.zeros(TORCH_NUM_EPOCHS)
 
     for epoch in range(TORCH_NUM_EPOCHS):
         print("===" * 30 + f"\nEpoch [{epoch+1} / {TORCH_NUM_EPOCHS}]")
         epoch_loss = 0
         epoch_correct = 0
+
+        model.train()
 
         for i, (images, labels) in tqdm(enumerate(train_data_loader), total=len(train_data_loader), desc="Training"):
             images = images.cuda()
@@ -134,15 +127,39 @@ def main():
             epoch_correct += torch.sum(predictions == labels)
             epoch_loss += loss.item()
 
-            # if i > 0 and (i % (len(train_data_loader) // 10) == 0 or i == 1):
-            #     print(f"{i} / {len(train_data_loader)}" + 
-            #         f"\tLoss = {epoch_loss / i:.2f}" + 
-            #         f"\tAcc = {epoch_correct:d} / {i * train_data_loader.batch_size} " + 
-            #         f"({epoch_correct / (i * train_data_loader.batch_size) * 100:.1f}%)", flush=True)
+        train_ave_loss = epoch_loss / len(train_data_loader)
+        train_accuracy = epoch_correct / (len(train_data_loader) * train_batch_size) * 100
 
-        print(f"Loss = {epoch_loss / len(train_data_loader):.4f}")
-        print(f"Train Acc = {epoch_correct / (len(train_data_loader) * train_batch_size) * 100:.2f}%")
-            
+        train_loss_per_epoch[epoch] = train_ave_loss
+        train_accuracy_per_epoch[epoch] = train_accuracy
+
+        print(f"Train Loss = {train_ave_loss:.4f}, Train Acc = {train_accuracy:.2f}%")
+
+
+        model.eval()
+
+        val_epoch_loss = 0
+        val_epoch_correct = 0
+
+        with torch.no_grad():
+            for i, (images, labels) in tqdm(enumerate(test_data_loader), total=len(test_data_loader), desc="Validating"):
+                images = images.cuda()
+                labels = labels.cuda()
+                outputs = model(images)
+
+                loss = loss_function(outputs.float(), labels.long())
+
+                _, predictions = torch.max(outputs, 1)
+                val_epoch_correct += torch.sum(predictions == labels)
+                val_epoch_loss += loss.item()
+
+            val_ave_loss = val_epoch_loss / len(test_data_loader)
+            val_accuracy = val_epoch_correct / (len(test_data_loader) * test_batch_size) * 100
+
+            val_loss_per_epoch[epoch] = val_ave_loss
+            val_accuracy_per_epoch[epoch] = val_accuracy
+
+            print(f"Val Loss = {val_ave_loss:.4f}, Val Acc = {val_accuracy:.2f}%")
 
     model.eval()
 
@@ -174,15 +191,43 @@ def main():
     # Write Results
     results = {
         "Fold_Number": FOLD_NUM,
-        "Accuracy": f"{acc:.6f * 100}%",
-        "Precision": f"{pre:.6f * 100}%",
-        "Recall": f"{rec:.6f * 100}%",
-        "F-1_Score": f"{fscore:.6f * 100}%",
+        "Accuracy": f"{acc * 100:.4f}%",
+        "Precision": f"{prec * 100:.4f}%",
+        "Recall": f"{rec * 100:.4f}%",
+        "F-1_Score": f"{fscore * 100:.4f}%",
     }
 
-    file_name = f"results/fold_{FOLD_NUM}.json"
+    file_path = f"results/{TORCH_MODEL_NAME}/{TORCH_DATA_NAME}/{FOLD_NUM}/"
+    file_name = f"results_{FOLD_NUM}.json"
 
-    write_results_to_file(results, file_name)
+    if not os.path.exists(file_path):
+        os.makedirs(file_path)
+
+    write_results_to_file(results, file_path + file_name)
+
+    write_2data_plot_to_file(
+        data_1 = train_loss_per_epoch,
+        data_1_label = "Training Loss",
+        data_2 = val_loss_per_epoch,
+        data_2_label = "Validation Loss",
+        x_label = "Epoch",
+        y_label = "Loss",
+        title = "Loss vs Epoch",
+        filename = file_path + f"loss_{FOLD_NUM}.png",
+    )
+
+    write_2data_plot_to_file(
+        data_1 = train_accuracy_per_epoch,
+        data_1_label = "Training Accuracy",
+        data_2 = val_accuracy_per_epoch,
+        data_2_label = "Validation Accuracy",
+        x_label = "Epoch",
+        y_label = "Accuracy",
+        title = "Accuracy vs Epoch",
+        filename = file_path + f"accuracy_{FOLD_NUM}.png",
+    )
+
+    print("Results Saved to 'results' Folder")
 
 if __name__ == "__main__":
     main()
