@@ -102,6 +102,14 @@ def main():
     val_loss_per_epoch = np.zeros(TORCH_NUM_EPOCHS)
     val_accuracy_per_epoch = np.zeros(TORCH_NUM_EPOCHS)
 
+    best_epoch = dict(
+        epoch = 0,
+        train_loss = np.inf,
+        val_loss = np.inf,
+        train_accuracy = 0,
+        val_accuracy = 0,
+    )
+
     for epoch in range(TORCH_NUM_EPOCHS):
         print("===" * 30 + f"\nEpoch [{epoch+1} / {TORCH_NUM_EPOCHS}]")
         epoch_loss = 0
@@ -156,6 +164,15 @@ def main():
             val_ave_loss = val_epoch_loss / len(test_data_loader)
             val_accuracy = val_epoch_correct / (len(test_data_loader) * test_batch_size) * 100
 
+            if val_accuracy > best_epoch["val_accuracy"]:
+                best_epoch = dict(
+                    epoch = epoch + 1,
+                    train_loss = train_ave_loss,
+                    val_loss = val_ave_loss,
+                    train_accuracy = train_accuracy,
+                    val_accuracy = val_accuracy,
+                )
+
             val_loss_per_epoch[epoch] = val_ave_loss
             val_accuracy_per_epoch[epoch] = val_accuracy
 
@@ -195,9 +212,10 @@ def main():
         "Precision": f"{prec * 100:.4f}%",
         "Recall": f"{rec * 100:.4f}%",
         "F-1_Score": f"{fscore * 100:.4f}%",
+        "Best_Epoch": best_epoch,
     }
 
-    file_path = f"results/{TORCH_MODEL_NAME}/{TORCH_DATA_NAME}/{FOLD_NUM}/"
+    file_path = f"results/{TORCH_MODEL_NAME}/{TORCH_DATA_NAME}/{TORCH_NUM_EPOCHS}/fold_{FOLD_NUM}/"
     file_name = f"results_{FOLD_NUM}.json"
 
     if not os.path.exists(file_path):

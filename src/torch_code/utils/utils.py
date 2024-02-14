@@ -18,7 +18,7 @@ def cuda_setup() -> ():
 
 def write_results_to_file(results, filename):
     
-    json_object = json.dumps(results, indent=4)
+    json_object = json.dumps(results, indent=4, default=lambda x: str(x))
 
     with open(filename, "w") as f:
         f.write(json_object)
