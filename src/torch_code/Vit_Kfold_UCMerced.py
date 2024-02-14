@@ -17,11 +17,11 @@ from sklearn import metrics
 from sklearn.metrics import precision_recall_fscore_support as evaluate
 from sklearn.model_selection import KFold
 
-from utils import *
+from utils.utils import *
 
 # GLOBAL VARIABLES
 TORCH_NUM_JOBS = int(os.environ.get("TORCH_NUM_JOBS", "4"))
-TORCH_NUM_EPOCHS = int(os.environ.get("TORCH_NUM_EPOCHS", "20"))
+TORCH_NUM_EPOCHS = int(os.environ.get("TORCH_NUM_EPOCHS", "1"))
 FOLD_NUM = int(os.environ.get("FOLD_NUM", "1"))
 TORCH_MODEL_NAME = os.environ.get("TORCH_MODEL_NAME", "vit_b_16")
 TORCH_DATA_NAME = os.environ.get("TORCH_DATA_NAME", "ucmerced_landuse")
@@ -32,7 +32,6 @@ def get_data(train_batch_size, test_batch_size, k_folds) -> ():
     # print(os.path.abspath('.'))
     # total_dataset = datasets.ImageFolder('src/torch_code/Images', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
     total_dataset = datasets.ImageFolder('Images', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
-    # total_dataset = datasets.ImageFolder('src/torch_code/Images', transform=transform)
 
     kf = KFold(n_splits=k_folds, shuffle=True, random_state=42)
 
@@ -164,13 +163,13 @@ def main():
             val_ave_loss = val_epoch_loss / len(test_data_loader)
             val_accuracy = val_epoch_correct / (len(test_data_loader) * test_batch_size) * 100
 
-            if val_accuracy > best_epoch["val_accuracy"]:
+            if val_accuracy > float(best_epoch["val_accuracy"]):
                 best_epoch = dict(
                     epoch = epoch + 1,
-                    train_loss = train_ave_loss,
-                    val_loss = val_ave_loss,
-                    train_accuracy = train_accuracy,
-                    val_accuracy = val_accuracy,
+                    train_loss = f"{train_ave_loss:.4f}",
+                    val_loss = f"{val_ave_loss:.4f}",
+                    train_accuracy = train_accuracy.item(),
+                    val_accuracy = val_accuracy.item(),
                 )
 
             val_loss_per_epoch[epoch] = val_ave_loss
@@ -204,6 +203,9 @@ def main():
     Recall  \t{rec*100:.2f}%
     F-1 Score \t{fscore*100:.2f}%
     """)
+
+    best_epoch["train_accuracy"] = f"{float(best_epoch['train_accuracy']):.4f}%"
+    best_epoch["val_accuracy"] = f"{float(best_epoch['val_accuracy']):.4f}%"
 
     # Write Results
     results = {
