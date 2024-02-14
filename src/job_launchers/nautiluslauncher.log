@@ -1,0 +1,470 @@
+[2024-02-13 11:55:34,767] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 20, 'FOLD_NUM': 0, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit_ucmerced-1'}
+[2024-02-13 11:55:34,767] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 11:55:34,767] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 11:55:34,767] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 11:55:34,767] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit_ucmerced-1
+[2024-02-13 11:55:35,055] (ERROR):: Failed to create job: vit_ucmerced-1
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'aecef1e1-b9a5-4c50-90d5-f52e7df15b7c', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Tue, 13 Feb 2024 17:55:35 GMT', 'Content-Length': '1605'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"vit_ucmerced-1\" is invalid: [metadata.name: Invalid value: \"vit_ucmerced-1\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'), spec.template.spec.containers[0].name: Invalid value: \"vit_ucmerced-1-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')]","reason":"Invalid","details":{"name":"vit_ucmerced-1","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"vit_ucmerced-1\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')","field":"metadata.name"},{"reason":"FieldValueInvalid","message":"Invalid value: \"vit_ucmerced-1-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.containers[0].name"}]},"code":422}
+
+
+[2024-02-13 11:55:35,062] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 20, 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit_ucmerced-2'}
+[2024-02-13 11:55:35,062] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 11:55:35,062] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 11:55:35,063] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 11:55:35,063] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit_ucmerced-2
+[2024-02-13 11:55:35,297] (ERROR):: Failed to create job: vit_ucmerced-2
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'a0db0bf2-2999-42f8-9319-d46865b64c7b', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Tue, 13 Feb 2024 17:55:35 GMT', 'Content-Length': '1605'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"vit_ucmerced-2\" is invalid: [metadata.name: Invalid value: \"vit_ucmerced-2\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'), spec.template.spec.containers[0].name: Invalid value: \"vit_ucmerced-2-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')]","reason":"Invalid","details":{"name":"vit_ucmerced-2","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"vit_ucmerced-2\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')","field":"metadata.name"},{"reason":"FieldValueInvalid","message":"Invalid value: \"vit_ucmerced-2-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.containers[0].name"}]},"code":422}
+
+
+[2024-02-13 11:55:35,300] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 20, 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit_ucmerced-3'}
+[2024-02-13 11:55:35,300] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 11:55:35,300] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 11:55:35,300] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 11:55:35,301] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit_ucmerced-3
+[2024-02-13 11:55:35,476] (ERROR):: Failed to create job: vit_ucmerced-3
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'faa554ed-5389-4739-a9da-c2e5d2a0ba9c', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Tue, 13 Feb 2024 17:55:35 GMT', 'Content-Length': '1605'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"vit_ucmerced-3\" is invalid: [metadata.name: Invalid value: \"vit_ucmerced-3\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'), spec.template.spec.containers[0].name: Invalid value: \"vit_ucmerced-3-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')]","reason":"Invalid","details":{"name":"vit_ucmerced-3","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"vit_ucmerced-3\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')","field":"metadata.name"},{"reason":"FieldValueInvalid","message":"Invalid value: \"vit_ucmerced-3-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.containers[0].name"}]},"code":422}
+
+
+[2024-02-13 11:55:35,477] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 20, 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit_ucmerced-4'}
+[2024-02-13 11:55:35,478] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 11:55:35,478] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 11:55:35,478] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 11:55:35,478] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit_ucmerced-4
+[2024-02-13 11:55:35,821] (ERROR):: Failed to create job: vit_ucmerced-4
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '33fa4568-924d-44aa-8a63-7c40ec6708a5', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Tue, 13 Feb 2024 17:55:35 GMT', 'Content-Length': '1605'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"vit_ucmerced-4\" is invalid: [metadata.name: Invalid value: \"vit_ucmerced-4\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'), spec.template.spec.containers[0].name: Invalid value: \"vit_ucmerced-4-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')]","reason":"Invalid","details":{"name":"vit_ucmerced-4","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"vit_ucmerced-4\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')","field":"metadata.name"},{"reason":"FieldValueInvalid","message":"Invalid value: \"vit_ucmerced-4-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.containers[0].name"}]},"code":422}
+
+
+[2024-02-13 11:55:35,824] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 20, 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit_ucmerced-5'}
+[2024-02-13 11:55:35,825] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 11:55:35,825] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 11:55:35,825] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 11:55:35,825] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit_ucmerced-5
+[2024-02-13 11:55:36,143] (ERROR):: Failed to create job: vit_ucmerced-5
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'd1b72c4f-f1c8-4fb9-b07b-c8df89e854a9', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Tue, 13 Feb 2024 17:55:35 GMT', 'Content-Length': '1605'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"vit_ucmerced-5\" is invalid: [metadata.name: Invalid value: \"vit_ucmerced-5\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'), spec.template.spec.containers[0].name: Invalid value: \"vit_ucmerced-5-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')]","reason":"Invalid","details":{"name":"vit_ucmerced-5","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"vit_ucmerced-5\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')","field":"metadata.name"},{"reason":"FieldValueInvalid","message":"Invalid value: \"vit_ucmerced-5-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.containers[0].name"}]},"code":422}
+
+
+[2024-02-13 11:56:41,069] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 20, 'FOLD_NUM': 0, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-1'}
+[2024-02-13 11:56:41,070] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 11:56:41,070] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 11:56:41,070] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 11:56:41,070] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-1
+[2024-02-13 11:56:41,413] (INFO):: Successfully created job: vit-ucmerced-1
+[2024-02-13 11:56:41,414] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 20, 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-2'}
+[2024-02-13 11:56:41,414] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 11:56:41,414] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 11:56:41,414] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 11:56:41,414] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-2
+[2024-02-13 11:56:42,298] (INFO):: Successfully created job: vit-ucmerced-2
+[2024-02-13 11:56:42,299] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 20, 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-3'}
+[2024-02-13 11:56:42,299] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 11:56:42,300] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 11:56:42,300] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 11:56:42,300] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-3
+[2024-02-13 11:56:42,550] (INFO):: Successfully created job: vit-ucmerced-3
+[2024-02-13 11:56:42,550] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 20, 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-4'}
+[2024-02-13 11:56:42,550] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 11:56:42,550] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 11:56:42,550] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 11:56:42,551] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-4
+[2024-02-13 11:56:42,831] (INFO):: Successfully created job: vit-ucmerced-4
+[2024-02-13 11:56:42,832] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 20, 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-5'}
+[2024-02-13 11:56:42,832] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 11:56:42,832] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 11:56:42,832] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 11:56:42,832] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-5
+[2024-02-13 11:56:43,129] (INFO):: Successfully created job: vit-ucmerced-5
+[2024-02-13 13:15:53,163] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 50, 'FOLD_NUM': 0, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-1'}
+[2024-02-13 13:15:53,163] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 13:15:53,163] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 13:15:53,163] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 13:15:53,163] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-1
+[2024-02-13 13:15:53,647] (INFO):: Successfully created job: vit-ucmerced-1
+[2024-02-13 13:15:53,647] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 50, 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-2'}
+[2024-02-13 13:15:53,648] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 13:15:53,648] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 13:15:53,648] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 13:15:53,648] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-2
+[2024-02-13 13:15:53,884] (INFO):: Successfully created job: vit-ucmerced-2
+[2024-02-13 13:15:53,884] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 50, 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-3'}
+[2024-02-13 13:15:53,884] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 13:15:53,884] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 13:15:53,884] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 13:15:53,884] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-3
+[2024-02-13 13:15:54,978] (INFO):: Successfully created job: vit-ucmerced-3
+[2024-02-13 13:15:54,978] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 50, 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-4'}
+[2024-02-13 13:15:54,978] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 13:15:54,978] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 13:15:54,979] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 13:15:54,979] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-4
+[2024-02-13 13:15:55,283] (INFO):: Successfully created job: vit-ucmerced-4
+[2024-02-13 13:15:55,283] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 50, 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-5'}
+[2024-02-13 13:15:55,284] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 13:15:55,284] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 13:15:55,284] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 13:15:55,284] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-5
+[2024-02-13 13:15:55,591] (INFO):: Successfully created job: vit-ucmerced-5
+[2024-02-13 15:27:00,760] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 0, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-1'}
+[2024-02-13 15:27:00,760] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:27:00,760] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:27:00,760] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:27:00,760] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-1
+[2024-02-13 15:27:01,106] (INFO):: Successfully created job: vit-ucmerced-1
+[2024-02-13 15:27:01,106] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-2'}
+[2024-02-13 15:27:01,106] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:27:01,106] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:27:01,106] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:27:01,107] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-2
+[2024-02-13 15:27:01,349] (INFO):: Successfully created job: vit-ucmerced-2
+[2024-02-13 15:27:01,349] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-3'}
+[2024-02-13 15:27:01,349] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:27:01,349] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:27:01,349] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:27:01,349] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-3
+[2024-02-13 15:27:01,594] (INFO):: Successfully created job: vit-ucmerced-3
+[2024-02-13 15:27:01,595] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-4'}
+[2024-02-13 15:27:01,595] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:27:01,595] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:27:01,595] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:27:01,595] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-4
+[2024-02-13 15:27:01,833] (INFO):: Successfully created job: vit-ucmerced-4
+[2024-02-13 15:27:01,834] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-5'}
+[2024-02-13 15:27:01,834] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:27:01,834] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:27:01,834] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:27:01,834] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-5
+[2024-02-13 15:27:02,077] (INFO):: Successfully created job: vit-ucmerced-5
+[2024-02-13 15:39:27,033] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 0, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-1'}
+[2024-02-13 15:39:27,033] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:39:27,033] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:39:27,033] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:39:27,034] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-1
+[2024-02-13 15:39:27,367] (INFO):: Successfully created job: vit-ucmerced-1
+[2024-02-13 15:39:27,367] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-2'}
+[2024-02-13 15:39:27,367] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:39:27,367] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:39:27,367] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:39:27,367] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-2
+[2024-02-13 15:39:27,711] (INFO):: Successfully created job: vit-ucmerced-2
+[2024-02-13 15:39:27,711] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-3'}
+[2024-02-13 15:39:27,711] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:39:27,711] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:39:27,711] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:39:27,712] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-3
+[2024-02-13 15:39:27,952] (INFO):: Successfully created job: vit-ucmerced-3
+[2024-02-13 15:39:27,952] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-4'}
+[2024-02-13 15:39:27,952] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:39:27,952] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:39:27,952] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:39:27,953] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-4
+[2024-02-13 15:39:28,222] (INFO):: Successfully created job: vit-ucmerced-4
+[2024-02-13 15:39:28,222] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-5'}
+[2024-02-13 15:39:28,222] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:39:28,222] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:39:28,222] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:39:28,223] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-5
+[2024-02-13 15:39:28,466] (INFO):: Successfully created job: vit-ucmerced-5
+[2024-02-13 15:55:13,740] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 0, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-1'}
+[2024-02-13 15:55:13,741] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-02-13 15:55:13,741] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:55:13,741] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:55:13,741] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:55:13,741] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-1
+[2024-02-13 15:55:14,075] (INFO):: Successfully created job: vit-ucmerced-1
+[2024-02-13 15:55:14,092] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-2'}
+[2024-02-13 15:55:14,094] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-02-13 15:55:14,094] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:55:14,094] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:55:14,095] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:55:14,095] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-2
+[2024-02-13 15:55:14,335] (INFO):: Successfully created job: vit-ucmerced-2
+[2024-02-13 15:55:14,335] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-3'}
+[2024-02-13 15:55:14,337] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-02-13 15:55:14,337] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:55:14,337] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:55:14,337] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:55:14,338] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-3
+[2024-02-13 15:55:14,612] (INFO):: Successfully created job: vit-ucmerced-3
+[2024-02-13 15:55:14,612] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-4'}
+[2024-02-13 15:55:14,612] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-02-13 15:55:14,612] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:55:14,612] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:55:14,612] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:55:14,612] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-4
+[2024-02-13 15:55:14,854] (INFO):: Successfully created job: vit-ucmerced-4
+[2024-02-13 15:55:14,855] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 10, 'max_ram': 12, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-5'}
+[2024-02-13 15:55:14,855] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-02-13 15:55:14,856] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:55:14,856] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:55:14,856] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:55:14,856] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-5
+[2024-02-13 15:55:15,237] (INFO):: Successfully created job: vit-ucmerced-5
+[2024-02-13 15:59:05,717] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 0, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-1'}
+[2024-02-13 15:59:05,717] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-02-13 15:59:05,717] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:59:05,717] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:59:05,717] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:59:05,717] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-1
+[2024-02-13 15:59:06,074] (INFO):: Successfully created job: vit-ucmerced-1
+[2024-02-13 15:59:06,075] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-2'}
+[2024-02-13 15:59:06,075] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-02-13 15:59:06,075] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:59:06,075] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:59:06,075] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:59:06,075] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-2
+[2024-02-13 15:59:06,316] (INFO):: Successfully created job: vit-ucmerced-2
+[2024-02-13 15:59:06,316] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-3'}
+[2024-02-13 15:59:06,316] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-02-13 15:59:06,317] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:59:06,317] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:59:06,317] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:59:06,317] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-3
+[2024-02-13 15:59:06,555] (INFO):: Successfully created job: vit-ucmerced-3
+[2024-02-13 15:59:06,555] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-4'}
+[2024-02-13 15:59:06,555] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-02-13 15:59:06,555] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:59:06,555] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:59:06,555] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:59:06,556] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-4
+[2024-02-13 15:59:06,798] (INFO):: Successfully created job: vit-ucmerced-4
+[2024-02-13 15:59:06,799] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-5'}
+[2024-02-13 15:59:06,799] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-02-13 15:59:06,799] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 15:59:06,799] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 15:59:06,799] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 15:59:06,799] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-5
+[2024-02-13 15:59:07,039] (INFO):: Successfully created job: vit-ucmerced-5
+[2024-02-13 16:04:44,665] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 0, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-1'}
+[2024-02-13 16:04:44,665] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 16:04:44,665] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 16:04:44,665] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 16:04:44,665] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-1
+[2024-02-13 16:04:44,996] (INFO):: Successfully created job: vit-ucmerced-1
+[2024-02-13 16:04:44,996] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-2'}
+[2024-02-13 16:04:44,997] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 16:04:44,997] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 16:04:44,997] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 16:04:44,997] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-2
+[2024-02-13 16:04:45,236] (INFO):: Successfully created job: vit-ucmerced-2
+[2024-02-13 16:04:45,237] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-3'}
+[2024-02-13 16:04:45,237] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 16:04:45,237] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 16:04:45,237] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 16:04:45,237] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-3
+[2024-02-13 16:04:45,473] (INFO):: Successfully created job: vit-ucmerced-3
+[2024-02-13 16:04:45,473] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-4'}
+[2024-02-13 16:04:45,473] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 16:04:45,473] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 16:04:45,473] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 16:04:45,473] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-4
+[2024-02-13 16:04:45,709] (INFO):: Successfully created job: vit-ucmerced-4
+[2024-02-13 16:04:45,709] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 1, 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-5'}
+[2024-02-13 16:04:45,709] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 16:04:45,709] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 16:04:45,709] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 16:04:45,709] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-5
+[2024-02-13 16:04:45,943] (INFO):: Successfully created job: vit-ucmerced-5
+[2024-02-13 16:08:54,066] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 50, 'FOLD_NUM': 0, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-1'}
+[2024-02-13 16:08:54,066] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 16:08:54,066] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 16:08:54,066] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 16:08:54,067] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-1
+[2024-02-13 16:08:54,404] (INFO):: Successfully created job: vit-ucmerced-1
+[2024-02-13 16:08:54,404] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 50, 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-2'}
+[2024-02-13 16:08:54,404] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 16:08:54,404] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 16:08:54,404] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 16:08:54,404] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-2
+[2024-02-13 16:08:55,259] (INFO):: Successfully created job: vit-ucmerced-2
+[2024-02-13 16:08:55,260] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 50, 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-3'}
+[2024-02-13 16:08:55,260] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 16:08:55,260] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 16:08:55,260] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 16:08:55,260] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-3
+[2024-02-13 16:08:55,566] (INFO):: Successfully created job: vit-ucmerced-3
+[2024-02-13 16:08:55,567] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 50, 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-4'}
+[2024-02-13 16:08:55,567] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 16:08:55,567] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 16:08:55,567] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 16:08:55,567] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-4
+[2024-02-13 16:08:55,806] (INFO):: Successfully created job: vit-ucmerced-4
+[2024-02-13 16:08:55,807] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 50, 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-5'}
+[2024-02-13 16:08:55,807] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 16:08:55,807] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 16:08:55,807] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 16:08:55,807] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-5
+[2024-02-13 16:08:56,048] (INFO):: Successfully created job: vit-ucmerced-5
+[2024-02-13 20:16:38,986] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 5, 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-1'}
+[2024-02-13 20:16:38,986] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 20:16:38,986] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 20:16:38,986] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 20:16:38,986] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-1
+[2024-02-13 20:16:39,461] (INFO):: Successfully created job: vit-ucmerced-1
+[2024-02-13 20:16:39,462] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 5, 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-2'}
+[2024-02-13 20:16:39,462] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 20:16:39,462] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 20:16:39,462] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 20:16:39,462] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-2
+[2024-02-13 20:16:39,840] (INFO):: Successfully created job: vit-ucmerced-2
+[2024-02-13 20:16:39,840] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 5, 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-3'}
+[2024-02-13 20:16:39,840] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 20:16:39,840] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 20:16:39,840] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 20:16:39,840] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-3
+[2024-02-13 20:16:40,162] (INFO):: Successfully created job: vit-ucmerced-3
+[2024-02-13 20:16:40,163] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 5, 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-4'}
+[2024-02-13 20:16:40,163] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 20:16:40,163] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 20:16:40,163] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 20:16:40,163] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-4
+[2024-02-13 20:16:40,558] (INFO):: Successfully created job: vit-ucmerced-4
+[2024-02-13 20:16:40,558] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Vit_Kfold_UCMerced.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 5, 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'vit-ucmerced-5'}
+[2024-02-13 20:16:40,558] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-02-13 20:16:40,558] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-02-13 20:16:40,558] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-02-13 20:16:40,559] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: vit-ucmerced-5
+[2024-02-13 20:16:40,969] (INFO):: Successfully created job: vit-ucmerced-5
