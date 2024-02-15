@@ -24,10 +24,11 @@ from utils.models import *
 # GLOBAL VARIABLES
 TORCH_NUM_JOBS = int(os.environ.get("TORCH_NUM_JOBS", "4"))
 TORCH_NUM_EPOCHS = int(os.environ.get("TORCH_NUM_EPOCHS", "5"))
+TORCH_NUM_FOLDS = int(os.environ.get("TORCH_NUM_FOLDS", "5"))
 FOLD_NUM = int(os.environ.get("FOLD_NUM", "1"))
 TORCH_MODEL_NAME = os.environ.get("TORCH_MODEL_NAME", "resnet50")
 TORCH_DATA_NAME = os.environ.get("TORCH_DATA_NAME", "cifar10")
-WRITE_RESULTS = bool(os.environ.get("WRITE_RESULTS", "False"))
+WRITE_RESULTS = bool(os.environ.get("WRITE_RESULTS", False))
 
 # DATA LOADER
 def get_data(train_batch_size, test_batch_size, k_folds) -> ():
@@ -73,7 +74,9 @@ def main():
     train_batch_size = 16
     test_batch_size = 16
 
-    k_folds = 5
+    num_classes = 10
+
+    # k_folds = 5
 
     # train_data_loader, test_data_loader = get_data(
     #     train_batch_size=train_batch_size, 
@@ -81,28 +84,29 @@ def main():
     #     k_folds=k_folds
     # )
 
-    train_data_loader, test_data_loader = get_k_fold_data(
+    train_data_loader, test_data_loader, input_features, num_classes = get_k_fold_data(
         data_name = TORCH_DATA_NAME,
         model_name = TORCH_MODEL_NAME,
-        num_folds = 5,
+        num_folds = TORCH_NUM_FOLDS,
         fold = FOLD_NUM,
         train_batch_size = train_batch_size,
         test_batch_size = test_batch_size,
         num_jobs = TORCH_NUM_JOBS
     )
 
+    
 
     # model = vit_b_16(ViT_B_16_Weights.IMAGENET1K_V1)
 
     model = get_model(
         model_name=TORCH_MODEL_NAME,
-        pretrain_weights=True
+        pretrain_weights=True,
+        input_features=input_features,
+        num_classes = num_classes
     )
 
-    num_classes = 10
-
     # Resnet50 Modifications
-    model.fc = nn.Linear(in_features=2048, out_features=num_classes, bias=True)
+    # model.fc = nn.Linear(in_features=2048, out_features=num_classes, bias=True)
 
     # ViT_b_16 Modifications
     # model.heads[0] = nn.Linear(768, 21)
@@ -243,31 +247,32 @@ def main():
     if not os.path.exists(file_path):
         os.makedirs(file_path)
 
-    write_results_to_file(results, file_path + file_name)
+    if WRITE_RESULTS:
+        write_results_to_file(results, file_path + file_name)
 
-    write_2data_plot_to_file(
-        data_1 = train_loss_per_epoch,
-        data_1_label = "Training Loss",
-        data_2 = val_loss_per_epoch,
-        data_2_label = "Validation Loss",
-        x_label = "Epoch",
-        y_label = "Loss",
-        title = "Loss vs Epoch",
-        filename = file_path + f"loss_{FOLD_NUM}.png",
-    )
+        write_2data_plot_to_file(
+            data_1 = train_loss_per_epoch,
+            data_1_label = "Training Loss",
+            data_2 = val_loss_per_epoch,
+            data_2_label = "Validation Loss",
+            x_label = "Epoch",
+            y_label = "Loss",
+            title = "Loss vs Epoch",
+            filename = file_path + f"loss_{FOLD_NUM}.png",
+        )
 
-    write_2data_plot_to_file(
-        data_1 = train_accuracy_per_epoch,
-        data_1_label = "Training Accuracy",
-        data_2 = val_accuracy_per_epoch,
-        data_2_label = "Validation Accuracy",
-        x_label = "Epoch",
-        y_label = "Accuracy",
-        title = "Accuracy vs Epoch",
-        filename = file_path + f"accuracy_{FOLD_NUM}.png",
-    )
+        write_2data_plot_to_file(
+            data_1 = train_accuracy_per_epoch,
+            data_1_label = "Training Accuracy",
+            data_2 = val_accuracy_per_epoch,
+            data_2_label = "Validation Accuracy",
+            x_label = "Epoch",
+            y_label = "Accuracy",
+            title = "Accuracy vs Epoch",
+            filename = file_path + f"accuracy_{FOLD_NUM}.png",
+        )
 
-    print("Results Saved to 'results' Folder")
+        print("Results Saved to 'results' Folder")
 
 if __name__ == "__main__":
     main()

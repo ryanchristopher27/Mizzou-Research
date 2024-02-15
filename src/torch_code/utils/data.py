@@ -7,7 +7,7 @@ from torchvision.models import (
 from sklearn.model_selection import KFold
 from torch.utils.data import DataLoader
 import torch
-from torchvision.transforms import ToTensor
+from torchvision.transforms import ToTensor, transforms
 
 # Get Data For K-Fold Cross Validation
 # Arguments
@@ -30,25 +30,35 @@ def get_k_fold_data(
     fold: int = 1,
     train_batch_size: int = 16,
     test_batch_size: int = 16,
-    num_jobs: int = 4,
+    num_jobs: int = 4
     ):
         
     if model_name == "vit_b_16":
         transform = ViT_B_16_Weights.IMAGENETK_V1.transforms()
     elif model_name == "resnet50":
-        transform = ToTensor()
+        transform = transforms.Compose([
+            transforms.Resize(224),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+        ])
     
     if data_name == "ucmerced_landuse":
         dataset = datasets.ImageFolder(
             root = "Images",
             transform = transform,
         )
+        num_classes = 21
+        input_features = 2048
+
     elif data_name == "cifar10":
         dataset = datasets.CIFAR10(
             root='data/', 
             download=True, 
             transform=transform
         )
+        num_classes = 10
+        input_features = 768
     
     kf = KFold(n_splits=num_folds, shuffle=True, random_state=42)
 
@@ -61,14 +71,22 @@ def get_k_fold_data(
         batch_size=train_batch_size, 
         num_workers=num_jobs,
         sampler=torch.utils.data.SubsetRandomSampler(train_idx),
+        pin_memory=True,
+        # collate_fn=collate_fn,
     )
     test_loader = DataLoader(
         dataset=dataset, 
         batch_size=test_batch_size,
         sampler=torch.utils.data.SubsetRandomSampler(test_idx),
+        # collate_fn=collate_fn,
     )
 
-    return train_loader, test_loader
+    return train_loader, test_loader, input_features, num_classes
 
 
+# def collate_fn(batch):
+#     return {
+#         'pixel_values': torch.stack([x['pixel_values'] for x in batch]),
+#         'labels': torch.tensor([x['labels'] for x in batch])
+#     }
             
