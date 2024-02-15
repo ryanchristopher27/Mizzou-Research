@@ -217,7 +217,7 @@ def main():
         "Best_Epoch": best_epoch,
     }
 
-    file_path = f"results/{TORCH_MODEL_NAME}/{TORCH_DATA_NAME}/{TORCH_NUM_EPOCHS}/fold_{FOLD_NUM}/"
+    file_path = f"results/{TORCH_MODEL_NAME}/{TORCH_DATA_NAME}/epochs_{TORCH_NUM_EPOCHS}/fold_{FOLD_NUM}/"
     file_name = f"results_{FOLD_NUM}.json"
 
     if not os.path.exists(file_path):

@@ -22,7 +22,7 @@ defaults = dict(
     # gpu_types=["NVIDIA-A100-80GB-PCIe-MIG-1g.10gb"],
     env=dict(
         TORCH_NUM_JOBS=8, 
-        TORCH_NUM_EPOCHS=5,
+        TORCH_NUM_EPOCHS=25,
         ),
 )
 

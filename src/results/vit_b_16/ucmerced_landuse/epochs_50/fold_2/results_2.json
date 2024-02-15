@@ -1,0 +1,14 @@
+{
+    "Fold_Number": 2,
+    "Accuracy": "89.0476%",
+    "Precision": "88.5737%",
+    "Recall": "88.7438%",
+    "F-1_Score": "88.3623%",
+    "Best_Epoch": {
+        "epoch": 16,
+        "train_loss": "0.0527",
+        "val_loss": "0.4287",
+        "train_accuracy": "100.0000%",
+        "val_accuracy": "87.7315%"
+    }
+}
