@@ -6,6 +6,8 @@ from torchvision.models import (
 )
 from sklearn.model_selection import KFold
 from torch.utils.data import DataLoader
+import torch
+from torchvision.transforms import ToTensor
 
 # Get Data For K-Fold Cross Validation
 # Arguments
@@ -26,18 +28,26 @@ def get_k_fold_data(
     model_name: str = "vit_b_16", 
     num_folds: int = 5,
     fold: int = 1,
-    train_batch_idx: int = 16,
+    train_batch_size: int = 16,
     test_batch_size: int = 16,
-    num_jobs,
+    num_jobs: int = 4,
     ):
         
     if model_name == "vit_b_16":
         transform = ViT_B_16_Weights.IMAGENETK_V1.transforms()
+    elif model_name == "resnet50":
+        transform = ToTensor()
     
     if data_name == "ucmerced_landuse":
         dataset = datasets.ImageFolder(
             root = "Images",
             transform = transform,
+        )
+    elif data_name == "cifar10":
+        dataset = datasets.CIFAR10(
+            root='data/', 
+            download=True, 
+            transform=transform
         )
     
     kf = KFold(n_splits=num_folds, shuffle=True, random_state=42)

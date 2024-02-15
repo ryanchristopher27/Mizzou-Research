@@ -18,13 +18,16 @@ from sklearn.metrics import precision_recall_fscore_support as evaluate
 from sklearn.model_selection import KFold
 
 from utils.utils import *
+from utils.data import *
+from utils.models import *
 
 # GLOBAL VARIABLES
 TORCH_NUM_JOBS = int(os.environ.get("TORCH_NUM_JOBS", "4"))
-TORCH_NUM_EPOCHS = int(os.environ.get("TORCH_NUM_EPOCHS", "1"))
+TORCH_NUM_EPOCHS = int(os.environ.get("TORCH_NUM_EPOCHS", "5"))
 FOLD_NUM = int(os.environ.get("FOLD_NUM", "1"))
-TORCH_MODEL_NAME = os.environ.get("TORCH_MODEL_NAME", "vit_b_16")
-TORCH_DATA_NAME = os.environ.get("TORCH_DATA_NAME", "ucmerced_landuse")
+TORCH_MODEL_NAME = os.environ.get("TORCH_MODEL_NAME", "resnet50")
+TORCH_DATA_NAME = os.environ.get("TORCH_DATA_NAME", "cifar10")
+WRITE_RESULTS = bool(os.environ.get("WRITE_RESULTS", "False"))
 
 # DATA LOADER
 def get_data(train_batch_size, test_batch_size, k_folds) -> ():
@@ -72,21 +75,38 @@ def main():
 
     k_folds = 5
 
-    train_data_loader, test_data_loader = get_data(
-        train_batch_size=train_batch_size, 
-        test_batch_size=test_batch_size,
-        k_folds=k_folds
+    # train_data_loader, test_data_loader = get_data(
+    #     train_batch_size=train_batch_size, 
+    #     test_batch_size=test_batch_size,
+    #     k_folds=k_folds
+    # )
+
+    train_data_loader, test_data_loader = get_k_fold_data(
+        data_name = TORCH_DATA_NAME,
+        model_name = TORCH_MODEL_NAME,
+        num_folds = 5,
+        fold = FOLD_NUM,
+        train_batch_size = train_batch_size,
+        test_batch_size = test_batch_size,
+        num_jobs = TORCH_NUM_JOBS
     )
 
-    # num_classes = train_data_loader.dataset.num_classes
 
-    model = vit_b_16(ViT_B_16_Weights.IMAGENET1K_V1)
+    # model = vit_b_16(ViT_B_16_Weights.IMAGENET1K_V1)
 
-    # set output neurons to Num Classes = 21
-    model.heads[0] = nn.Linear(768, 21)
+    model = get_model(
+        model_name=TORCH_MODEL_NAME,
+        pretrain_weights=True
+    )
 
-    # freeze the backbone
-    model.encoder.requires_grad_(False)
+    num_classes = 10
+
+    # Resnet50 Modifications
+    model.fc = nn.Linear(in_features=2048, out_features=num_classes, bias=True)
+
+    # ViT_b_16 Modifications
+    # model.heads[0] = nn.Linear(768, 21)
+    # model.encoder.requires_grad_(False)
 
     # create opt and loss
     optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
