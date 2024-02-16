@@ -2,14 +2,17 @@
 import torchvision.datasets as datasets
 from torchvision.models import (
     ViT_B_16_Weights, 
-    ResNet50_Weights,
     ViT_B_32_Weights,
     ViT_L_16_Weights,
+    ResNet18_Weights,
+    ResNet50_Weights,
 )
 from sklearn.model_selection import KFold
 from torch.utils.data import DataLoader
 import torch
 from torchvision.transforms import ToTensor, transforms
+from torch.utils.data import random_split
+
 
 # Get Data For K-Fold Cross Validation
 # Arguments
@@ -37,10 +40,25 @@ def get_k_fold_data(
         
     if model_name == "vit_b_16":
         transform = ViT_B_16_Weights.IMAGENET1K_V1.transforms()
+        input_features = 768
+
     elif model_name == "vit_b_32":
         transform = ViT_B_32_Weights.IMAGENET1K_V1.transforms()
+        input_features = 768
+
     elif model_name == "vit_l_16":
         transform = ViT_L_16_Weights.IMAGENET1K_V1.transforms()
+        input_features = 1024
+
+    elif model_name == "resnet18":
+        transform = transforms.Compose([
+            transforms.Resize(224),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+        ])
+        input_features = 512
+
     elif model_name == "resnet50":
         transform = transforms.Compose([
             transforms.Resize(224),
@@ -48,6 +66,7 @@ def get_k_fold_data(
             transforms.ToTensor(),
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
         ])
+        input_features = 2048
     
     if data_name == "ucmerced_landuse":
         dataset = datasets.ImageFolder(
@@ -55,7 +74,6 @@ def get_k_fold_data(
             transform = transform,
         )
         num_classes = 21
-        input_features = 2048
 
     elif data_name == "cifar10":
         dataset = datasets.CIFAR10(
@@ -64,7 +82,6 @@ def get_k_fold_data(
             transform=transform
         )
         num_classes = 10
-        input_features = 768
     
     kf = KFold(n_splits=num_folds, shuffle=True, random_state=42)
 
@@ -72,27 +89,46 @@ def get_k_fold_data(
 
     train_idx, test_idx = fold_idxs[fold - 1]
 
+    print(f'Fold Number: {fold}')
+    print(f'Train Indexes: {train_idx[0:10]}')
+    print(f'Test Indexes: {test_idx[0:10]}')
+
     train_loader = DataLoader(
         dataset=dataset, 
         batch_size=train_batch_size, 
         num_workers=num_jobs,
         sampler=torch.utils.data.SubsetRandomSampler(train_idx),
         pin_memory=True,
-        # collate_fn=collate_fn,
     )
     test_loader = DataLoader(
         dataset=dataset, 
         batch_size=test_batch_size,
         sampler=torch.utils.data.SubsetRandomSampler(test_idx),
-        # collate_fn=collate_fn,
     )
 
     return train_loader, test_loader, input_features, num_classes
 
+  
+# DATA LOADER
+def get_data(train_batch_size, test_batch_size) -> tuple:
 
-# def collate_fn(batch):
-#     return {
-#         'pixel_values': torch.stack([x['pixel_values'] for x in batch]),
-#         'labels': torch.tensor([x['labels'] for x in batch])
-#     }
-            
+    # print(os.path.abspath('.'))
+    # total_dataset = datasets.ImageFolder('src/torch_code/Images', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
+    total_dataset = datasets.ImageFolder('Images', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
+
+    train_size = int(0.8 * len(total_dataset))
+    test_size = len(total_dataset) - train_size
+
+    train_dataset, test_dataset = random_split(total_dataset, [train_size, test_size])
+
+    train_loader = DataLoader(
+        dataset=train_dataset, 
+        batch_size=train_batch_size, 
+        num_workers=4,
+    )
+    test_loader = DataLoader(
+        dataset=test_dataset, 
+        batch_size=test_batch_size,
+    )
+
+    return train_loader, test_loader
