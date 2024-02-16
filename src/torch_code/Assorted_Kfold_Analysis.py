@@ -24,6 +24,11 @@ WRITE_RESULTS = bool(os.environ.get("WRITE_RESULTS", False))
 
 # MAIN FUNCTION
 def main():
+    # PRINT JOB INFO
+    print(f"Model: {TORCH_MODEL_NAME}")
+    print(f"Dataset: {TORCH_DATA_NAME}")
+    print(f"Fold: {FOLD_NUM}\n")
+
     cuda_setup()
 
     train_batch_size = 128
