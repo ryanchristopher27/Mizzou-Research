@@ -26,7 +26,7 @@ TORCH_NUM_JOBS = int(os.environ.get("TORCH_NUM_JOBS", "4"))
 TORCH_NUM_EPOCHS = int(os.environ.get("TORCH_NUM_EPOCHS", "5"))
 TORCH_NUM_FOLDS = int(os.environ.get("TORCH_NUM_FOLDS", "5"))
 FOLD_NUM = int(os.environ.get("FOLD_NUM", "1"))
-TORCH_MODEL_NAME = os.environ.get("TORCH_MODEL_NAME", "resnet50")
+TORCH_MODEL_NAME = os.environ.get("TORCH_MODEL_NAME", "vit_b_32")
 TORCH_DATA_NAME = os.environ.get("TORCH_DATA_NAME", "cifar10")
 WRITE_RESULTS = bool(os.environ.get("WRITE_RESULTS", False))
 
@@ -71,8 +71,8 @@ def get_data(train_batch_size, test_batch_size, k_folds) -> ():
 def main():
     cuda_setup()
 
-    train_batch_size = 16
-    test_batch_size = 16
+    train_batch_size = 128
+    test_batch_size = 128
 
     num_classes = 10
 

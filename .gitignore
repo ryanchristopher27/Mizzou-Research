@@ -4,3 +4,8 @@ Images/
 
 __pycache__/
 
+# Extensions
+.gz
+.meta
+
+src/torch_code/data/

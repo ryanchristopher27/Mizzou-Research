@@ -3,7 +3,11 @@ from torchvision.models import (
     vit_b_16, 
     ViT_B_16_Weights, 
     resnet50, 
-    ResNet50_Weights
+    ResNet50_Weights,
+    vit_b_32,
+    ViT_B_32_Weights,
+    vit_l_16,
+    ViT_L_16_Weights,
 )
 from torch import nn
 
@@ -16,9 +20,27 @@ def get_model(
     
     if model_name == "vit_b_16":
         if pretrain_weights:
-            model = vit_b_16(ViT_B_16_Weights.IMAGENETK_V1)
+            model = vit_b_16(ViT_B_16_Weights.IMAGENET1K_V1)
         else:
             model = vit_b_16()
+
+        model.heads[0] = nn.Linear(input_features, num_classes)
+        model.encoder.requires_grad_(False)
+
+    elif model_name == "vit_b_32":
+        if pretrain_weights:
+            model = vit_b_32(ViT_B_32_Weights.IMAGENET1K_V1)
+        else:
+            model = vit_b_32()
+
+        model.heads[0] = nn.Linear(input_features, num_classes)
+        model.encoder.requires_grad_(False)
+
+    elif model_name == "vit_l_16":
+        if pretrain_weights:
+            model = vit_l_16(ViT_L_16_Weights.IMAGENET1K_V1)
+        else:
+            model = vit_l_16()
 
         model.heads[0] = nn.Linear(input_features, num_classes)
         model.encoder.requires_grad_(False)
@@ -29,6 +51,6 @@ def get_model(
         else:
             model = resnet50()
 
-        model.fc = nn.Linear(in_features=input_features, out_features=num_classes, bias=True)
+        model.fc = nn.Linear(input_features, num_classes, bias=True)
 
     return model

@@ -2,7 +2,9 @@
 import torchvision.datasets as datasets
 from torchvision.models import (
     ViT_B_16_Weights, 
-    ResNet50_Weights
+    ResNet50_Weights,
+    ViT_B_32_Weights,
+    ViT_L_16_Weights,
 )
 from sklearn.model_selection import KFold
 from torch.utils.data import DataLoader
@@ -34,7 +36,11 @@ def get_k_fold_data(
     ):
         
     if model_name == "vit_b_16":
-        transform = ViT_B_16_Weights.IMAGENETK_V1.transforms()
+        transform = ViT_B_16_Weights.IMAGENET1K_V1.transforms()
+    elif model_name == "vit_b_32":
+        transform = ViT_B_32_Weights.IMAGENET1K_V1.transforms()
+    elif model_name == "vit_l_16":
+        transform = ViT_L_16_Weights.IMAGENET1K_V1.transforms()
     elif model_name == "resnet50":
         transform = transforms.Compose([
             transforms.Resize(224),
