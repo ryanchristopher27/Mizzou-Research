@@ -1,14 +1,14 @@
 {
     "Fold_Number": 4,
-    "Accuracy": "97.3810%",
-    "Precision": "97.5321%",
-    "Recall": "97.5706%",
-    "F-1_Score": "97.5174%",
+    "Accuracy": "96.6667%",
+    "Precision": "96.7184%",
+    "Recall": "96.8400%",
+    "F-1_Score": "96.6376%",
     "Best_Epoch": {
-        "epoch": 43,
-        "train_loss": "0.0159",
-        "val_loss": "0.0801",
-        "train_accuracy": "99.7024%",
-        "val_accuracy": "95.8333%"
+        "epoch": 48,
+        "train_loss": "0.0244",
+        "val_loss": "0.0732",
+        "train_accuracy": "93.6384%",
+        "val_accuracy": "79.8828%"
     }
 }

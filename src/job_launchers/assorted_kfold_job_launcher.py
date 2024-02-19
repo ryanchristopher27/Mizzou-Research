@@ -1,7 +1,7 @@
 from nautiluslauncher import NautilusJobLauncher
 
 namespace = "gp-engine-mu-hpdi-christopher"
-job_prefix = "vit-ucmerced-"
+job_prefix = "kfold-"
 command = ["python3", "/data/Assorted_Kfold_Analysis.py"]
 image = "rchristopher27/cnn-image:latest"
 pvc_name = "rchristopher-pvc"
@@ -22,13 +22,17 @@ defaults = dict(
     # gpu_types=["NVIDIA-A100-80GB-PCIe-MIG-1g.10gb"],
     env=dict(
         TORCH_NUM_JOBS=8, 
-        TORCH_NUM_EPOCHS=50,
+        TORCH_NUM_EPOCHS=40,
         TORCH_NUM_FOLDS=NUM_FOLDS,
         WRITE_RESULTS=True,
+        OPTIMIZER="Adam",
+        LOSS_FUNCTION="CrossEntropy",
+        BATCH_SIZE=128,
+        LEARNING_RATE=0.001,
         ),
 )
 
-models = ["vit_b_16", "vit_b_32", "resnet18", "resnet50"]
+models = ["vit_b_16", "vit_b_32"]
 datasets = ["ucmerced_landuse", "cifar10"]
 
 jobs = []

@@ -20,6 +20,10 @@ FOLD_NUM = int(os.environ.get("FOLD_NUM", "1"))
 TORCH_MODEL_NAME = os.environ.get("TORCH_MODEL_NAME", "resnet18")
 TORCH_DATA_NAME = os.environ.get("TORCH_DATA_NAME", "ucmerced_landuse")
 WRITE_RESULTS = bool(os.environ.get("WRITE_RESULTS", False))
+OPTIMIZER = os.environ.get("OPTIMIZER", "Adam")
+LOSS_FUNCTION = os.environ.get("LOSS_FUNCTION", "CrossEntropy")
+BATCH_SIZE = int(os.environ.get("BATCH_SIZE", "128"))
+LEARNING_RATE = float(os.environ.get("LEARNING_RATE", "0.001"))
 
 
 # MAIN FUNCTION
@@ -28,11 +32,15 @@ def main():
     print(f"Model: {TORCH_MODEL_NAME}")
     print(f"Dataset: {TORCH_DATA_NAME}")
     print(f"Fold: {FOLD_NUM}\n")
+    print(f"Batch Size: {BATCH_SIZE}\n")
+    print(f"Optimizer: {OPTIMIZER}\n")
+    print(f"Loss Function: {LOSS_FUNCTION}\n")
+    print(f"Learning Rate: {LEARNING_RATE}\n")
 
     cuda_setup()
 
-    train_batch_size = 128
-    test_batch_size = 128
+    train_batch_size = BATCH_SIZE
+    test_batch_size = BATCH_SIZE
 
     num_classes = 10
 
@@ -54,8 +62,15 @@ def main():
     )
 
     # create opt and loss
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
-    loss_function = nn.CrossEntropyLoss()
+    if OPTIMIZER == "Adam":
+        optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
+    elif OPTIMIZER == "SGD":
+        optimizer = torch.optim.SGD(model.parameters(), lr=LEARNING_RATE, momentum=0.9)
+    elif OPTIMIZER == "AdamW":
+        optimizer = torch.optim.AdamW(model.parameters(), lr=LEARNING_RATE)
+    
+    if LOSS_FUNCTION == "CrossEntropy":
+        loss_function = nn.CrossEntropyLoss()
 
     model.cuda()
 
@@ -177,6 +192,12 @@ def main():
         "Recall": f"{rec * 100:.4f}%",
         "F-1_Score": f"{fscore * 100:.4f}%",
         "Best_Epoch": best_epoch,
+        "Hyper_Parameters": {
+            "Optimizer": OPTIMIZER,
+            "Loss_Function": LOSS_FUNCTION,
+            "Batch_Size": BATCH_SIZE,
+            "Learning_Rate": LEARNING_RATE,
+        }
     }
 
     file_path = f"results/{TORCH_MODEL_NAME}/{TORCH_DATA_NAME}/epochs_{TORCH_NUM_EPOCHS}/fold_{FOLD_NUM}/"
