@@ -17,7 +17,7 @@ TORCH_NUM_JOBS = int(os.environ.get("TORCH_NUM_JOBS", "4"))
 TORCH_NUM_EPOCHS = int(os.environ.get("TORCH_NUM_EPOCHS", "5"))
 TORCH_NUM_FOLDS = int(os.environ.get("TORCH_NUM_FOLDS", "5"))
 FOLD_NUM = int(os.environ.get("FOLD_NUM", "1"))
-TORCH_MODEL_NAME = os.environ.get("TORCH_MODEL_NAME", "resnet18")
+TORCH_MODEL_NAME = os.environ.get("TORCH_MODEL_NAME", "convnext-tiny_32xb128_in1k")
 TORCH_DATA_NAME = os.environ.get("TORCH_DATA_NAME", "ucmerced_landuse")
 WRITE_RESULTS = bool(os.environ.get("WRITE_RESULTS", False))
 OPTIMIZER = os.environ.get("OPTIMIZER", "Adam")
@@ -37,14 +37,14 @@ def main():
     print(f"Loss Function: {LOSS_FUNCTION}\n")
     print(f"Learning Rate: {LEARNING_RATE}\n")
 
-    cuda_setup()
+    device, on_gpu = cuda_setup()
 
     train_batch_size = BATCH_SIZE
     test_batch_size = BATCH_SIZE
 
     num_classes = 10
 
-    train_data_loader, test_data_loader, input_features, num_classes = get_k_fold_data(
+    train_data_loader, test_data_loader, input_features, num_classes = get_kfold_data(
         data_name = TORCH_DATA_NAME,
         model_name = TORCH_MODEL_NAME,
         num_folds = TORCH_NUM_FOLDS,
@@ -54,7 +54,7 @@ def main():
         num_jobs = TORCH_NUM_JOBS
     )
 
-    model = get_model(
+    model = get_kfold_model(
         model_name=TORCH_MODEL_NAME,
         pretrain_weights=True,
         input_features=input_features,
@@ -72,7 +72,7 @@ def main():
     if LOSS_FUNCTION == "CrossEntropy":
         loss_function = nn.CrossEntropyLoss()
 
-    model.cuda()
+    model.cuda() if on_gpu else None
 
     train_loss_per_epoch = np.zeros(TORCH_NUM_EPOCHS)
     train_accuracy_per_epoch = np.zeros(TORCH_NUM_EPOCHS)
@@ -96,8 +96,8 @@ def main():
         model.train()
 
         for i, (images, labels) in tqdm(enumerate(train_data_loader), total=len(train_data_loader), desc="Training"):
-            images = images.cuda()
-            labels = labels.cuda()
+            images = images.cuda() if on_gpu else None
+            labels = labels.cuda() if on_gpu else None
 
             optimizer.zero_grad()
             outputs = model(images)
@@ -129,8 +129,8 @@ def main():
 
         with torch.no_grad():
             for i, (images, labels) in tqdm(enumerate(test_data_loader), total=len(test_data_loader), desc="Validating"):
-                images = images.cuda()
-                labels = labels.cuda()
+                images = images.cuda() if on_gpu else None
+                labels = labels.cuda() if on_gpu else None
                 outputs = model(images)
 
                 loss = loss_function(outputs.float(), labels.long())
@@ -164,12 +164,16 @@ def main():
         print("---" * 30 + f"\nRunning Eval")
         for i, (images, lb) in tqdm(enumerate(test_data_loader), total=len(test_data_loader), desc="Testing"):
 
-            model_outputs = model(images.cuda())
+            images = images.cuda() if on_gpu else None
+
+            model_outputs = model(images)
 
             _, preds = torch.max(model_outputs, 1)
 
             labels.extend(lb.numpy().tolist())
-            predictions.extend(preds.cpu().numpy().tolist())
+
+            preds = preds.cpu() if on_gpu else None
+            predictions.extend(preds.numpy().tolist())
 
     acc = metrics.accuracy_score(predictions, labels)
     prec, rec, fscore, _ = evaluate(predictions, labels, average="macro", zero_division=0)

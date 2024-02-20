@@ -28,7 +28,7 @@ from torch.utils.data import random_split
     # Train Data Loader
     # Test Data Loader
 
-def get_k_fold_data(
+def get_kfold_data(
     data_name: str = "ucmerced_landuse", 
     model_name: str = "vit_b_16", 
     num_folds: int = 5,
@@ -60,6 +60,15 @@ def get_k_fold_data(
         input_features = 512
 
     elif model_name == "resnet50":
+        transform = transforms.Compose([
+            transforms.Resize(224),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+        ])
+        input_features = 2048
+
+    elif model_name == "convnext-tiny_32xb128_in1k":
         transform = transforms.Compose([
             transforms.Resize(224),
             transforms.CenterCrop(224),

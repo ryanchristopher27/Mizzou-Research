@@ -12,8 +12,9 @@ from torchvision.models import (
     ResNet50_Weights,
 )
 from torch import nn
+from mmpretrain import get_model
 
-def get_model(
+def get_kfold_model(
     model_name: str ="vit_b_16", 
     pretrain_weights: bool = True, 
     input_features: int = 768, 
@@ -60,6 +61,14 @@ def get_model(
             model = resnet50(weights=ResNet50_Weights.DEFAULT)
         else:
             model = resnet50()
+
+        model.fc = nn.Linear(input_features, num_classes, bias=True)
+
+    elif model_name == "convnext-tiny_32xb128_in1k":
+        if pretrain_weights:
+            model = get_model('convnext-tiny_32xb128_in1k', pretrained=True)
+        else:
+            model = get_model('convnext-tiny_32xb128_in1k', pretrained=False)
 
         model.fc = nn.Linear(input_features, num_classes, bias=True)
 
