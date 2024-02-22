@@ -12,7 +12,6 @@ from torchvision.models import (
     ResNet50_Weights,
 )
 from torch import nn
-from mmpretrain import get_model
 import torch
 
 def get_kfold_model(
@@ -64,15 +63,5 @@ def get_kfold_model(
             model = resnet50()
 
         model.fc = nn.Linear(input_features, num_classes, bias=True)
-
-    elif model_name == "convnext-tiny_32xb128_in1k":
-        if pretrain_weights:
-            model = get_model('convnext-tiny_32xb128_in1k', pretrained=True, head=dict(num_classes=num_classes))
-        else:
-            model = get_model('convnext-tiny_32xb128_in1k', pretrained=False, head=dict(num_classes=num_classes))
-
-        model.head.fc.weight = torch.Size([num_classes, input_features])
-        model.head.fc.bias = torch.Size([num_classes])
-        # model.fc = nn.Linear(input_features, num_classes, bias=True)
 
     return model
