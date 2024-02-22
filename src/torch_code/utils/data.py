@@ -75,7 +75,7 @@ def get_kfold_data(
             transforms.ToTensor(),
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
         ])
-        input_features = 2048
+        input_features = 768
     
     if data_name == "ucmerced_landuse":
         dataset = datasets.ImageFolder(
