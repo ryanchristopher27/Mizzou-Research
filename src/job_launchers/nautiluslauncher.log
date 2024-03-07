@@ -1290,3 +1290,15 @@ HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"F
 [2024-02-19 13:09:00,825] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
 [2024-02-19 13:09:00,825] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-20
 [2024-02-19 13:09:01,063] (INFO):: Successfully created job: kfold-20
+[2024-03-04 13:29:41,986] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 40, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 128, 'LEARNING_RATE': 0.001, 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'test-job'}
+[2024-03-04 13:29:41,987] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-03-04 13:29:41,987] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-04 13:29:41,987] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-04 13:29:41,987] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: test-job
+[2024-03-04 13:29:42,485] (INFO):: Successfully created job: test-job
+[2024-03-04 13:32:10,050] (DEBUG):: {'image': 'rchristopher27/cnn-image:latest', 'command': ['python3', '/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 40, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 128, 'LEARNING_RATE': 0.001, 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'test-job'}
+[2024-03-04 13:32:10,050] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-03-04 13:32:10,051] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-04 13:32:10,051] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-04 13:32:10,051] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: test-job
+[2024-03-04 13:32:10,616] (INFO):: Successfully created job: test-job

@@ -35,20 +35,20 @@ defaults = dict(
 models = ["vit_b_16", "vit_b_32"]
 datasets = ["ucmerced_landuse", "cifar10"]
 
-jobs = []
-job_counter = 1
-for model in models:
-    for dataset in datasets:
-        for fold in range(NUM_FOLDS):
-            temp_dict = dict(job_name=job_prefix + str(job_counter), env=dict(
-                FOLD_NUM=fold+1,
-                TORCH_MODEL_NAME=model,
-                TORCH_DATA_NAME=dataset,
-            ))
+# jobs = []
+# job_counter = 1
+# for model in models:
+#     for dataset in datasets:
+#         for fold in range(NUM_FOLDS):
+#             temp_dict = dict(job_name=job_prefix + str(job_counter), env=dict(
+#                 FOLD_NUM=fold+1,
+#                 TORCH_MODEL_NAME=model,
+#                 TORCH_DATA_NAME=dataset,
+#             ))
 
-            jobs.append(temp_dict)
+#             jobs.append(temp_dict)
 
-            job_counter += 1
+#             job_counter += 1
 
 # jobs = [
 #     dict(job_name=job_prefix + str(i+1), env=dict(
@@ -60,13 +60,13 @@ for model in models:
 # ]
 
 # Single Job Test
-# jobs = [
-#     dict(job_name='test-job', env=dict(
-#         FOLD_NUM=1,
-#         TORCH_MODEL_NAME="resnet50",
-#         TORCH_DATA_NAME="ucmerced_landuse",
-#     ))
-# ]
+jobs = [
+    dict(job_name='test-job', env=dict(
+        FOLD_NUM=1,
+        TORCH_MODEL_NAME="resnet50",
+        TORCH_DATA_NAME="ucmerced_landuse",
+    ))
+]
 
 launcher = NautilusJobLauncher(
     cfg = dict(namespace=namespace, defaults=defaults, jobs=jobs)

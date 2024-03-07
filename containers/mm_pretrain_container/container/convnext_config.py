@@ -1,6 +1,6 @@
-_base_ = "/config/mmpretrain/swin_transformer/swin-base_16xb64_in1k.py"
+_base_ = "mmpretrain/configs/convnext/convnext-base_32xb128_in21k.py"
 
-load_from = "https://download.openmmlab.com/mmclassification/v0/swin-transformer/swin_base_224_b16x64_300e_imagenet_20210616_190742-93230b0d.pth"
+load_from = "https://download.openmmlab.com/mmclassification/v0/convnext/convnext-base_3rdparty_in21k_20220124-13b83eec.pth"
 
 data_preprocessor = dict(num_classes=21)
 
@@ -21,7 +21,7 @@ train_dataloader = dict(
     dataset=dict(
         _delete_=True,
         type="CustomDataset",
-        data_prefix="/data/UCMerced/UCMerced_LandUse/Images",
+        data_prefix="/data/UCMerced_Landuse/",
         with_label=True,
         pipeline=train_pipeline
     )
