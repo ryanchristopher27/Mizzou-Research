@@ -1,6 +1,6 @@
-_base_ = ["base/models/convnext/convnext-base.py", "base/default_runtime.py"]
+_base_ = "/data/src/mmpretrain/configs/convnext/convnext-base_32xb128_in21k.py"
 
-# load_from = "https://download.openmmlab.com/mmclassification/v0/convnext/convnext-base_3rdparty_in21k_20220124-13b83eec.pth"
+load_from = "https://download.openmmlab.com/mmclassification/v0/convnext/convnext-base_3rdparty_in21k_20220124-13b83eec.pth"
 
 data_preprocessor = dict(num_classes=21)
 
@@ -21,7 +21,7 @@ train_dataloader = dict(
     dataset=dict(
         _delete_=True,
         type="CustomDataset",
-        data_prefix="/data/Images",
+        data_prefix="/data/src/data/UCMerced_Landuse/",
         with_label=True,
         pipeline=train_pipeline
     )
@@ -38,7 +38,7 @@ optim_wrapper=dict(
     ),
 )
 
-max_epochs = 200
+max_epochs = 2
 train_cfg=dict(_delete_= True, max_epochs=max_epochs, type="EpochBasedTrainLoop")
 param_scheduler = [
     dict(
@@ -46,12 +46,12 @@ param_scheduler = [
         begin=0,
         end=max_epochs,
         by_epoch=True,
-        milestones=[160, 180],
+        milestones=[1],
         gamma=0.1
     )
 ]
 
-work_dir = "./data"
+work_dir = "/data/src/results/mmpretrain_results"
 
 test_dataloader = None
 test_cfg = None

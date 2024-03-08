@@ -38,7 +38,7 @@ optim_wrapper=dict(
     ),
 )
 
-max_epochs = 200
+max_epochs = 2
 train_cfg=dict(_delete_= True, max_epochs=max_epochs, type="EpochBasedTrainLoop")
 param_scheduler = [
     dict(
@@ -46,7 +46,7 @@ param_scheduler = [
         begin=0,
         end=max_epochs,
         by_epoch=True,
-        milestones=[160, 180],
+        milestones=[1],
         gamma=0.1
     )
 ]
