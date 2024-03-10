@@ -1,11 +1,11 @@
 from nautiluslauncher import NautilusJobLauncher
 
 namespace = "gp-engine-mu-hpdi-christopher"
-job_prefix = "mmpretrain-convnext-ucmerced"
+job_prefix = "mm-convnext-ucmerced"
 # command = ["ls"]
 command = ["python3", "/data/src/code/mmpretrain_config_runner.py"]
 image = "gitlab-registry.nrp-nautilus.io/jhurt/mmdet-v3/mmdet-base:v3.1"
-pvc_name = "rchristopher-pvc"
+pvc_name = "rc-large-pvc"
 
 NUM_FOLDS = 5
 
@@ -21,7 +21,15 @@ defaults = dict(
     max_ram=8,
     gpu=1,
     # gpu_types=["NVIDIA-A100-80GB-PCIe-MIG-1g.10gb"],
-    env=dict(),
+    env=dict(
+        NUM_EPOCHS=100,
+        DATA_NAME='UCMerced_Landuse',
+        MILESTONES=[10, 25, 50],
+        VISUALIZE=True,
+        OPTIMIZER="SGD",
+        LEARNING_RATE=0.0001,
+        BATCH_SIZE=32,
+    ),
 )
 
 

@@ -1511,3 +1511,58 @@ HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"F
 [2024-03-07 19:09:03,972] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
 [2024-03-07 19:09:03,972] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-convnext-ucmerced
 [2024-03-07 19:09:04,430] (INFO):: Successfully created job: mmpretrain-convnext-ucmerced
+[2024-03-07 23:36:17,391] (DEBUG):: {'image': 'gitlab-registry.nrp-nautilus.io/jhurt/mmdet-v3/mmdet-base:v3.1', 'command': ['python3', '/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {}, 'job_name': 'mmpretrain-convnext-ucmerced'}
+[2024-03-07 23:36:17,391] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-03-07 23:36:17,391] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-07 23:36:17,391] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-convnext-ucmerced
+[2024-03-07 23:36:17,988] (INFO):: Successfully created job: mmpretrain-convnext-ucmerced
+[2024-03-08 12:50:01,736] (DEBUG):: {'image': 'gitlab-registry.nrp-nautilus.io/jhurt/mmdet-v3/mmdet-base:v3.1', 'command': ['python3', '/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/data', 'volumes': {'rchristopher-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.0001, 'BATCH_SIZE': 32}, 'job_name': 'mm-convnext-ucmerced'}
+[2024-03-08 12:50:01,736] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-03-08 12:50:01,736] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-08 12:50:01,736] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE']
+[2024-03-08 12:50:01,736] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mm-convnext-ucmerced
+[2024-03-08 12:50:02,080] (INFO):: Successfully created job: mm-convnext-ucmerced
+[2024-03-08 13:18:22,016] (DEBUG):: {'image': 'gitlab-registry.nrp-nautilus.io/jhurt/mmdet-v3/mmdet-base:v3.1', 'command': ['python3', '/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/data', 'volumes': {'rc-large-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.0001, 'BATCH_SIZE': 32}, 'job_name': 'mm-convnext-ucmerced'}
+[2024-03-08 13:18:22,016] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-08 13:18:22,016] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-08 13:18:22,016] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE']
+[2024-03-08 13:18:22,016] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mm-convnext-ucmerced
+[2024-03-08 13:18:22,354] (ERROR):: Failed to create job: mm-convnext-ucmerced
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (409)
+Reason: Conflict
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'a95da37b-89ea-4151-9d27-142f3745706f', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Fri, 08 Mar 2024 19:18:22 GMT', 'Content-Length': '240'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"jobs.batch \"mm-convnext-ucmerced\" already exists","reason":"AlreadyExists","details":{"name":"mm-convnext-ucmerced","group":"batch","kind":"jobs"},"code":409}
+
+
+[2024-03-08 13:18:35,260] (DEBUG):: {'image': 'gitlab-registry.nrp-nautilus.io/jhurt/mmdet-v3/mmdet-base:v3.1', 'command': ['python3', '/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/data', 'volumes': {'rc-large-pvc': '/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.0001, 'BATCH_SIZE': 32}, 'job_name': 'mm-convnext-ucmerced'}
+[2024-03-08 13:18:35,260] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-08 13:18:35,260] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-08 13:18:35,260] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE']
+[2024-03-08 13:18:35,261] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mm-convnext-ucmerced
+[2024-03-08 13:18:35,607] (INFO):: Successfully created job: mm-convnext-ucmerced
