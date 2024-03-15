@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: rc-large-pvc
 spec:
-  storageClassName: rook-cephfs	
+  storageClassName: rook-cephfs-central
   accessModes:
   - ReadWriteMany
   resources:
