@@ -70,7 +70,7 @@ def get_kfold_data(
     
     if data_name == "ucmerced_landuse":
         dataset = datasets.ImageFolder(
-            root = "Images",
+            root = "/rchristopher/data/src/data/UCMerced_Landuse",
             transform = transform,
         )
         num_classes = 21
@@ -114,7 +114,7 @@ def get_data(train_batch_size, test_batch_size) -> tuple:
 
     # print(os.path.abspath('.'))
     # total_dataset = datasets.ImageFolder('src/torch_code/Images', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
-    total_dataset = datasets.ImageFolder('Images', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
+    total_dataset = datasets.ImageFolder('/rchristopher/data/src/data/UCMerced_Landuse', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
 
     train_size = int(0.8 * len(total_dataset))
     test_size = len(total_dataset) - train_size

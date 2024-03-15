@@ -204,7 +204,7 @@ def main():
         }
     }
 
-    file_path = f"results/{TORCH_MODEL_NAME}/{TORCH_DATA_NAME}/epochs_{TORCH_NUM_EPOCHS}/fold_{FOLD_NUM}/"
+    file_path = f"/rchristopher/data/src/results/{TORCH_MODEL_NAME}/{TORCH_DATA_NAME}/epochs_{TORCH_NUM_EPOCHS}/fold_{FOLD_NUM}/"
     file_name = f"results_{FOLD_NUM}.json"
 
     if not os.path.exists(file_path):

@@ -3,8 +3,8 @@ from nautiluslauncher import NautilusJobLauncher
 namespace = "gp-engine-mu-hpdi-christopher"
 job_prefix = "mm-convnext-ucmerced"
 # command = ["ls"]
-command = ["python3", "/data/src/code/mmpretrain_config_runner.py"]
-image = "gitlab-registry.nrp-nautilus.io/jhurt/mmdet-v3/mmdet-base:v3.1"
+command = ["python3", "/rchristopher/data/src/code/mmpretrain_config_runner.py"]
+image = "rchristopher27/rc-research-image:mmpretrain1"
 pvc_name = "rc-large-pvc"
 
 NUM_FOLDS = 5
@@ -12,8 +12,8 @@ NUM_FOLDS = 5
 defaults = dict(
     image=image,
     command=command,
-    workingDir="/data",
-    volumes={pvc_name: "/data"},
+    workingDir="/rchristopher/data",
+    volumes={pvc_name: "/rchristopher/data"},
     shm=True,
     min_cpu=8,
     max_cpu=8,

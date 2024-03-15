@@ -15,7 +15,8 @@ spec:
             - us-central 
   containers:
     - name: rc-large-pvc-pod # YOUR CONTAINER NAME HERE
-      image: ubuntu:20.04
+      # image: ubuntu:20.04
+      image: rchristopher27/rc-research-image:mmpretrain1
       command: ["sh", "-c", "echo 'RChristopher Large PVC Pod' && sleep infinity"]
       resources:
         limits:

@@ -2,8 +2,8 @@ from nautiluslauncher import NautilusJobLauncher
 
 namespace = "gp-engine-mu-hpdi-christopher"
 job_prefix = "kfold-"
-command = ["python3", "/data/Assorted_Kfold_Analysis.py"]
-image = "rchristopher27/cnn-image:latest"
+command = ["python3", "/rchristopher/data/Assorted_Kfold_Analysis.py"]
+image = "rchristopher27/rc-research-image:assorted_kfold1"
 pvc_name = "rchristopher-pvc"
 
 NUM_FOLDS = 5
@@ -11,8 +11,8 @@ NUM_FOLDS = 5
 defaults = dict(
     image=image,
     command=command,
-    workingDir="/data",
-    volumes={pvc_name: "/data"},
+    workingDir="/rchristopher/data",
+    volumes={pvc_name: "/rchristopher/data"},
     shm=True,
     min_cpu=8,
     max_cpu=8,
