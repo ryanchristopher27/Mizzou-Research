@@ -200,17 +200,19 @@ def main():
 
     # Write Results
     results = {
-        "Accuracy": f"{acc * 100:.4f}%",
-        "Precision": f"{prec * 100:.4f}%",
-        "Recall": f"{rec * 100:.4f}%",
-        "F-1_Score": f"{fscore * 100:.4f}%",
-        "Best_Epoch": best_epoch,
-        "Hyper_Parameters": {
-            "Epochs": TORCH_NUM_EPOCHS,
-            "Optimizer": OPTIMIZER,
-            "Loss_Function": LOSS_FUNCTION,
-            "Batch_Size": BATCH_SIZE,
-            "Learning_Rate": LEARNING_RATE,
+        "Results": {
+            "Accuracy": f"{acc * 100:.4f}%",
+            "Precision": f"{prec * 100:.4f}%",
+            "Recall": f"{rec * 100:.4f}%",
+            "F-1_Score": f"{fscore * 100:.4f}%",
+            "Best_Epoch": best_epoch,
+            "Hyper_Parameters": {
+                "Epochs": TORCH_NUM_EPOCHS,
+                "Optimizer": OPTIMIZER,
+                "Loss_Function": LOSS_FUNCTION,
+                "Batch_Size": BATCH_SIZE,
+                "Learning_Rate": LEARNING_RATE,
+            }
         }
     }
 
@@ -224,10 +226,12 @@ def main():
 
     previous_data = read_json_from_file(file_path + file_name)
 
-    experiment_id = len(previous_data)
+    experiment_id = len(previous_data['Experiments'])
     results["Experiment_ID"] = experiment_id
 
-    data = previous_data.append(results)
+    previous_data['Experiments'].append(results)
+
+    data = previous_data
 
     if not os.path.exists(file_path):
         os.makedirs(file_path)

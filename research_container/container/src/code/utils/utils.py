@@ -26,10 +26,10 @@ def read_json_from_file(filename):
                 data = json.load(file)
             except json.JSONDecodeError:
                 # If the file is empty or contains invalid JSON, initialize data as an empty list
-                data = []
+                data = {"Experiments": []}
     else:
         # If the file doesn't exist, initialize data as an empty list
-        data = []
+        data = {"Experiments": []}
 
     return data
 
