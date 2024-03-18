@@ -2110,3 +2110,9 @@ HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"F
 [2024-03-18 15:25:20,095] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
 [2024-03-18 15:25:20,095] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: single-job
 [2024-03-18 15:25:20,724] (INFO):: Successfully created job: single-job
+[2024-03-18 15:42:36,441] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 5, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'single-job'}
+[2024-03-18 15:42:36,441] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 15:42:36,441] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 15:42:36,441] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 15:42:36,442] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: single-job
+[2024-03-18 15:42:37,123] (INFO):: Successfully created job: single-job
