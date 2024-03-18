@@ -4,7 +4,7 @@ import argparse
 import os
 
 def main():
-    config = Config.fromfile('/rchristopher/data/src/mmpretrain_configs/convnext_ucmercedlanduse_config.py')
+    config = Config.fromfile('/rchristopher/data/src/mmpretrain_configs/convnext_config.py')
     runner = Runner.from_cfg(config)
     runner.train()
     

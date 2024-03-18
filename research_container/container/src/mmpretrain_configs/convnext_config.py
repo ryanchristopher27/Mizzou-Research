@@ -22,11 +22,12 @@ print(f"LEARNING_RATE: {LEARNING_RATE}")
 print(f"BATCH_SIZE: {BATCH_SIZE}")
 
 if DATA_NAME == "UCMerced_Landuse":
-    # data_type = "CustomDataset"
-    data_type = "KFoldDataset"
+    data_type = "CustomDataset"
+    # data_type = "KFoldDataset"
     data_prefix = "/rchristopher/data/src/data/UCMerced_Landuse/"
     num_classes=21
 elif DATA_NAME == "CIFAR-10":
+    data_type = "CIFAR10"
     data_prefix = "/rchristopher/data/src/data/CIFAR-10/"
     num_classes=10
 else:
@@ -52,7 +53,7 @@ train_dataloader = dict(
         _delete_=True,
         type=data_type,
         data_prefix=data_prefix,
-        with_label=True,
+        # with_label=True,
         pipeline=train_pipeline
     )
 )

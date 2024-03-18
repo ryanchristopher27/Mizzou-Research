@@ -1572,3 +1572,505 @@ HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"F
 [2024-03-15 13:37:53,516] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE']
 [2024-03-15 13:37:53,516] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mm-convnext-ucmerced
 [2024-03-15 13:37:54,182] (INFO):: Successfully created job: mm-convnext-ucmerced
+[2024-03-15 14:09:19,728] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain1', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.0001, 'BATCH_SIZE': 32}, 'job_name': 'mm-convnext-ucmerced'}
+[2024-03-15 14:09:19,729] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 14:09:19,729] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 14:09:19,729] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE']
+[2024-03-15 14:09:19,729] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mm-convnext-ucmerced
+[2024-03-15 14:09:20,131] (INFO):: Successfully created job: mm-convnext-ucmerced
+[2024-03-15 14:15:16,170] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain1', 'command': ['pwd'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.0001, 'BATCH_SIZE': 32}, 'job_name': 'mm-convnext-ucmerced'}
+[2024-03-15 14:15:16,170] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 14:15:16,170] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 14:15:16,170] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE']
+[2024-03-15 14:15:16,170] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mm-convnext-ucmerced
+[2024-03-15 14:15:16,745] (INFO):: Successfully created job: mm-convnext-ucmerced
+[2024-03-15 14:17:12,275] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain1', 'command': ['python3', 'src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.0001, 'BATCH_SIZE': 32}, 'job_name': 'mm-convnext-ucmerced'}
+[2024-03-15 14:17:12,275] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 14:17:12,275] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 14:17:12,276] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE']
+[2024-03-15 14:17:12,276] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mm-convnext-ucmerced
+[2024-03-15 14:17:12,671] (INFO):: Successfully created job: mm-convnext-ucmerced
+[2024-03-15 14:18:15,297] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain1', 'command': ['ls'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.0001, 'BATCH_SIZE': 32}, 'job_name': 'mm-convnext-ucmerced'}
+[2024-03-15 14:18:15,298] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 14:18:15,298] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 14:18:15,298] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE']
+[2024-03-15 14:18:15,298] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mm-convnext-ucmerced
+[2024-03-15 14:18:15,700] (INFO):: Successfully created job: mm-convnext-ucmerced
+[2024-03-15 14:51:22,655] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rchristopher-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 40, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 128, 'LEARNING_RATE': 0.001, 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'test-job'}
+[2024-03-15 14:51:22,655] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-03-15 14:51:22,655] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 14:51:22,655] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 14:51:22,655] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: test-job
+[2024-03-15 14:51:23,075] (INFO):: Successfully created job: test-job
+[2024-03-15 14:53:55,014] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rchristopher-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-1'}
+[2024-03-15 14:53:55,014] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-03-15 14:53:55,014] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 14:53:55,014] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 14:53:55,014] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-1
+[2024-03-15 14:53:55,599] (INFO):: Successfully created job: kfold-1
+[2024-03-15 14:53:55,600] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rchristopher-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-2'}
+[2024-03-15 14:53:55,600] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-03-15 14:53:55,600] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 14:53:55,600] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 14:53:55,600] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-2
+[2024-03-15 14:53:56,141] (INFO):: Successfully created job: kfold-2
+[2024-03-15 14:53:56,141] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rchristopher-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-3'}
+[2024-03-15 14:53:56,141] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-03-15 14:53:56,141] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 14:53:56,142] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 14:53:56,142] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-3
+[2024-03-15 14:53:56,647] (INFO):: Successfully created job: kfold-3
+[2024-03-15 14:53:56,648] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rchristopher-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-4'}
+[2024-03-15 14:53:56,648] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-03-15 14:53:56,648] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 14:53:56,648] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 14:53:56,648] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-4
+[2024-03-15 14:53:56,948] (INFO):: Successfully created job: kfold-4
+[2024-03-15 14:53:56,948] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rchristopher-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 8, 'max_ram': 8, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-5'}
+[2024-03-15 14:53:56,948] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rchristopher-pvc']
+[2024-03-15 14:53:56,948] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 14:53:56,948] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 14:53:56,948] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-5
+[2024-03-15 14:53:57,965] (INFO):: Successfully created job: kfold-5
+[2024-03-15 15:02:28,389] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc_large_pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-1'}
+[2024-03-15 15:02:28,389] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc_large_pvc']
+[2024-03-15 15:02:28,389] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:02:28,389] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:02:28,390] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-1
+[2024-03-15 15:02:28,754] (ERROR):: Failed to create job: kfold-1
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '6ad9e91e-0342-4865-803f-b141e7f05905', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Fri, 15 Mar 2024 20:02:28 GMT', 'Content-Length': '1094'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"kfold-1\" is invalid: [spec.template.spec.volumes[0].name: Invalid value: \"rc_large_pvc\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?'), spec.template.spec.containers[0].volumeMounts[0].name: Not found: \"rc_large_pvc\"]","reason":"Invalid","details":{"name":"kfold-1","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"rc_large_pvc\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.volumes[0].name"},{"reason":"FieldValueNotFound","message":"Not found: \"rc_large_pvc\"","field":"spec.template.spec.containers[0].volumeMounts[0].name"}]},"code":422}
+
+
+[2024-03-15 15:02:28,763] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc_large_pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-2'}
+[2024-03-15 15:02:28,763] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc_large_pvc']
+[2024-03-15 15:02:28,763] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:02:28,763] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:02:28,763] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-2
+[2024-03-15 15:02:29,049] (ERROR):: Failed to create job: kfold-2
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '70ad2e4b-458e-40a7-a6b7-b76399477d20', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Fri, 15 Mar 2024 20:02:29 GMT', 'Content-Length': '1094'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"kfold-2\" is invalid: [spec.template.spec.volumes[0].name: Invalid value: \"rc_large_pvc\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?'), spec.template.spec.containers[0].volumeMounts[0].name: Not found: \"rc_large_pvc\"]","reason":"Invalid","details":{"name":"kfold-2","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"rc_large_pvc\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.volumes[0].name"},{"reason":"FieldValueNotFound","message":"Not found: \"rc_large_pvc\"","field":"spec.template.spec.containers[0].volumeMounts[0].name"}]},"code":422}
+
+
+[2024-03-15 15:02:29,056] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc_large_pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-3'}
+[2024-03-15 15:02:29,056] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc_large_pvc']
+[2024-03-15 15:02:29,056] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:02:29,057] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:02:29,057] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-3
+[2024-03-15 15:02:29,369] (ERROR):: Failed to create job: kfold-3
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '79640cc9-6896-41c1-9e5f-d576ae63f1f9', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Fri, 15 Mar 2024 20:02:29 GMT', 'Content-Length': '1094'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"kfold-3\" is invalid: [spec.template.spec.volumes[0].name: Invalid value: \"rc_large_pvc\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?'), spec.template.spec.containers[0].volumeMounts[0].name: Not found: \"rc_large_pvc\"]","reason":"Invalid","details":{"name":"kfold-3","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"rc_large_pvc\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.volumes[0].name"},{"reason":"FieldValueNotFound","message":"Not found: \"rc_large_pvc\"","field":"spec.template.spec.containers[0].volumeMounts[0].name"}]},"code":422}
+
+
+[2024-03-15 15:02:29,371] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc_large_pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-4'}
+[2024-03-15 15:02:29,371] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc_large_pvc']
+[2024-03-15 15:02:29,372] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:02:29,372] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:02:29,372] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-4
+[2024-03-15 15:02:29,598] (ERROR):: Failed to create job: kfold-4
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '613c191d-2e8b-4088-8dbe-496f2b834cda', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Fri, 15 Mar 2024 20:02:29 GMT', 'Content-Length': '1094'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"kfold-4\" is invalid: [spec.template.spec.volumes[0].name: Invalid value: \"rc_large_pvc\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?'), spec.template.spec.containers[0].volumeMounts[0].name: Not found: \"rc_large_pvc\"]","reason":"Invalid","details":{"name":"kfold-4","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"rc_large_pvc\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.volumes[0].name"},{"reason":"FieldValueNotFound","message":"Not found: \"rc_large_pvc\"","field":"spec.template.spec.containers[0].volumeMounts[0].name"}]},"code":422}
+
+
+[2024-03-15 15:02:29,601] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc_large_pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-5'}
+[2024-03-15 15:02:29,601] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc_large_pvc']
+[2024-03-15 15:02:29,602] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:02:29,602] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:02:29,603] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-5
+[2024-03-15 15:02:29,822] (ERROR):: Failed to create job: kfold-5
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '75823ae6-258d-49a6-8ebd-ae0a37123c17', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Fri, 15 Mar 2024 20:02:29 GMT', 'Content-Length': '1094'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"kfold-5\" is invalid: [spec.template.spec.volumes[0].name: Invalid value: \"rc_large_pvc\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?'), spec.template.spec.containers[0].volumeMounts[0].name: Not found: \"rc_large_pvc\"]","reason":"Invalid","details":{"name":"kfold-5","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"rc_large_pvc\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.volumes[0].name"},{"reason":"FieldValueNotFound","message":"Not found: \"rc_large_pvc\"","field":"spec.template.spec.containers[0].volumeMounts[0].name"}]},"code":422}
+
+
+[2024-03-15 15:02:56,058] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-1'}
+[2024-03-15 15:02:56,058] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:02:56,058] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:02:56,058] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:02:56,059] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-1
+[2024-03-15 15:02:56,550] (INFO):: Successfully created job: kfold-1
+[2024-03-15 15:02:56,550] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-2'}
+[2024-03-15 15:02:56,550] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:02:56,551] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:02:56,551] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:02:56,551] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-2
+[2024-03-15 15:02:56,853] (INFO):: Successfully created job: kfold-2
+[2024-03-15 15:02:56,853] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-3'}
+[2024-03-15 15:02:56,854] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:02:56,854] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:02:56,854] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:02:56,854] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-3
+[2024-03-15 15:02:57,595] (INFO):: Successfully created job: kfold-3
+[2024-03-15 15:02:57,596] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-4'}
+[2024-03-15 15:02:57,596] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:02:57,596] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:02:57,596] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:02:57,597] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-4
+[2024-03-15 15:02:58,117] (INFO):: Successfully created job: kfold-4
+[2024-03-15 15:02:58,117] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-5'}
+[2024-03-15 15:02:58,117] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:02:58,118] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:02:58,118] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:02:58,118] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-5
+[2024-03-15 15:02:58,642] (INFO):: Successfully created job: kfold-5
+[2024-03-15 15:06:51,669] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-1'}
+[2024-03-15 15:06:51,670] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:06:51,670] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:06:51,670] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:06:51,670] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-1
+[2024-03-15 15:06:52,060] (INFO):: Successfully created job: kfold-1
+[2024-03-15 15:06:52,061] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-2'}
+[2024-03-15 15:06:52,061] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:06:52,061] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:06:52,061] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:06:52,062] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-2
+[2024-03-15 15:06:52,549] (INFO):: Successfully created job: kfold-2
+[2024-03-15 15:06:52,549] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-3'}
+[2024-03-15 15:06:52,549] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:06:52,549] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:06:52,549] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:06:52,549] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-3
+[2024-03-15 15:06:52,839] (INFO):: Successfully created job: kfold-3
+[2024-03-15 15:06:52,839] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-4'}
+[2024-03-15 15:06:52,839] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:06:52,839] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:06:52,840] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:06:52,840] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-4
+[2024-03-15 15:06:53,575] (INFO):: Successfully created job: kfold-4
+[2024-03-15 15:06:53,575] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted_kfold1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-5'}
+[2024-03-15 15:06:53,576] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:06:53,576] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:06:53,576] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:06:53,576] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-5
+[2024-03-15 15:06:53,864] (INFO):: Successfully created job: kfold-5
+[2024-03-15 15:18:46,891] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted-kfold1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-1'}
+[2024-03-15 15:18:46,891] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:18:46,891] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:18:46,891] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:18:46,891] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-1
+[2024-03-15 15:18:47,290] (INFO):: Successfully created job: kfold-1
+[2024-03-15 15:18:47,291] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted-kfold1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-2'}
+[2024-03-15 15:18:47,291] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:18:47,291] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:18:47,291] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:18:47,292] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-2
+[2024-03-15 15:18:47,732] (INFO):: Successfully created job: kfold-2
+[2024-03-15 15:18:47,732] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted-kfold1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-3'}
+[2024-03-15 15:18:47,732] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:18:47,732] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:18:47,732] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:18:47,733] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-3
+[2024-03-15 15:18:48,167] (INFO):: Successfully created job: kfold-3
+[2024-03-15 15:18:48,167] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted-kfold1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-4'}
+[2024-03-15 15:18:48,167] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:18:48,167] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:18:48,167] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:18:48,168] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-4
+[2024-03-15 15:18:48,692] (INFO):: Successfully created job: kfold-4
+[2024-03-15 15:18:48,692] (DEBUG):: {'image': 'rchristopher27/rc-research-image:assorted-kfold1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-5'}
+[2024-03-15 15:18:48,693] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:18:48,693] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:18:48,693] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 15:18:48,693] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-5
+[2024-03-15 15:18:49,215] (INFO):: Successfully created job: kfold-5
+[2024-03-15 15:58:25,337] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mm-convnext-ucmerced'}
+[2024-03-15 15:58:25,337] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 15:58:25,337] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 15:58:25,338] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-15 15:58:25,338] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mm-convnext-ucmerced
+[2024-03-15 15:58:25,962] (INFO):: Successfully created job: mm-convnext-ucmerced
+[2024-03-15 16:07:31,497] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mm-convnext-ucmerced'}
+[2024-03-15 16:07:31,498] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 16:07:31,498] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 16:07:31,498] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-15 16:07:31,498] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mm-convnext-ucmerced
+[2024-03-15 16:07:32,093] (INFO):: Successfully created job: mm-convnext-ucmerced
+[2024-03-15 16:11:17,023] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-1'}
+[2024-03-15 16:11:17,023] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 16:11:17,023] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 16:11:17,024] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 16:11:17,024] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-1
+[2024-03-15 16:11:17,606] (INFO):: Successfully created job: kfold-1
+[2024-03-15 16:11:17,607] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-2'}
+[2024-03-15 16:11:17,607] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 16:11:17,607] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 16:11:17,607] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 16:11:17,608] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-2
+[2024-03-15 16:11:19,356] (INFO):: Successfully created job: kfold-2
+[2024-03-15 16:11:19,357] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-3'}
+[2024-03-15 16:11:19,357] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 16:11:19,357] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 16:11:19,357] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 16:11:19,358] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-3
+[2024-03-15 16:11:19,877] (INFO):: Successfully created job: kfold-3
+[2024-03-15 16:11:19,877] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-4'}
+[2024-03-15 16:11:19,878] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 16:11:19,878] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 16:11:19,878] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 16:11:19,878] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-4
+[2024-03-15 16:11:20,592] (INFO):: Successfully created job: kfold-4
+[2024-03-15 16:11:20,593] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-5'}
+[2024-03-15 16:11:20,593] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 16:11:20,593] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 16:11:20,594] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 16:11:20,594] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-5
+[2024-03-15 16:11:20,930] (INFO):: Successfully created job: kfold-5
+[2024-03-15 20:41:00,882] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_32', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-1'}
+[2024-03-15 20:41:00,883] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 20:41:00,883] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 20:41:00,883] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 20:41:00,883] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-1
+[2024-03-15 20:41:01,544] (INFO):: Successfully created job: kfold-1
+[2024-03-15 20:41:01,544] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_32', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-2'}
+[2024-03-15 20:41:01,544] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 20:41:01,544] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 20:41:01,544] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 20:41:01,545] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-2
+[2024-03-15 20:41:01,875] (INFO):: Successfully created job: kfold-2
+[2024-03-15 20:41:01,875] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_32', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-3'}
+[2024-03-15 20:41:01,875] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 20:41:01,875] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 20:41:01,875] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 20:41:01,876] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-3
+[2024-03-15 20:41:02,209] (INFO):: Successfully created job: kfold-3
+[2024-03-15 20:41:02,210] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_32', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-4'}
+[2024-03-15 20:41:02,210] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 20:41:02,210] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 20:41:02,210] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 20:41:02,211] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-4
+[2024-03-15 20:41:02,584] (INFO):: Successfully created job: kfold-4
+[2024-03-15 20:41:02,585] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'vit_b_32', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-5'}
+[2024-03-15 20:41:02,585] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 20:41:02,585] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 20:41:02,585] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 20:41:02,586] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-5
+[2024-03-15 20:41:02,925] (INFO):: Successfully created job: kfold-5
+[2024-03-15 21:59:24,112] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-1'}
+[2024-03-15 21:59:24,113] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 21:59:24,113] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 21:59:24,113] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 21:59:24,113] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-1
+[2024-03-15 21:59:24,616] (INFO):: Successfully created job: kfold-1
+[2024-03-15 21:59:24,616] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-2'}
+[2024-03-15 21:59:24,617] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 21:59:24,617] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 21:59:24,617] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 21:59:24,617] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-2
+[2024-03-15 21:59:25,101] (INFO):: Successfully created job: kfold-2
+[2024-03-15 21:59:25,101] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-3'}
+[2024-03-15 21:59:25,101] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 21:59:25,102] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 21:59:25,102] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 21:59:25,102] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-3
+[2024-03-15 21:59:25,447] (INFO):: Successfully created job: kfold-3
+[2024-03-15 21:59:25,448] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-4'}
+[2024-03-15 21:59:25,448] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 21:59:25,448] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 21:59:25,448] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 21:59:25,448] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-4
+[2024-03-15 21:59:25,778] (INFO):: Successfully created job: kfold-4
+[2024-03-15 21:59:25,778] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-5'}
+[2024-03-15 21:59:25,779] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 21:59:25,779] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 21:59:25,779] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 21:59:25,779] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-5
+[2024-03-15 21:59:26,150] (INFO):: Successfully created job: kfold-5
+[2024-03-15 22:29:30,515] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-1'}
+[2024-03-15 22:29:30,515] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 22:29:30,515] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 22:29:30,515] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 22:29:30,515] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-1
+[2024-03-15 22:29:32,109] (INFO):: Successfully created job: kfold-1
+[2024-03-15 22:29:32,110] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-2'}
+[2024-03-15 22:29:32,110] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 22:29:32,110] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 22:29:32,110] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 22:29:32,110] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-2
+[2024-03-15 22:29:32,453] (INFO):: Successfully created job: kfold-2
+[2024-03-15 22:29:32,454] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-3'}
+[2024-03-15 22:29:32,454] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 22:29:32,454] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 22:29:32,454] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 22:29:32,455] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-3
+[2024-03-15 22:29:32,896] (INFO):: Successfully created job: kfold-3
+[2024-03-15 22:29:32,897] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-4'}
+[2024-03-15 22:29:32,897] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 22:29:32,897] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 22:29:32,897] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 22:29:32,897] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-4
+[2024-03-15 22:29:33,229] (INFO):: Successfully created job: kfold-4
+[2024-03-15 22:29:33,230] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'kfold-5'}
+[2024-03-15 22:29:33,230] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 22:29:33,230] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 22:29:33,230] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 22:29:33,231] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-5
+[2024-03-15 22:29:33,570] (INFO):: Successfully created job: kfold-5
+[2024-03-15 22:53:09,992] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'kfold-1'}
+[2024-03-15 22:53:09,993] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 22:53:09,993] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 22:53:09,993] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 22:53:09,993] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-1
+[2024-03-15 22:53:10,776] (INFO):: Successfully created job: kfold-1
+[2024-03-15 22:53:10,776] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'kfold-2'}
+[2024-03-15 22:53:10,777] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 22:53:10,777] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 22:53:10,777] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 22:53:10,777] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-2
+[2024-03-15 22:53:11,183] (INFO):: Successfully created job: kfold-2
+[2024-03-15 22:53:11,184] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'kfold-3'}
+[2024-03-15 22:53:11,184] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 22:53:11,184] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 22:53:11,184] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 22:53:11,185] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-3
+[2024-03-15 22:53:11,661] (INFO):: Successfully created job: kfold-3
+[2024-03-15 22:53:11,661] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'kfold-4'}
+[2024-03-15 22:53:11,662] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 22:53:11,662] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 22:53:11,662] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 22:53:11,662] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-4
+[2024-03-15 22:53:11,988] (INFO):: Successfully created job: kfold-4
+[2024-03-15 22:53:11,989] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/Assorted_Kfold_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'kfold-5'}
+[2024-03-15 22:53:11,989] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-15 22:53:11,989] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-15 22:53:11,989] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-15 22:53:11,990] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: kfold-5
+[2024-03-15 22:53:12,316] (INFO):: Successfully created job: kfold-5

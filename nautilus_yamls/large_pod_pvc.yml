@@ -16,7 +16,7 @@ spec:
   containers:
     - name: rc-large-pvc-pod # YOUR CONTAINER NAME HERE
       # image: ubuntu:20.04
-      image: rchristopher27/rc-research-image:mmpretrain1
+      image: rchristopher27/rc-research-image:mmpretrain2
       command: ["sh", "-c", "echo 'RChristopher Large PVC Pod' && sleep infinity"]
       resources:
         limits:
@@ -28,7 +28,7 @@ spec:
           cpu: 2
           # nvidia.com/gpu: '1'
       volumeMounts:
-        - mountPath: /data
+        - mountPath: /rchristopher/data
           name: rc-large-pvc # YOUR PVC NAME HERE
   volumes:
   - name: rc-large-pvc # YOUR PVC NAME HERE
