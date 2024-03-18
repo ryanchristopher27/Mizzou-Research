@@ -24,6 +24,8 @@ def read_json_from_file(filename):
         with open(filename, 'r') as file:
             try:
                 data = json.load(file)
+                if (data == None):
+                    data = {"Experiments": []}
             except json.JSONDecodeError:
                 # If the file is empty or contains invalid JSON, initialize data as an empty list
                 data = {"Experiments": []}

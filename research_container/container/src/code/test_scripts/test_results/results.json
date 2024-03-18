@@ -3,10 +3,6 @@
         {
             "Test": "This is a test",
             "Experiment_ID": 0
-        },
-        {
-            "Test": "This is a test",
-            "Experiment_ID": 1
         }
     ]
 }
