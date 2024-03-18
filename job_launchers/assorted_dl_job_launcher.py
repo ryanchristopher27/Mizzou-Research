@@ -1,9 +1,9 @@
 from nautiluslauncher import NautilusJobLauncher
 
 namespace = "gp-engine-mu-hpdi-christopher"
-job_prefix = "kfold-"
-command = ["python3", "/rchristopher/data/src/code/Assorted_Kfold_Analysis.py"]
-image = "rchristopher27/rc-research-image:mmpretrain2"
+job_prefix = "dl-"
+command = ["python3", "/rchristopher/data/src/code/Assorted_DL_Analysis.py"]
+image = "rchristopher27/rc-research-image:generic1"
 pvc_name = "rc-large-pvc"
 
 NUM_FOLDS = 5
@@ -22,10 +22,10 @@ defaults = dict(
     # gpu_types=["NVIDIA-A100-80GB-PCIe-MIG-1g.10gb"],
     env=dict(
         TORCH_NUM_JOBS=8, 
-        TORCH_NUM_EPOCHS=100,
+        TORCH_NUM_EPOCHS=5,
         TORCH_NUM_FOLDS=NUM_FOLDS,
         WRITE_RESULTS=True,
-        OPTIMIZER="Adam",
+        OPTIMIZER="SGD",
         LOSS_FUNCTION="CrossEntropy",
         BATCH_SIZE=32,
         LEARNING_RATE=0.001,
@@ -51,23 +51,23 @@ datasets = ["ucmerced_landuse", "cifar10"]
 
 #             job_counter += 1
 
+# jobs = [
+#     dict(job_name=job_prefix + str(i+1), env=dict(
+#         FOLD_NUM=i+1,
+#         TORCH_MODEL_NAME="vit_b_16",
+#         TORCH_DATA_NAME="cifar10",
+#     ))
+#     for i in range(NUM_FOLDS)
+# ]
+
+# Single Job Test
 jobs = [
-    dict(job_name=job_prefix + str(i+1), env=dict(
-        FOLD_NUM=i+1,
+    dict(job_name='single-job', env=dict(
+        FOLD_NUM=1,
         TORCH_MODEL_NAME="vit_b_16",
         TORCH_DATA_NAME="cifar10",
     ))
-    for i in range(NUM_FOLDS)
 ]
-
-# Single Job Test
-# jobs = [
-#     dict(job_name='test-job', env=dict(
-#         FOLD_NUM=1,
-#         TORCH_MODEL_NAME="resnet50",
-#         TORCH_DATA_NAME="ucmerced_landuse",
-#     ))
-# ]
 
 launcher = NautilusJobLauncher(
     cfg = dict(namespace=namespace, defaults=defaults, jobs=jobs)

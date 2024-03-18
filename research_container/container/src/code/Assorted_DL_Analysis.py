@@ -7,6 +7,7 @@ from tqdm import tqdm
 from matplotlib import pyplot as plt
 from sklearn import metrics
 from sklearn.metrics import precision_recall_fscore_support as evaluate
+import json
 
 from utils.utils import *
 from utils.data import *
@@ -14,11 +15,12 @@ from utils.models import *
 
 # GLOBAL VARIABLES
 TORCH_NUM_JOBS = int(os.environ.get("TORCH_NUM_JOBS", "4"))
-TORCH_NUM_EPOCHS = int(os.environ.get("TORCH_NUM_EPOCHS", "5"))
+TORCH_NUM_EPOCHS = int(os.environ.get("TORCH_NUM_EPOCHS", "2"))
 TORCH_NUM_FOLDS = int(os.environ.get("TORCH_NUM_FOLDS", "5"))
 FOLD_NUM = int(os.environ.get("FOLD_NUM", "1"))
+TRAIN_RATIO = float(os.environ.get("TRAIN_RATIO", "0.8"))
 TORCH_MODEL_NAME = os.environ.get("TORCH_MODEL_NAME", "vit_b_16")
-TORCH_DATA_NAME = os.environ.get("TORCH_DATA_NAME", "ucmerced_landuse")
+TORCH_DATA_NAME = os.environ.get("TORCH_DATA_NAME", "cifar10")
 WRITE_RESULTS = bool(os.environ.get("WRITE_RESULTS", False))
 OPTIMIZER = os.environ.get("OPTIMIZER", "AdamW")
 LOSS_FUNCTION = os.environ.get("LOSS_FUNCTION", "CrossEntropy")
@@ -31,10 +33,9 @@ def main():
     # PRINT JOB INFO
     print(f"Model: {TORCH_MODEL_NAME}")
     print(f"Dataset: {TORCH_DATA_NAME}")
-    print(f"Fold: {FOLD_NUM}\n")
-    print(f"Batch Size: {BATCH_SIZE}\n")
-    print(f"Optimizer: {OPTIMIZER}\n")
-    print(f"Loss Function: {LOSS_FUNCTION}\n")
+    print(f"Batch Size: {BATCH_SIZE}")
+    print(f"Optimizer: {OPTIMIZER}")
+    print(f"Loss Function: {LOSS_FUNCTION}")
     print(f"Learning Rate: {LEARNING_RATE}\n")
 
     device, on_gpu = cuda_setup()
@@ -44,17 +45,24 @@ def main():
 
     num_classes = 10
 
-    train_data_loader, test_data_loader, input_features, num_classes = get_kfold_data(
+    if TORCH_DATA_NAME == "cifar10":
+        kfold = False
+    else:
+        kfold = True
+        print(f"Fold: {FOLD_NUM}\n")
+
+    train_data_loader, test_data_loader, input_features, num_classes = get_data(
         data_name = TORCH_DATA_NAME,
         model_name = TORCH_MODEL_NAME,
         num_folds = TORCH_NUM_FOLDS,
         fold = FOLD_NUM,
+        train_ratio = TRAIN_RATIO,
         train_batch_size = train_batch_size,
         test_batch_size = test_batch_size,
-        num_jobs = TORCH_NUM_JOBS
+        num_workers = TORCH_NUM_JOBS
     )
 
-    model = get_kfold_model(
+    model = get_model(
         model_name=TORCH_MODEL_NAME,
         pretrain_weights=True,
         input_features=input_features,
@@ -188,15 +196,17 @@ def main():
     best_epoch["train_accuracy"] = f"{float(best_epoch['train_accuracy']):.4f}%"
     best_epoch["val_accuracy"] = f"{float(best_epoch['val_accuracy']):.4f}%"
 
+
+
     # Write Results
     results = {
-        "Fold_Number": FOLD_NUM,
         "Accuracy": f"{acc * 100:.4f}%",
         "Precision": f"{prec * 100:.4f}%",
         "Recall": f"{rec * 100:.4f}%",
         "F-1_Score": f"{fscore * 100:.4f}%",
         "Best_Epoch": best_epoch,
         "Hyper_Parameters": {
+            "Epochs": TORCH_NUM_EPOCHS,
             "Optimizer": OPTIMIZER,
             "Loss_Function": LOSS_FUNCTION,
             "Batch_Size": BATCH_SIZE,
@@ -204,14 +214,26 @@ def main():
         }
     }
 
-    file_path = f"/rchristopher/data/src/results/{TORCH_MODEL_NAME}/{TORCH_DATA_NAME}/epochs_{TORCH_NUM_EPOCHS}/fold_{FOLD_NUM}/"
-    file_name = f"results_{FOLD_NUM}.json"
+    if kfold:
+        results["Fold_Number"] = FOLD_NUM
+        file_path = f"/rchristopher/data/src/results/{TORCH_MODEL_NAME}/{TORCH_DATA_NAME}/fold_{FOLD_NUM}/"
+        file_name = f"results_{FOLD_NUM}.json"
+    else:
+        file_path = f"/rchristopher/data/src/results/{TORCH_MODEL_NAME}/{TORCH_DATA_NAME}/"
+        file_name = f"results.json"
+
+    previous_data = read_json_from_file(file_path + file_name)
+
+    experiment_id = len(previous_data)
+    results["Experiment_ID"] = experiment_id
+
+    data = previous_data.append(results)
 
     if not os.path.exists(file_path):
         os.makedirs(file_path)
 
     if WRITE_RESULTS:
-        write_results_to_file(results, file_path + file_name)
+        write_results_to_file(data, file_path + file_name)
 
         write_2data_plot_to_file(
             data_1 = train_loss_per_epoch,
@@ -221,7 +243,7 @@ def main():
             x_label = "Epoch",
             y_label = "Loss",
             title = "Loss vs Epoch",
-            filename = file_path + f"loss_{FOLD_NUM}.png",
+            filename = file_path + f"loss_{experiment_id}.png",
         )
 
         write_2data_plot_to_file(
@@ -232,7 +254,7 @@ def main():
             x_label = "Epoch",
             y_label = "Accuracy",
             title = "Accuracy vs Epoch",
-            filename = file_path + f"accuracy_{FOLD_NUM}.png",
+            filename = file_path + f"accuracy_{experiment_id}.png",
         )
 
         print("Results Saved to 'results' Folder")

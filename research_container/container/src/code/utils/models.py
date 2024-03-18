@@ -14,7 +14,7 @@ from torchvision.models import (
 from torch import nn
 import torch
 
-def get_kfold_model(
+def get_model(
     model_name: str ="vit_b_16", 
     pretrain_weights: bool = True, 
     input_features: int = 768, 

@@ -1,6 +1,7 @@
 import torch
 import json
 from matplotlib import pyplot as plt
+import os
 
 def cuda_setup() -> ():
     if torch.cuda.is_available():
@@ -15,6 +16,22 @@ def cuda_setup() -> ():
     print(f'Device: {device}')
 
     return device, on_gpu
+
+def read_json_from_file(filename):
+    # Check if the file exists
+    if os.path.exists(filename):
+        # If the file exists, read the existing JSON data
+        with open(filename, 'r') as file:
+            try:
+                data = json.load(file)
+            except json.JSONDecodeError:
+                # If the file is empty or contains invalid JSON, initialize data as an empty list
+                data = []
+    else:
+        # If the file doesn't exist, initialize data as an empty list
+        data = []
+
+    return data
 
 def write_results_to_file(results, filename):
     

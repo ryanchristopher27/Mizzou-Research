@@ -2,8 +2,8 @@ version: '3'
 services:
   rc-research-container:
     # image: rchristopher27/rc-research-image:mmpretrain1
-    image: rchristopher27/rc-research-image:mmpretrain2
+    image: rchristopher27/rc-research-image:generic1
     build:
       context: container
-    # command: "python3 /rchristopher/data/src/code/Assorted_Kfold_Analysis.py"
-    command: "python3 /rchristopher/data/src/code/mmpretrain_config_runner.py"
+    command: "python3 /rchristopher/data/src/code/Assorted_DL_Analysis.py"
+    # command: "python3 /rchristopher/data/src/code/mmpretrain_config_runner.py"

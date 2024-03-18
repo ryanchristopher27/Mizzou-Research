@@ -108,27 +108,118 @@ def get_kfold_data(
 
     return train_loader, test_loader, input_features, num_classes
 
-  
-# DATA LOADER
-def get_data(train_batch_size, test_batch_size) -> tuple:
 
-    # print(os.path.abspath('.'))
-    # total_dataset = datasets.ImageFolder('src/torch_code/Images', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
-    total_dataset = datasets.ImageFolder('/rchristopher/data/src/data/UCMerced_Landuse', transform=ViT_B_16_Weights.IMAGENET1K_V1.transforms())
+def get_traintest_data(
+    data_name: str = "cifar10", 
+    model_name: str = "vit_b_16", 
+    train_ratio: float = 0.8,
+    train_batch_size: int = 16,
+    test_batch_size: int = 16,
+    num_workers: int = 4
+    ):
+        
+    if model_name == "vit_b_16":
+        transform = ViT_B_16_Weights.IMAGENET1K_V1.transforms()
+        input_features = 768
 
-    train_size = int(0.8 * len(total_dataset))
-    test_size = len(total_dataset) - train_size
+    elif model_name == "vit_b_32":
+        transform = ViT_B_32_Weights.IMAGENET1K_V1.transforms()
+        input_features = 768
 
-    train_dataset, test_dataset = random_split(total_dataset, [train_size, test_size])
+    elif model_name == "vit_l_16":
+        transform = ViT_L_16_Weights.IMAGENET1K_V1.transforms()
+        input_features = 1024
+
+    elif model_name == "resnet18":
+        transform = transforms.Compose([
+            transforms.Resize(224),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+        ])
+        input_features = 512
+
+    elif model_name == "resnet50":
+        transform = transforms.Compose([
+            transforms.Resize(224),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+        ])
+        input_features = 2048
+    
+    if data_name == "ucmerced_landuse":
+        dataset = datasets.ImageFolder(
+            root = "/rchristopher/data/src/data/UCMerced_Landuse",
+            transform = transform,
+        )
+        num_classes = 21
+
+        train_size = int(train_ratio * len(dataset))
+        test_size = len(dataset) - train_size
+
+        train_dataset, test_dataset = random_split(dataset, [train_size, test_size])
+
+
+    elif data_name == "cifar10":
+        train_dataset = datasets.CIFAR10(
+            root='data/', 
+            download=True, 
+            transform=transform,
+            train=True,
+        )
+
+        test_dataset = datasets.CIFAR10(
+            root='data/', 
+            download=True, 
+            transform=transform,
+            train=False,
+        )
+
+        num_classes = 10
 
     train_loader = DataLoader(
         dataset=train_dataset, 
         batch_size=train_batch_size, 
-        num_workers=4,
+        num_workers=num_workers,
     )
     test_loader = DataLoader(
         dataset=test_dataset, 
         batch_size=test_batch_size,
     )
 
-    return train_loader, test_loader
+    return train_loader, test_loader, input_features, num_classes
+  
+# DATA LOADER
+def get_data(
+    data_name: str = "ucmerced_landuse", 
+    model_name: str = "vit_b_16", 
+    num_folds: int = 5,
+    fold: int = 1,
+    train_ratio: float = 0.8,
+    train_batch_size: int = 16,
+    test_batch_size: int = 16,
+    num_workers: int = 4
+    ) -> tuple:
+
+    if data_name == "cifar10":
+        train_loader, test_loader, input_features, num_classes = get_traintest_data(
+            data_name=data_name,
+            model_name=model_name,
+            train_ratio=train_ratio,
+            train_batch_size=train_batch_size,
+            test_batch_size=test_batch_size,
+            num_workers=num_workers
+        )
+    elif data_name == "ucmerced_landuse":
+        train_loader, test_loader, input_features, num_classes = get_kfold_data(
+            data_name=data_name,
+            model_name=model_name,
+            num_folds=num_folds,
+            fold=fold,
+            train_batch_size=train_batch_size,
+            test_batch_size=test_batch_size,
+            num_jobs=num_workers
+        )
+
+    return train_loader, test_loader, input_features, num_classes
