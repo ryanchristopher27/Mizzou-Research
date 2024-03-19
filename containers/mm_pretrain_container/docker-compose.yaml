@@ -1,0 +1,7 @@
+version: '3'
+services: 
+  mmpretrain-container: 
+    image: rchristopher27/mmpretrain-image:latest
+    build:
+      context: container
+    command: "python3 /data/config_runner.py"

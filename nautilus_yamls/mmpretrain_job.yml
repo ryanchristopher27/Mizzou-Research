@@ -1,0 +1,60 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mm-convnext-ucmerced
+spec:
+  template:
+    spec:
+      containers:
+        - name: mm-convnext-ucmerced
+          image: rchristopher27/rc-research-image:mmpretrain2
+          workingDir: /rchristopher/data
+          env:
+              - name: NUM_EPOCHS
+                value: "100"
+              - name: DATA_NAME
+                value: "UCMerced_Landuse"
+              - name: MILESTONES
+                value: "[10, 25, 50]"
+              - name: VISUALIZE
+                value: "True"
+              - name: OPTIMIZER
+                value: "SGD"
+              - name: LEARNING_RATE
+                value: "0.0001"
+              - name: BATCH_SIZE
+                value: "32"
+          command: ["python3", "/rchristopher/data/src/code/mmpretrain_config_runner.py"]
+          resources:
+            limits:
+              memory: 16Gi
+              cpu: 8
+              nvidia.com/gpu: '1'
+            requests:
+              memory: 12Gi
+              cpu: 8
+              nvidia.com/gpu: '1'
+          volumeMounts:
+            - name: rc-large-pvc
+              mountPath: /rchristopher/data
+            - name: dshm
+              mountPath: /dev/shm
+      volumes:
+        - name: rc-large-pvc
+          persistentVolumeClaim:
+            claimName: rc-large-pvc
+        - name: dshm
+          emptyDir:
+            medium: Memory
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: nvidia.com/gpu.product
+                    operator: In
+                    values:
+                      - NVIDIA-A100-80GB-PCIe-MIG-1g.10gb
+      restartPolicy: Never
+  backoffLimit: 1

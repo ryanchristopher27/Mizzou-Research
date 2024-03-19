@@ -1,0 +1,8 @@
+version: '3'
+services:
+  cnn-container:
+    image: rchristopher27/test-image:latest
+    build:
+      context: test-container
+      dockerfile: Dockerfile
+    command: "python3 /app/src/data_access_test.py"

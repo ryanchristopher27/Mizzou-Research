@@ -1,0 +1,7 @@
+notebook
+scikit-image
+matplotlib
+opencv-python
+scikit-learn
+scipy
+tqdm
