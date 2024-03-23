@@ -1,0 +1,20 @@
+{
+    "Fold_Number": 5,
+    "Accuracy": "61.9900%",
+    "Precision": "61.9848%",
+    "Recall": "63.4204%",
+    "F-1_Score": "62.2675%",
+    "Best_Epoch": {
+        "epoch": 67,
+        "train_loss": "0.9694",
+        "val_loss": "1.0866",
+        "train_accuracy": "65.8125%",
+        "val_accuracy": "62.4501%"
+    },
+    "Hyper_Parameters": {
+        "Optimizer": "Adam",
+        "Loss_Function": "CrossEntropy",
+        "Batch_Size": 32,
+        "Learning_Rate": 0.001
+    }
+}

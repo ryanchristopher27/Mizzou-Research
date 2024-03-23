@@ -2116,3 +2116,893 @@ HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"F
 [2024-03-18 15:42:36,441] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
 [2024-03-18 15:42:36,442] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: single-job
 [2024-03-18 15:42:37,123] (INFO):: Successfully created job: single-job
+[2024-03-18 18:59:44,806] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 5, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'single-job'}
+[2024-03-18 18:59:44,807] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 18:59:44,807] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 18:59:44,807] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 18:59:44,807] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: single-job
+[2024-03-18 18:59:45,504] (INFO):: Successfully created job: single-job
+[2024-03-18 19:03:40,156] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 5, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'single-job'}
+[2024-03-18 19:03:40,157] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 19:03:40,157] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 19:03:40,157] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 19:03:40,157] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: single-job
+[2024-03-18 19:03:40,764] (INFO):: Successfully created job: single-job
+[2024-03-18 21:51:55,380] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 5, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'single-job'}
+[2024-03-18 21:51:55,380] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 21:51:55,381] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 21:51:55,381] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 21:51:55,381] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: single-job
+[2024-03-18 21:51:56,052] (INFO):: Successfully created job: single-job
+[2024-03-18 22:05:50,817] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-_resnet18_1'}
+[2024-03-18 22:05:50,817] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 22:05:50,817] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 22:05:50,817] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 22:05:50,818] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-_resnet18_1
+[2024-03-18 22:05:51,405] (ERROR):: Failed to create job: dl-_resnet18_1
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '9ac6e655-03f4-4aa9-b791-4ed2f394d8a5', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Tue, 19 Mar 2024 03:05:51 GMT', 'Content-Length': '1605'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"dl-_resnet18_1\" is invalid: [metadata.name: Invalid value: \"dl-_resnet18_1\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'), spec.template.spec.containers[0].name: Invalid value: \"dl-_resnet18_1-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')]","reason":"Invalid","details":{"name":"dl-_resnet18_1","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"dl-_resnet18_1\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')","field":"metadata.name"},{"reason":"FieldValueInvalid","message":"Invalid value: \"dl-_resnet18_1-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.containers[0].name"}]},"code":422}
+
+
+[2024-03-18 22:05:51,413] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-_resnet50_2'}
+[2024-03-18 22:05:51,413] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 22:05:51,413] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 22:05:51,413] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 22:05:51,414] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-_resnet50_2
+[2024-03-18 22:05:51,814] (ERROR):: Failed to create job: dl-_resnet50_2
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '5098d87f-f7f4-456e-851f-8aaf1c9153bd', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Tue, 19 Mar 2024 03:05:51 GMT', 'Content-Length': '1605'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"dl-_resnet50_2\" is invalid: [metadata.name: Invalid value: \"dl-_resnet50_2\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'), spec.template.spec.containers[0].name: Invalid value: \"dl-_resnet50_2-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')]","reason":"Invalid","details":{"name":"dl-_resnet50_2","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"dl-_resnet50_2\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')","field":"metadata.name"},{"reason":"FieldValueInvalid","message":"Invalid value: \"dl-_resnet50_2-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.containers[0].name"}]},"code":422}
+
+
+[2024-03-18 22:05:51,818] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-_vit_b_16_3'}
+[2024-03-18 22:05:51,818] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 22:05:51,819] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 22:05:51,819] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 22:05:51,820] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-_vit_b_16_3
+[2024-03-18 22:05:52,121] (ERROR):: Failed to create job: dl-_vit_b_16_3
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'db5183d3-1991-444f-b944-074f0de6b4c1', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Tue, 19 Mar 2024 03:05:52 GMT', 'Content-Length': '1605'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"dl-_vit_b_16_3\" is invalid: [metadata.name: Invalid value: \"dl-_vit_b_16_3\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'), spec.template.spec.containers[0].name: Invalid value: \"dl-_vit_b_16_3-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')]","reason":"Invalid","details":{"name":"dl-_vit_b_16_3","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"dl-_vit_b_16_3\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')","field":"metadata.name"},{"reason":"FieldValueInvalid","message":"Invalid value: \"dl-_vit_b_16_3-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.containers[0].name"}]},"code":422}
+
+
+[2024-03-18 22:05:52,124] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_32', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-_vit_b_32_4'}
+[2024-03-18 22:05:52,125] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 22:05:52,125] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 22:05:52,125] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 22:05:52,125] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-_vit_b_32_4
+[2024-03-18 22:05:52,383] (ERROR):: Failed to create job: dl-_vit_b_32_4
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'b0bb5251-7ad1-4b74-961d-c475948b1e0a', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Tue, 19 Mar 2024 03:05:52 GMT', 'Content-Length': '1605'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"dl-_vit_b_32_4\" is invalid: [metadata.name: Invalid value: \"dl-_vit_b_32_4\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'), spec.template.spec.containers[0].name: Invalid value: \"dl-_vit_b_32_4-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')]","reason":"Invalid","details":{"name":"dl-_vit_b_32_4","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"dl-_vit_b_32_4\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')","field":"metadata.name"},{"reason":"FieldValueInvalid","message":"Invalid value: \"dl-_vit_b_32_4-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.containers[0].name"}]},"code":422}
+
+
+[2024-03-18 22:06:26,741] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-resnet18-1'}
+[2024-03-18 22:06:26,741] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 22:06:26,741] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 22:06:26,741] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 22:06:26,741] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-resnet18-1
+[2024-03-18 22:06:27,355] (INFO):: Successfully created job: dl-resnet18-1
+[2024-03-18 22:06:27,355] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-resnet50-2'}
+[2024-03-18 22:06:27,356] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 22:06:27,356] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 22:06:27,356] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 22:06:27,356] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-resnet50-2
+[2024-03-18 22:06:27,763] (INFO):: Successfully created job: dl-resnet50-2
+[2024-03-18 22:06:27,763] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-vit_b_16-3'}
+[2024-03-18 22:06:27,763] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 22:06:27,763] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 22:06:27,763] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 22:06:27,764] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-vit_b_16-3
+[2024-03-18 22:06:28,083] (ERROR):: Failed to create job: dl-vit_b_16-3
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '3b3a4333-71c4-4c60-9ad6-44976d471f03', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Tue, 19 Mar 2024 03:06:28 GMT', 'Content-Length': '1599'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"dl-vit_b_16-3\" is invalid: [metadata.name: Invalid value: \"dl-vit_b_16-3\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'), spec.template.spec.containers[0].name: Invalid value: \"dl-vit_b_16-3-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')]","reason":"Invalid","details":{"name":"dl-vit_b_16-3","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"dl-vit_b_16-3\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')","field":"metadata.name"},{"reason":"FieldValueInvalid","message":"Invalid value: \"dl-vit_b_16-3-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.containers[0].name"}]},"code":422}
+
+
+[2024-03-18 22:06:28,090] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_32', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-vit_b_32-4'}
+[2024-03-18 22:06:28,090] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 22:06:28,090] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 22:06:28,090] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 22:06:28,091] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-vit_b_32-4
+[2024-03-18 22:06:28,473] (ERROR):: Failed to create job: dl-vit_b_32-4
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '191a34dd-dbec-42c2-aa24-725afeed1fb4', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Tue, 19 Mar 2024 03:06:28 GMT', 'Content-Length': '1599'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"dl-vit_b_32-4\" is invalid: [metadata.name: Invalid value: \"dl-vit_b_32-4\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'), spec.template.spec.containers[0].name: Invalid value: \"dl-vit_b_32-4-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')]","reason":"Invalid","details":{"name":"dl-vit_b_32-4","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"dl-vit_b_32-4\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')","field":"metadata.name"},{"reason":"FieldValueInvalid","message":"Invalid value: \"dl-vit_b_32-4-container\": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')","field":"spec.template.spec.containers[0].name"}]},"code":422}
+
+
+[2024-03-18 22:07:57,180] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-1'}
+[2024-03-18 22:07:57,180] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 22:07:57,180] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 22:07:57,181] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 22:07:57,181] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-1
+[2024-03-18 22:07:57,774] (INFO):: Successfully created job: dl-1
+[2024-03-18 22:07:57,775] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-2'}
+[2024-03-18 22:07:57,775] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 22:07:57,775] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 22:07:57,775] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 22:07:57,776] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-2
+[2024-03-18 22:07:58,180] (INFO):: Successfully created job: dl-2
+[2024-03-18 22:07:58,180] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-3'}
+[2024-03-18 22:07:58,181] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 22:07:58,181] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 22:07:58,181] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 22:07:58,181] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-3
+[2024-03-18 22:07:59,306] (INFO):: Successfully created job: dl-3
+[2024-03-18 22:07:59,306] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'Adam', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_32', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-4'}
+[2024-03-18 22:07:59,307] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-18 22:07:59,307] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-18 22:07:59,307] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-18 22:07:59,307] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-4
+[2024-03-18 22:07:59,697] (INFO):: Successfully created job: dl-4
+[2024-03-19 13:52:58,920] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-1'}
+[2024-03-19 13:52:58,920] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-19 13:52:58,920] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-19 13:52:58,920] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-19 13:52:58,920] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-1
+[2024-03-19 13:52:59,538] (INFO):: Successfully created job: dl-1
+[2024-03-19 13:52:59,538] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-2'}
+[2024-03-19 13:52:59,538] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-19 13:52:59,538] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-19 13:52:59,538] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-19 13:52:59,539] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-2
+[2024-03-19 13:52:59,948] (INFO):: Successfully created job: dl-2
+[2024-03-19 13:52:59,948] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-3'}
+[2024-03-19 13:52:59,948] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-19 13:52:59,949] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-19 13:52:59,949] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-19 13:52:59,949] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-3
+[2024-03-19 13:53:01,004] (INFO):: Successfully created job: dl-3
+[2024-03-19 13:53:01,004] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_32', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'dl-4'}
+[2024-03-19 13:53:01,005] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-19 13:53:01,005] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-19 13:53:01,005] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-19 13:53:01,006] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl-4
+[2024-03-19 13:53:01,377] (INFO):: Successfully created job: dl-4
+[2024-03-19 16:12:22,432] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'cifar10'}, 'job_name': 'single-job'}
+[2024-03-19 16:12:22,433] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-19 16:12:22,433] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-19 16:12:22,433] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-19 16:12:22,433] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: single-job
+[2024-03-19 16:12:22,832] (INFO):: Successfully created job: single-job
+[2024-03-20 17:21:01,875] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mm-convnext-ucmerced'}
+[2024-03-20 17:21:01,875] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-20 17:21:01,875] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-20 17:21:01,875] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-20 17:21:01,875] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mm-convnext-ucmerced
+[2024-03-20 17:21:02,639] (INFO):: Successfully created job: mm-convnext-ucmerced
+[2024-03-20 17:23:08,057] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mm-convnext-ucmerced'}
+[2024-03-20 17:23:08,057] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-20 17:23:08,057] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-20 17:23:08,057] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-20 17:23:08,057] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mm-convnext-ucmerced
+[2024-03-20 17:23:08,524] (INFO):: Successfully created job: mm-convnext-ucmerced
+[2024-03-20 17:23:30,875] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mm-convnext-ucmerced'}
+[2024-03-20 17:23:30,875] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-20 17:23:30,875] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-20 17:23:30,875] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-20 17:23:30,875] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mm-convnext-ucmerced
+[2024-03-20 17:23:31,366] (ERROR):: Failed to create job: mm-convnext-ucmerced
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (409)
+Reason: Conflict
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '1b7de098-c70f-48b2-98bf-e364ad7738e8', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Wed, 20 Mar 2024 22:23:31 GMT', 'Content-Length': '240'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"jobs.batch \"mm-convnext-ucmerced\" already exists","reason":"AlreadyExists","details":{"name":"mm-convnext-ucmerced","group":"batch","kind":"jobs"},"code":409}
+
+
+[2024-03-20 17:26:29,223] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-20 17:26:29,223] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-20 17:26:29,223] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-20 17:26:29,223] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-20 17:26:29,223] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-20 17:26:29,784] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-20 19:11:41,288] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-20 19:11:41,288] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-20 19:11:41,288] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-20 19:11:41,288] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-20 19:11:41,289] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-20 19:11:42,114] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-20 19:33:05,611] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-20 19:33:05,612] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-20 19:33:05,612] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-20 19:33:05,612] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-20 19:33:05,612] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-20 19:33:06,122] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-20 19:54:40,471] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-20 19:54:40,471] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-20 19:54:40,471] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-20 19:54:40,472] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-20 19:54:40,472] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-20 19:54:41,033] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-20 20:06:40,024] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-20 20:06:40,024] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-20 20:06:40,025] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-20 20:06:40,025] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-20 20:06:40,025] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-20 20:06:40,946] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-20 20:16:24,632] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-20 20:16:24,632] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-20 20:16:24,633] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-20 20:16:24,633] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-20 20:16:24,633] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-20 20:16:25,174] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-20 20:20:12,213] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-20 20:20:12,214] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-20 20:20:12,214] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-20 20:20:12,214] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-20 20:20:12,214] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-20 20:20:12,729] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-20 20:23:28,575] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-20 20:23:28,576] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-20 20:23:28,576] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-20 20:23:28,576] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-20 20:23:28,576] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-20 20:23:29,182] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-20 20:27:01,010] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-20 20:27:01,011] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-20 20:27:01,011] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-20 20:27:01,011] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-20 20:27:01,011] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-20 20:27:01,573] (ERROR):: Failed to create job: mmpretrain-job
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (409)
+Reason: Conflict
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'a454a6ff-5bd6-460c-8cff-f492848638d1', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Thu, 21 Mar 2024 01:27:01 GMT', 'Content-Length': '228'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"jobs.batch \"mmpretrain-job\" already exists","reason":"AlreadyExists","details":{"name":"mmpretrain-job","group":"batch","kind":"jobs"},"code":409}
+
+
+[2024-03-20 21:05:50,746] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-20 21:05:50,747] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-20 21:05:50,747] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-20 21:05:50,747] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-20 21:05:50,747] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-20 21:05:51,385] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 12:42:17,102] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 12:42:17,103] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 12:42:17,103] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 12:42:17,103] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 12:42:17,103] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 12:42:17,568] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 12:56:24,665] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 12:56:24,665] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 12:56:24,665] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 12:56:24,665] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 12:56:24,666] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 12:56:25,194] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 12:59:47,634] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 12:59:47,634] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 12:59:47,634] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 12:59:47,634] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 12:59:47,634] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 12:59:48,287] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 13:13:03,206] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 13:13:03,206] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 13:13:03,206] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 13:13:03,206] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 13:13:03,206] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 13:13:07,682] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 13:38:03,354] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR-10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 13:38:03,354] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 13:38:03,354] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 13:38:03,354] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 13:38:03,354] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 13:38:03,957] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 14:13:05,922] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 14:13:05,922] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 14:13:05,922] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 14:13:05,922] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 14:13:05,922] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 14:13:06,549] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 14:15:59,413] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 14:15:59,413] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 14:15:59,413] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 14:15:59,413] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 14:15:59,413] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 14:15:59,800] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 14:19:47,054] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 14:19:47,054] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 14:19:47,054] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 14:19:47,054] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 14:19:47,054] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 14:19:47,448] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 14:21:27,667] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 14:21:27,667] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 14:21:27,667] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 14:21:27,667] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 14:21:27,667] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 14:21:28,057] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 14:27:47,447] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 14:27:47,447] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 14:27:47,447] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 14:27:47,447] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 14:27:47,447] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 14:27:47,832] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 15:01:29,939] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 15:01:29,939] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 15:01:29,939] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 15:01:29,939] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 15:01:29,939] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 15:01:30,328] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 15:04:47,434] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 15:04:47,435] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 15:04:47,435] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 15:04:47,435] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 15:04:47,435] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 15:04:47,871] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 21:01:52,038] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 21:01:52,038] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 21:01:52,039] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 21:01:52,039] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 21:01:52,039] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 21:01:52,773] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 21:28:04,572] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 21:28:04,572] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 21:28:04,572] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 21:28:04,572] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 21:28:04,572] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 21:28:05,127] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 21:35:59,158] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 21:35:59,158] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 21:35:59,158] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 21:35:59,158] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 21:35:59,159] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 21:35:59,733] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 21:57:55,819] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 21:57:55,820] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 21:57:55,820] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 21:57:55,820] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 21:57:55,820] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 21:57:56,416] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 22:03:34,748] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 22:03:34,748] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 22:03:34,748] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 22:03:34,748] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 22:03:34,749] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 22:03:35,401] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-21 22:07:05,252] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-03-21 22:07:05,252] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-21 22:07:05,253] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-21 22:07:05,253] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-03-21 22:07:05,253] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-03-21 22:07:05,928] (INFO):: Successfully created job: mmpretrain-job
+[2024-03-22 14:01:11,224] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 0}, 'job_name': 'mmpretrain-job-1'}
+[2024-03-22 14:01:11,224] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:01:11,224] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:01:11,224] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:01:11,224] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-1
+[2024-03-22 14:01:11,620] (INFO):: Successfully created job: mmpretrain-job-1
+[2024-03-22 14:01:11,620] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1}, 'job_name': 'mmpretrain-job-2'}
+[2024-03-22 14:01:11,620] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:01:11,620] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:01:11,621] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:01:11,621] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-2
+[2024-03-22 14:01:12,631] (INFO):: Successfully created job: mmpretrain-job-2
+[2024-03-22 14:01:12,631] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2}, 'job_name': 'mmpretrain-job-3'}
+[2024-03-22 14:01:12,631] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:01:12,631] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:01:12,631] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:01:12,632] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-3
+[2024-03-22 14:01:12,988] (INFO):: Successfully created job: mmpretrain-job-3
+[2024-03-22 14:01:12,988] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3}, 'job_name': 'mmpretrain-job-4'}
+[2024-03-22 14:01:12,989] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:01:12,989] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:01:12,989] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:01:12,989] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-4
+[2024-03-22 14:01:13,278] (INFO):: Successfully created job: mmpretrain-job-4
+[2024-03-22 14:01:13,279] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4}, 'job_name': 'mmpretrain-job-5'}
+[2024-03-22 14:01:13,279] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:01:13,279] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:01:13,279] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:01:13,279] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-5
+[2024-03-22 14:01:13,602] (INFO):: Successfully created job: mmpretrain-job-5
+[2024-03-22 14:09:44,670] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 0}, 'job_name': 'mmpretrain-job-1'}
+[2024-03-22 14:09:44,670] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:09:44,670] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:09:44,670] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:09:44,670] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-1
+[2024-03-22 14:09:45,095] (INFO):: Successfully created job: mmpretrain-job-1
+[2024-03-22 14:09:45,095] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1}, 'job_name': 'mmpretrain-job-2'}
+[2024-03-22 14:09:45,095] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:09:45,095] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:09:45,096] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:09:45,096] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-2
+[2024-03-22 14:09:45,391] (INFO):: Successfully created job: mmpretrain-job-2
+[2024-03-22 14:09:45,391] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2}, 'job_name': 'mmpretrain-job-3'}
+[2024-03-22 14:09:45,392] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:09:45,392] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:09:45,392] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:09:45,393] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-3
+[2024-03-22 14:09:46,433] (INFO):: Successfully created job: mmpretrain-job-3
+[2024-03-22 14:09:46,433] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3}, 'job_name': 'mmpretrain-job-4'}
+[2024-03-22 14:09:46,433] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:09:46,433] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:09:46,434] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:09:46,434] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-4
+[2024-03-22 14:09:46,740] (INFO):: Successfully created job: mmpretrain-job-4
+[2024-03-22 14:09:46,741] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4}, 'job_name': 'mmpretrain-job-5'}
+[2024-03-22 14:09:46,741] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:09:46,741] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:09:46,741] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:09:46,741] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-5
+[2024-03-22 14:09:47,044] (INFO):: Successfully created job: mmpretrain-job-5
+[2024-03-22 14:26:50,014] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 0}, 'job_name': 'mmpretrain-job-0'}
+[2024-03-22 14:26:50,014] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:26:50,014] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:26:50,014] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:26:50,014] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-0
+[2024-03-22 14:26:50,507] (INFO):: Successfully created job: mmpretrain-job-0
+[2024-03-22 14:26:50,507] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1}, 'job_name': 'mmpretrain-job-1'}
+[2024-03-22 14:26:50,507] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:26:50,507] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:26:50,508] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:26:50,508] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-1
+[2024-03-22 14:26:50,816] (INFO):: Successfully created job: mmpretrain-job-1
+[2024-03-22 14:26:50,816] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2}, 'job_name': 'mmpretrain-job-2'}
+[2024-03-22 14:26:50,817] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:26:50,817] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:26:50,817] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:26:50,817] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-2
+[2024-03-22 14:26:51,103] (INFO):: Successfully created job: mmpretrain-job-2
+[2024-03-22 14:26:51,103] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3}, 'job_name': 'mmpretrain-job-3'}
+[2024-03-22 14:26:51,103] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:26:51,104] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:26:51,104] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:26:51,104] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-3
+[2024-03-22 14:26:52,317] (INFO):: Successfully created job: mmpretrain-job-3
+[2024-03-22 14:26:52,317] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 8, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4}, 'job_name': 'mmpretrain-job-4'}
+[2024-03-22 14:26:52,317] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:26:52,317] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:26:52,318] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:26:52,318] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-4
+[2024-03-22 14:26:52,606] (INFO):: Successfully created job: mmpretrain-job-4
+[2024-03-22 14:38:12,244] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 10, 'min_ram': 16, 'max_ram': 32, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2}, 'job_name': 'mmpretrain-job-2'}
+[2024-03-22 14:38:12,245] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:38:12,245] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:38:12,245] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:38:12,245] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-2
+[2024-03-22 14:38:12,693] (INFO):: Successfully created job: mmpretrain-job-2
+[2024-03-22 14:44:47,502] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 10, 'min_ram': 16, 'max_ram': 32, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 16, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2}, 'job_name': 'mmpretrain-job-2'}
+[2024-03-22 14:44:47,502] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 14:44:47,502] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 14:44:47,502] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 14:44:47,502] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-2
+[2024-03-22 14:44:47,885] (INFO):: Successfully created job: mmpretrain-job-2
+[2024-03-22 15:26:59,621] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 10, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 64, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'single-job'}
+[2024-03-22 15:26:59,622] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 15:26:59,622] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 15:26:59,622] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 15:26:59,622] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: single-job
+[2024-03-22 15:26:59,902] (ERROR):: Failed to create job: single-job
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '4bb0ac39-bffb-4dc8-9d00-67d7d8de8504', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Fri, 22 Mar 2024 20:26:59 GMT', 'Content-Length': '311'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"job.nrp-nautilus.io\" denied the request: Your pods resources utilization is too low for account http://cilogon.org/serverE/users/78425. See your stats at https://portal.nrp-nautilus.io for details.","code":400}
+
+
+[2024-03-22 15:28:06,936] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 8, 'max_cpu': 10, 'min_ram': 12, 'max_ram': 16, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'single-job'}
+[2024-03-22 15:28:06,937] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 15:28:06,937] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 15:28:06,937] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 15:28:06,937] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: single-job
+[2024-03-22 15:28:07,215] (ERROR):: Failed to create job: single-job
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'ffc4764e-8a41-4f15-a17a-5504ee00a3ed', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Fri, 22 Mar 2024 20:28:07 GMT', 'Content-Length': '311'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"job.nrp-nautilus.io\" denied the request: Your pods resources utilization is too low for account http://cilogon.org/serverE/users/78425. See your stats at https://portal.nrp-nautilus.io for details.","code":400}
+
+
+[2024-03-22 18:38:54,091] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--resnet18-1'}
+[2024-03-22 18:38:54,091] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:54,091] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:54,091] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:54,091] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--resnet18-1
+[2024-03-22 18:38:54,599] (INFO):: Successfully created job: dl--resnet18-1
+[2024-03-22 18:38:54,600] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--resnet18-2'}
+[2024-03-22 18:38:54,600] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:54,600] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:54,600] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:54,600] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--resnet18-2
+[2024-03-22 18:38:54,929] (INFO):: Successfully created job: dl--resnet18-2
+[2024-03-22 18:38:54,930] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--resnet18-3'}
+[2024-03-22 18:38:54,930] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:54,930] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:54,930] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:54,931] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--resnet18-3
+[2024-03-22 18:38:55,255] (INFO):: Successfully created job: dl--resnet18-3
+[2024-03-22 18:38:55,255] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--resnet18-4'}
+[2024-03-22 18:38:55,255] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:55,256] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:55,256] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:55,256] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--resnet18-4
+[2024-03-22 18:38:55,580] (INFO):: Successfully created job: dl--resnet18-4
+[2024-03-22 18:38:55,580] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'resnet18', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--resnet18-5'}
+[2024-03-22 18:38:55,580] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:55,580] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:55,581] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:55,581] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--resnet18-5
+[2024-03-22 18:38:55,909] (INFO):: Successfully created job: dl--resnet18-5
+[2024-03-22 18:38:55,909] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--resnet50-1'}
+[2024-03-22 18:38:55,910] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:55,910] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:55,910] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:55,910] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--resnet50-1
+[2024-03-22 18:38:56,245] (INFO):: Successfully created job: dl--resnet50-1
+[2024-03-22 18:38:56,245] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--resnet50-2'}
+[2024-03-22 18:38:56,245] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:56,245] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:56,245] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:56,246] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--resnet50-2
+[2024-03-22 18:38:56,569] (INFO):: Successfully created job: dl--resnet50-2
+[2024-03-22 18:38:56,569] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--resnet50-3'}
+[2024-03-22 18:38:56,570] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:56,570] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:56,570] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:56,570] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--resnet50-3
+[2024-03-22 18:38:56,956] (INFO):: Successfully created job: dl--resnet50-3
+[2024-03-22 18:38:56,956] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--resnet50-4'}
+[2024-03-22 18:38:56,957] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:56,957] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:56,957] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:56,957] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--resnet50-4
+[2024-03-22 18:38:58,002] (INFO):: Successfully created job: dl--resnet50-4
+[2024-03-22 18:38:58,003] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'resnet50', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--resnet50-5'}
+[2024-03-22 18:38:58,003] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:58,003] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:58,003] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:58,004] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--resnet50-5
+[2024-03-22 18:38:58,401] (INFO):: Successfully created job: dl--resnet50-5
+[2024-03-22 18:38:58,402] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--vit-b-16-1'}
+[2024-03-22 18:38:58,402] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:58,402] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:58,402] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:58,403] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--vit-b-16-1
+[2024-03-22 18:38:58,807] (INFO):: Successfully created job: dl--vit-b-16-1
+[2024-03-22 18:38:58,808] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--vit-b-16-2'}
+[2024-03-22 18:38:58,808] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:58,808] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:58,808] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:58,809] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--vit-b-16-2
+[2024-03-22 18:38:59,133] (INFO):: Successfully created job: dl--vit-b-16-2
+[2024-03-22 18:38:59,133] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--vit-b-16-3'}
+[2024-03-22 18:38:59,134] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:59,134] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:59,134] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:59,134] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--vit-b-16-3
+[2024-03-22 18:38:59,527] (INFO):: Successfully created job: dl--vit-b-16-3
+[2024-03-22 18:38:59,528] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--vit-b-16-4'}
+[2024-03-22 18:38:59,528] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:59,528] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:59,529] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:59,529] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--vit-b-16-4
+[2024-03-22 18:38:59,935] (INFO):: Successfully created job: dl--vit-b-16-4
+[2024-03-22 18:38:59,936] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'vit_b_16', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--vit-b-16-5'}
+[2024-03-22 18:38:59,936] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:38:59,936] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:38:59,936] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:38:59,937] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--vit-b-16-5
+[2024-03-22 18:39:00,262] (INFO):: Successfully created job: dl--vit-b-16-5
+[2024-03-22 18:39:00,262] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1, 'TORCH_MODEL_NAME': 'vit_b_32', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--vit-b-32-1'}
+[2024-03-22 18:39:00,262] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:39:00,262] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:39:00,262] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:39:00,263] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--vit-b-32-1
+[2024-03-22 18:39:00,592] (INFO):: Successfully created job: dl--vit-b-32-1
+[2024-03-22 18:39:00,592] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2, 'TORCH_MODEL_NAME': 'vit_b_32', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--vit-b-32-2'}
+[2024-03-22 18:39:00,593] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:39:00,593] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:39:00,593] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:39:00,593] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--vit-b-32-2
+[2024-03-22 18:39:01,061] (INFO):: Successfully created job: dl--vit-b-32-2
+[2024-03-22 18:39:01,062] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3, 'TORCH_MODEL_NAME': 'vit_b_32', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--vit-b-32-3'}
+[2024-03-22 18:39:01,062] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:39:01,062] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:39:01,062] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:39:01,063] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--vit-b-32-3
+[2024-03-22 18:39:01,471] (INFO):: Successfully created job: dl--vit-b-32-3
+[2024-03-22 18:39:01,471] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4, 'TORCH_MODEL_NAME': 'vit_b_32', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--vit-b-32-4'}
+[2024-03-22 18:39:01,471] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:39:01,472] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:39:01,472] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:39:01,472] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--vit-b-32-4
+[2024-03-22 18:39:01,880] (INFO):: Successfully created job: dl--vit-b-32-4
+[2024-03-22 18:39:01,881] (DEBUG):: {'image': 'rchristopher27/rc-research-image:generic1', 'command': ['python3', '/rchristopher/data/src/code/Assorted_DL_Analysis.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'TORCH_NUM_JOBS': 8, 'TORCH_NUM_EPOCHS': 100, 'TORCH_NUM_FOLDS': 5, 'WRITE_RESULTS': True, 'OPTIMIZER': 'SGD', 'LOSS_FUNCTION': 'CrossEntropy', 'BATCH_SIZE': 32, 'LEARNING_RATE': 0.001, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 5, 'TORCH_MODEL_NAME': 'vit_b_32', 'TORCH_DATA_NAME': 'ucmerced_landuse'}, 'job_name': 'dl--vit-b-32-5'}
+[2024-03-22 18:39:01,881] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:39:01,881] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:39:01,881] (DEBUG):: Found environment variables. Adding to container: ['TORCH_NUM_JOBS', 'TORCH_NUM_EPOCHS', 'TORCH_NUM_FOLDS', 'WRITE_RESULTS', 'OPTIMIZER', 'LOSS_FUNCTION', 'BATCH_SIZE', 'LEARNING_RATE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM', 'TORCH_MODEL_NAME', 'TORCH_DATA_NAME']
+[2024-03-22 18:39:01,881] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: dl--vit-b-32-5
+[2024-03-22 18:39:02,268] (INFO):: Successfully created job: dl--vit-b-32-5
+[2024-03-22 18:40:08,321] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 16, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 0}, 'job_name': 'mmpretrain-job-0'}
+[2024-03-22 18:40:08,322] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:40:08,322] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:40:08,322] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 18:40:08,322] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-0
+[2024-03-22 18:40:08,852] (INFO):: Successfully created job: mmpretrain-job-0
+[2024-03-22 18:40:08,852] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 16, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1}, 'job_name': 'mmpretrain-job-1'}
+[2024-03-22 18:40:08,852] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:40:08,852] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:40:08,853] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 18:40:08,853] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-1
+[2024-03-22 18:40:09,262] (INFO):: Successfully created job: mmpretrain-job-1
+[2024-03-22 18:40:09,263] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 16, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2}, 'job_name': 'mmpretrain-job-2'}
+[2024-03-22 18:40:09,263] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:40:09,263] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:40:09,263] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 18:40:09,264] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-2
+[2024-03-22 18:40:09,670] (INFO):: Successfully created job: mmpretrain-job-2
+[2024-03-22 18:40:09,670] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 16, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3}, 'job_name': 'mmpretrain-job-3'}
+[2024-03-22 18:40:09,670] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:40:09,670] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:40:09,671] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 18:40:09,671] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-3
+[2024-03-22 18:40:10,042] (INFO):: Successfully created job: mmpretrain-job-3
+[2024-03-22 18:40:10,043] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 16, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4}, 'job_name': 'mmpretrain-job-4'}
+[2024-03-22 18:40:10,043] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-03-22 18:40:10,043] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-03-22 18:40:10,043] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-03-22 18:40:10,043] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-4
+[2024-03-22 18:40:10,365] (INFO):: Successfully created job: mmpretrain-job-4

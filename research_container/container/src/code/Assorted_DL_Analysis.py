@@ -233,8 +233,8 @@ def main():
 
     data = previous_data
 
-    if not os.path.exists(file_path):
-        os.makedirs(file_path)
+    if not os.path.exists(file_path + '/plots'):
+        os.makedirs(file_path + '/plots')
 
     if WRITE_RESULTS:
         write_results_to_file(data, file_path + file_name)
@@ -247,7 +247,7 @@ def main():
             x_label = "Epoch",
             y_label = "Loss",
             title = "Loss vs Epoch",
-            filename = file_path + f"loss_{experiment_id}.png",
+            filename = file_path + f"plots/loss_{experiment_id}.png",
         )
 
         write_2data_plot_to_file(
@@ -258,7 +258,7 @@ def main():
             x_label = "Epoch",
             y_label = "Accuracy",
             title = "Accuracy vs Epoch",
-            filename = file_path + f"accuracy_{experiment_id}.png",
+            filename = file_path + f"plots/accuracy_{experiment_id}.png",
         )
 
         print("Results Saved to 'results' Folder")

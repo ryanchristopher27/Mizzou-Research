@@ -1,0 +1,73 @@
+{
+    "Experiments": [
+        {
+            "Results": {
+                "Accuracy": "94.2000%",
+                "Precision": "94.2000%",
+                "Recall": "94.2134%",
+                "F-1_Score": "94.1894%",
+                "Best_Epoch": {
+                    "epoch": 5,
+                    "train_loss": "0.2006",
+                    "val_loss": "0.1801",
+                    "train_accuracy": "93.2722%",
+                    "val_accuracy": "94.0495%"
+                },
+                "Hyper_Parameters": {
+                    "Epochs": 5,
+                    "Optimizer": "SGD",
+                    "Loss_Function": "CrossEntropy",
+                    "Batch_Size": 32,
+                    "Learning_Rate": 0.001
+                }
+            },
+            "Experiment_ID": 0
+        },
+        {
+            "Results": {
+                "Accuracy": "62.9800%",
+                "Precision": "62.9800%",
+                "Recall": "64.0434%",
+                "F-1_Score": "63.1245%",
+                "Best_Epoch": {
+                    "epoch": 99,
+                    "train_loss": "0.8999",
+                    "val_loss": "1.0560",
+                    "train_accuracy": "68.3684%",
+                    "val_accuracy": "62.6891%"
+                },
+                "Hyper_Parameters": {
+                    "Epochs": 100,
+                    "Optimizer": "Adam",
+                    "Loss_Function": "CrossEntropy",
+                    "Batch_Size": 64,
+                    "Learning_Rate": 0.001
+                }
+            },
+            "Experiment_ID": 1
+        },
+        {
+            "Results": {
+                "Accuracy": "95.9800%",
+                "Precision": "95.9800%",
+                "Recall": "95.9830%",
+                "F-1_Score": "95.9806%",
+                "Best_Epoch": {
+                    "epoch": 64,
+                    "train_loss": "0.0716",
+                    "val_loss": "0.1170",
+                    "train_accuracy": "97.4564%",
+                    "val_accuracy": "95.7902%"
+                },
+                "Hyper_Parameters": {
+                    "Epochs": 100,
+                    "Optimizer": "SGD",
+                    "Loss_Function": "CrossEntropy",
+                    "Batch_Size": 64,
+                    "Learning_Rate": 0.001
+                }
+            },
+            "Experiment_ID": 2
+        }
+    ]
+}

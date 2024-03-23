@@ -6,7 +6,7 @@ load_from = "https://download.openmmlab.com/mmclassification/v0/convnext/convnex
 
 # Environment Variables
 NUM_EPOCHS = int(os.environ.get('NUM_EPOCHS', 50))
-DATA_NAME = os.environ.get("DATA_NAME", "UCMerced_Landuse")
+DATA_NAME = os.environ.get("DATA_NAME", "CIFAR10")
 MILESTONES = os.environ.get("MILESTONES",[10, 25, 50])
 VISUALIZE = bool(os.environ.get("VISUALIZE", True))
 OPTIMIZER = os.environ.get("OPTIMIZER", "SGD")
@@ -21,24 +21,28 @@ print(f"OPTIMIZER: {OPTIMIZER}")
 print(f"LEARNING_RATE: {LEARNING_RATE}")
 print(f"BATCH_SIZE: {BATCH_SIZE}")
 
-if DATA_NAME == "UCMerced_Landuse":
-    data_type = "CustomDataset"
-    # data_type = "KFoldDataset"
-    data_prefix = "/rchristopher/data/src/data/UCMerced_Landuse/"
-    num_classes=21
-elif DATA_NAME == "CIFAR-10":
-    data_type = "CIFAR10"
-    data_prefix = "/rchristopher/data/src/data/CIFAR10/"
-    num_classes=10
-else:
-    raise ValueError(f"Invalid data name: {DATA_NAME}")
+data_type = "CIFAR10"
+data_root = "/rchristopher/data/src/data/CIFAR10"
+num_classes=10
 
-data_preprocessor = dict(num_classes=num_classes)
+# data_preprocessor = dict(num_classes=num_classes)
+data_preprocessor = dict(
+    num_classes=num_classes,
+    mean=[0.485, 0.456, 0.406], 
+    std=[0.229, 0.224, 0.225], 
+    to_rgb=True,
+)
+
+# train_pipeline = [
+#     {'type': 'LoadImageFromFile'},
+#     # {'type': 'RandomFlip', 'prob': 0.5, 'direction': 'horizontal'},
+#     {'type': 'PackInputs'}
+# ]
 
 train_pipeline = [
-    {'type': 'LoadImageFromFile'},
-    {'type': 'RandomFlip', 'prob': 0.5, 'direction': 'horizontal'},
-    {'type': 'PackInputs'}
+    dict(type='LoadImageFromFile'),
+    dict(type='RandomResizedCrop', scale=224),
+    dict(type='PackInputs'),
 ]
 
 model = dict(
@@ -50,14 +54,14 @@ model = dict(
 train_dataloader = dict(
     batch_size=BATCH_SIZE,
     dataset=dict(
-        _delete_=True,
         type=data_type,
-        data_prefix=data_prefix,
+        data_root=data_root,
+        split='train',
+        data_prefix='train',
         # with_label=True,
         pipeline=train_pipeline
     )
 )
-
 
 optim_wrapper=dict(
     type='OptimWrapper',
@@ -69,7 +73,6 @@ optim_wrapper=dict(
     ),
 )
 
-# max_epochs = 200
 train_cfg=dict(_delete_= True, max_epochs=NUM_EPOCHS, type="EpochBasedTrainLoop")
 param_scheduler = [
     dict(
@@ -84,11 +87,50 @@ param_scheduler = [
 
 visualization=dict(type='VisualizationHook', enable=VISUALIZE),
 
-work_dir = "/rchristopher/data/src/results/mmpretrain_results"
+work_dir = "/rchristopher/data/src/mmpretrain_results/cifar10"
+# work_dir = "/rchristopher/data/src/results/mmpretrain_results"
 
-test_dataloader = None
-test_cfg = None
-test_evaluator = None
+
+
+val_dataloader = dict(
+    batch_size=BATCH_SIZE,
+    dataset=dict(
+        type=data_type,
+        split='test',
+        data_root=data_root,
+        data_prefix='val',
+        pipeline=train_pipeline
+    )
+)
+
+val_evaluator = [
+    dict(type='Accuracy', topk=(1, 5)),
+    dict(type='ConfusionMatrix', num_classes=num_classes),
+]
+
+# val_evaluator = dict(type='ConfusionMatrix', num_classes=num_classes)
+
+test_dataloader = dict(
+    batch_size=BATCH_SIZE,
+    dataset=dict(
+        type=data_type,
+        split='test',
+        data_root=data_root,
+        data_prefix='test',
+        pipeline=train_pipeline
+    )
+)
+
+test_evaluator = val_evaluator
+
+val_cfg = dict()
+test_cfg = dict()
+
+'''
 val_dataloader = None
-val_cfg = None
 val_evaluator = None
+val_cfg = None
+test_dataloader = None
+test_evaluator = None
+test_cfg = None
+'''

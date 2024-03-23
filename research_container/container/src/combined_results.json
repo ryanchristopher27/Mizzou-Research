@@ -1,0 +1,126 @@
+{
+    "ucmerced_landuse": [
+        {
+            "Model": "resnet18",
+            "Dataset": "ucmerced_landuse",
+            "Folds": 5,
+            "Results": [
+                {
+                    "Epochs": 50,
+                    "Accuracy": 97.302,
+                    "Precision": 97.138,
+                    "Recall": 97.242,
+                    "F-1_Score": 97.136,
+                    "Best_Epoch": 20
+                }
+            ]
+        },
+        {
+            "Model": "resnet50",
+            "Dataset": "ucmerced_landuse",
+            "Folds": 5,
+            "Results": [
+                {
+                    "Epochs": 50,
+                    "Accuracy": 96.131,
+                    "Precision": 96.174,
+                    "Recall": 96.372,
+                    "F-1_Score": 95.933,
+                    "Best_Epoch": 29
+                }
+            ]
+        },
+        {
+            "Model": "vit_b_16",
+            "Dataset": "ucmerced_landuse",
+            "Folds": 5,
+            "Results": [
+                {
+                    "Epochs": 50,
+                    "Accuracy": 88.036,
+                    "Precision": 87.979,
+                    "Recall": 88.166,
+                    "F-1_Score": 87.717,
+                    "Best_Epoch": 19
+                }
+            ]
+        },
+        {
+            "Model": "vit_b_32",
+            "Dataset": "ucmerced_landuse",
+            "Folds": 5,
+            "Results": [
+                {
+                    "Epochs": 50,
+                    "Accuracy": 81.429,
+                    "Precision": 81.624,
+                    "Recall": 81.949,
+                    "F-1_Score": 81.179,
+                    "Best_Epoch": 30
+                }
+            ]
+        }
+    ],
+    "cifar10": [
+        {
+            "Model": "resnet18",
+            "Dataset": "cifar10",
+            "Folds": 5,
+            "Results": [
+                {
+                    "Epochs": 50,
+                    "Accuracy": 95.622,
+                    "Precision": 95.632,
+                    "Recall": 95.626,
+                    "F-1_Score": 95.622,
+                    "Best_Epoch": 30
+                }
+            ]
+        },
+        {
+            "Model": "resnet50",
+            "Dataset": "cifar10",
+            "Folds": 5,
+            "Results": [
+                {
+                    "Epochs": 50,
+                    "Accuracy": 95.62,
+                    "Precision": 95.625,
+                    "Recall": 95.649,
+                    "F-1_Score": 95.619,
+                    "Best_Epoch": 41
+                }
+            ]
+        },
+        {
+            "Model": "vit_b_16",
+            "Dataset": "cifar10",
+            "Folds": 5,
+            "Results": [
+                {
+                    "Epochs": 50,
+                    "Accuracy": 96.14,
+                    "Precision": 96.137,
+                    "Recall": 96.139,
+                    "F-1_Score": 96.133,
+                    "Best_Epoch": 42
+                }
+            ]
+        },
+        {
+            "Model": "vit_b_32",
+            "Dataset": "cifar10",
+            "Folds": 5,
+            "Results": [
+                {
+                    "Epochs": 50,
+                    "Accuracy": 93.717,
+                    "Precision": 93.73,
+                    "Recall": 93.726,
+                    "F-1_Score": 93.718,
+                    "Best_Epoch": 45
+                }
+            ]
+        }
+    ]
+}

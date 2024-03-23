@@ -3,7 +3,7 @@ import json
 from matplotlib import pyplot as plt
 import os
 
-def cuda_setup() -> ():
+def cuda_setup() -> tuple:
     if torch.cuda.is_available():
         print(torch.cuda.current_device())     # The ID of the current GPU.
         print(torch.cuda.get_device_name(id))  # The name of the specified GPU, where id is an integer.

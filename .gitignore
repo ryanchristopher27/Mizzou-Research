@@ -14,3 +14,5 @@ src/torch_code/data/
 data/
 
 mmpretrain/
+
+mmpretrain_results/
