@@ -84,7 +84,7 @@ param_scheduler = [
 
 visualization=dict(type='VisualizationHook', enable=VISUALIZE),
 
-work_dir = "/rchristopher/data/src/mmpretrain_results/cifar10"
+work_dir = "/rchristopher/data/src/mmpretrain_results/cifar10/convnext/"
 # work_dir = "/rchristopher/data/src/results/mmpretrain_results"
 
 

@@ -7,7 +7,7 @@ image = "rchristopher27/rc-research-image:mmpretrain2"
 pvc_name = "rc-large-pvc"
 
 NUM_FOLDS = 5
-DATA_NAME = 'UCMerced_Landuse'
+DATA_NAME = 'CIFAR10'
 
 defaults = dict(
     image=image,
@@ -20,7 +20,7 @@ defaults = dict(
     min_ram=12,
     max_ram=18,
     gpu=1,
-    # gpu_types=["NVIDIA-A100-80GB-PCIe-MIG-1g.10gb"],
+    gpu_types=["NVIDIA-A100-80GB-PCIe-MIG-1g.10gb"],
     env=dict(
         NUM_EPOCHS=100,
         DATA_NAME=DATA_NAME,
@@ -28,7 +28,7 @@ defaults = dict(
         VISUALIZE=True,
         OPTIMIZER="SGD",
         LEARNING_RATE=0.001,
-        BATCH_SIZE=16,
+        BATCH_SIZE=128,
         PYTORCH_CUDA_ALLOC_CONF="max_split_size_mb:128",
     ),
 )

@@ -20,6 +20,12 @@ Mizzou Master's Research
     ```
     kubectl cp code rc-large-pvc-pod:/rchristopher/data/src/
     ```
+
+ - Copy from large pvc to directory
+   ```console
+   kubectl cp rc-large-pvc-pod:/rchristopher/data/src/mmpretrain_results/ucmerced_landuse ./mmpretrain_results/ucmerced_landuse
+   ```
+
  - PVC Terminal
     ```console
     kubectl exec -it rc-large-pvc-pod -- /bin/bash
