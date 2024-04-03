@@ -1,19 +1,19 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: mm-convnext-ucmerced
+  name: mmpretrain-job-3
 spec:
   template:
     spec:
       containers:
-        - name: mm-convnext-ucmerced
+        - name: mm-convnext
           image: rchristopher27/rc-research-image:mmpretrain2
           workingDir: /rchristopher/data
           env:
               - name: NUM_EPOCHS
                 value: "100"
               - name: DATA_NAME
-                value: "UCMerced_Landuse"
+                value: "CIFAR10"
               - name: MILESTONES
                 value: "[10, 25, 50]"
               - name: VISUALIZE
@@ -21,18 +21,20 @@ spec:
               - name: OPTIMIZER
                 value: "SGD"
               - name: LEARNING_RATE
-                value: "0.0001"
+                value: "0.001"
               - name: BATCH_SIZE
-                value: "32"
+                value: "64"
+              - name: PYTORCH_CUDA_ALLOC_CONF 
+                value: "max_split_size_mb:128"
           command: ["python3", "/rchristopher/data/src/code/mmpretrain_config_runner.py"]
           resources:
             limits:
-              memory: 16Gi
-              cpu: 8
+              memory: 24Gi
+              cpu: 4
               nvidia.com/gpu: '1'
             requests:
-              memory: 12Gi
-              cpu: 8
+              memory: 16Gi
+              cpu: 2
               nvidia.com/gpu: '1'
           volumeMounts:
             - name: rc-large-pvc
@@ -55,6 +57,16 @@ spec:
                   - key: nvidia.com/gpu.product
                     operator: In
                     values:
-                      - NVIDIA-A100-80GB-PCIe-MIG-1g.10gb
+                      - "NVIDIA-A100-SXM4-80GB"
+                      - "NVIDIA-A40"
+                      - "NVIDIA-A100-80GB-PCIe"
+                      - "NVIDIA-RTX-A4000"
+                  - key: topology.kubernetes.io/zone
+                    operator: NotIn
+                    values:
+                      - "ucsd-nrp"
+                      - "ucsd"
+                      - "ucsd-sdsc"
+                      - "ucsd-sdsc-yu"
       restartPolicy: Never
   backoffLimit: 1

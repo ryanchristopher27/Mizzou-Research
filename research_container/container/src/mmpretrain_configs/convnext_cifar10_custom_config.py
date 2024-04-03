@@ -69,7 +69,7 @@ optim_wrapper=dict(
     ),
 )
 
-train_cfg=dict(_delete_= True, max_epochs=NUM_EPOCHS, type="EpochBasedTrainLoop")
+train_cfg=dict(_delete_= True, max_epochs=NUM_EPOCHS, type="EpochBasedTrainLoop", val_interval=1)
 
 param_scheduler = [
     dict(
@@ -82,11 +82,14 @@ param_scheduler = [
     )
 ]
 
-visualization=dict(type='VisualizationHook', enable=VISUALIZE),
+default_hooks = dict(
+    checkpoint=dict(type='CheckpointHook', interval=10),
+    visualization=dict(type='VisualizationHook', enable=VISUALIZE),
+)
+
 
 work_dir = "/rchristopher/data/src/mmpretrain_results/cifar10/convnext/"
 # work_dir = "/rchristopher/data/src/results/mmpretrain_results"
-
 
 
 val_dataloader = dict(

@@ -3069,3 +3069,440 @@ HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"F
 [2024-03-26 22:24:13,527] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
 [2024-03-26 22:24:13,527] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
 [2024-03-26 22:24:13,994] (INFO):: Successfully created job: mmpretrain-job
+[2024-04-01 23:13:34,356] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 128, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job'}
+[2024-04-01 23:13:34,356] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-01 23:13:34,356] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-01 23:13:34,356] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-01 23:13:34,356] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-01 23:13:34,356] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job
+[2024-04-01 23:13:34,974] (INFO):: Successfully created job: mmpretrain-job
+[2024-04-02 00:23:34,737] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 512, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:512'}, 'job_name': 'mmpretrain-job-2'}
+[2024-04-02 00:23:34,737] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 00:23:34,738] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 00:23:34,738] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 00:23:34,738] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 00:23:34,738] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-2
+[2024-04-02 00:23:35,457] (INFO):: Successfully created job: mmpretrain-job-2
+[2024-04-02 08:29:49,754] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 128, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 0}, 'job_name': 'mmpretrain-job-um-0'}
+[2024-04-02 08:29:49,754] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:29:49,754] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:29:49,754] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:29:49,754] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:29:49,754] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-0
+[2024-04-02 08:29:50,376] (INFO):: Successfully created job: mmpretrain-job-um-0
+[2024-04-02 08:29:50,376] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 128, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1}, 'job_name': 'mmpretrain-job-um-1'}
+[2024-04-02 08:29:50,377] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:29:50,377] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:29:50,377] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:29:50,377] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:29:50,378] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-1
+[2024-04-02 08:29:50,703] (INFO):: Successfully created job: mmpretrain-job-um-1
+[2024-04-02 08:29:50,703] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 128, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2}, 'job_name': 'mmpretrain-job-um-2'}
+[2024-04-02 08:29:50,704] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:29:50,704] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:29:50,704] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:29:50,704] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:29:50,704] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-2
+[2024-04-02 08:29:51,029] (INFO):: Successfully created job: mmpretrain-job-um-2
+[2024-04-02 08:29:51,029] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 128, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3}, 'job_name': 'mmpretrain-job-um-3'}
+[2024-04-02 08:29:51,030] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:29:51,030] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:29:51,030] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:29:51,030] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:29:51,031] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-3
+[2024-04-02 08:29:51,397] (INFO):: Successfully created job: mmpretrain-job-um-3
+[2024-04-02 08:29:51,398] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 128, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4}, 'job_name': 'mmpretrain-job-um-4'}
+[2024-04-02 08:29:51,398] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:29:51,398] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:29:51,398] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:29:51,398] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:29:51,399] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-4
+[2024-04-02 08:29:51,807] (INFO):: Successfully created job: mmpretrain-job-um-4
+[2024-04-02 08:31:10,464] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:32', 'FOLD_NUM': 0}, 'job_name': 'mmpretrain-job-um-32-0'}
+[2024-04-02 08:31:10,465] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:31:10,465] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:31:10,465] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:31:10,465] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:31:10,465] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-32-0
+[2024-04-02 08:31:10,982] (INFO):: Successfully created job: mmpretrain-job-um-32-0
+[2024-04-02 08:31:10,982] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:32', 'FOLD_NUM': 1}, 'job_name': 'mmpretrain-job-um-32-1'}
+[2024-04-02 08:31:10,982] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:31:10,983] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:31:10,983] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:31:10,983] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:31:10,984] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-32-1
+[2024-04-02 08:31:11,371] (INFO):: Successfully created job: mmpretrain-job-um-32-1
+[2024-04-02 08:31:11,371] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:32', 'FOLD_NUM': 2}, 'job_name': 'mmpretrain-job-um-32-2'}
+[2024-04-02 08:31:11,372] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:31:11,372] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:31:11,372] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:31:11,372] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:31:11,372] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-32-2
+[2024-04-02 08:31:11,786] (INFO):: Successfully created job: mmpretrain-job-um-32-2
+[2024-04-02 08:31:11,787] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:32', 'FOLD_NUM': 3}, 'job_name': 'mmpretrain-job-um-32-3'}
+[2024-04-02 08:31:11,787] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:31:11,787] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:31:11,787] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:31:11,787] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:31:11,787] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-32-3
+[2024-04-02 08:31:12,138] (INFO):: Successfully created job: mmpretrain-job-um-32-3
+[2024-04-02 08:31:12,138] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:32', 'FOLD_NUM': 4}, 'job_name': 'mmpretrain-job-um-32-4'}
+[2024-04-02 08:31:12,138] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:31:12,139] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:31:12,139] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:31:12,139] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:31:12,139] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-32-4
+[2024-04-02 08:31:12,479] (INFO):: Successfully created job: mmpretrain-job-um-32-4
+[2024-04-02 08:35:34,013] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 16, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 0}, 'job_name': 'mmpretrain-job-um-0'}
+[2024-04-02 08:35:34,013] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:35:34,013] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:35:34,013] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:35:34,013] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:35:34,013] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-0
+[2024-04-02 08:35:34,652] (INFO):: Successfully created job: mmpretrain-job-um-0
+[2024-04-02 08:35:34,652] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 16, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1}, 'job_name': 'mmpretrain-job-um-1'}
+[2024-04-02 08:35:34,653] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:35:34,653] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:35:34,653] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:35:34,653] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:35:34,653] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-1
+[2024-04-02 08:35:35,151] (INFO):: Successfully created job: mmpretrain-job-um-1
+[2024-04-02 08:35:35,152] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 16, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2}, 'job_name': 'mmpretrain-job-um-2'}
+[2024-04-02 08:35:35,152] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:35:35,152] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:35:35,152] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:35:35,152] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:35:35,153] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-2
+[2024-04-02 08:35:35,562] (INFO):: Successfully created job: mmpretrain-job-um-2
+[2024-04-02 08:35:35,562] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 16, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3}, 'job_name': 'mmpretrain-job-um-3'}
+[2024-04-02 08:35:35,562] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:35:35,562] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:35:35,563] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:35:35,563] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:35:35,563] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-3
+[2024-04-02 08:35:35,891] (INFO):: Successfully created job: mmpretrain-job-um-3
+[2024-04-02 08:35:35,891] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 16, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4}, 'job_name': 'mmpretrain-job-um-4'}
+[2024-04-02 08:35:35,892] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:35:35,892] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:35:35,892] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:35:35,892] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 08:35:35,892] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-4
+[2024-04-02 08:35:36,217] (INFO):: Successfully created job: mmpretrain-job-um-4
+[2024-04-02 08:41:12,676] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 16, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10-'}
+[2024-04-02 08:41:12,676] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:41:12,676] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:41:12,677] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:41:12,677] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 08:41:12,677] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10-
+[2024-04-02 08:41:13,119] (ERROR):: Failed to create job: mmpretrain-job-c10-
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '3ff270f0-411a-4fc7-a3ee-bbf15f2ba115', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Tue, 02 Apr 2024 13:41:13 GMT', 'Transfer-Encoding': 'chunked'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Job.batch \"mmpretrain-job-c10-\" is invalid: [metadata.name: Invalid value: \"mmpretrain-job-c10-\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'), metadata.labels: Invalid value: \"mmpretrain-job-c10-\": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?'), spec.template.labels: Invalid value: \"mmpretrain-job-c10-\": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')]","reason":"Invalid","details":{"name":"mmpretrain-job-c10-","group":"batch","kind":"Job","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"mmpretrain-job-c10-\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')","field":"metadata.name"},{"reason":"FieldValueInvalid","message":"Invalid value: \"mmpretrain-job-c10-\": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')","field":"metadata.labels"},{"reason":"FieldValueInvalid","message":"Invalid value: \"mmpretrain-job-c10-\": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')","field":"metadata.labels"},{"reason":"FieldValueInvalid","message":"Invalid value: \"mmpretrain-job-c10-\": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')","field":"spec.template.labels"},{"reason":"FieldValueInvalid","message":"Invalid value: \"mmpretrain-job-c10-\": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')","field":"spec.template.labels"}]},"code":422}
+
+
+[2024-04-02 08:42:33,316] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 16, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10'}
+[2024-04-02 08:42:33,316] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-80GB-PCIe-MIG-1g.10gb']
+[2024-04-02 08:42:33,316] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 08:42:33,316] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 08:42:33,316] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 08:42:33,316] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10
+[2024-04-02 08:42:33,855] (INFO):: Successfully created job: mmpretrain-job-c10
+[2024-04-02 10:50:53,497] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10'}
+[2024-04-02 10:50:53,497] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB']
+[2024-04-02 10:50:53,497] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 10:50:53,497] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 10:50:53,498] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 10:50:53,498] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10
+[2024-04-02 10:50:53,988] (ERROR):: Failed to create job: mmpretrain-job-c10
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (409)
+Reason: Conflict
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '1c127324-0cdb-41a9-b1ae-b20f8c6b17aa', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Tue, 02 Apr 2024 15:50:53 GMT', 'Content-Length': '236'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"jobs.batch \"mmpretrain-job-c10\" already exists","reason":"AlreadyExists","details":{"name":"mmpretrain-job-c10","group":"batch","kind":"jobs"},"code":409}
+
+
+[2024-04-02 10:51:02,862] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10'}
+[2024-04-02 10:51:02,862] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB']
+[2024-04-02 10:51:02,862] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 10:51:02,862] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 10:51:02,862] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 10:51:02,862] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10
+[2024-04-02 10:51:03,330] (ERROR):: Failed to create job: mmpretrain-job-c10
+Traceback (most recent call last):
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/launcher.py", line 76, in run
+    self.nac.create_job(job)
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/nautiluslauncher/client.py", line 19, in create_job
+    return self.batchV1.create_namespaced_job(body=job(), namespace=self.namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 210, in create_namespaced_job
+    return self.create_namespaced_job_with_http_info(namespace, body, **kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api/batch_v1_api.py", line 309, in create_namespaced_job_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/api_client.py", line 391, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 279, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rchristopher/mambaforge/envs/ms_research/lib/python3.11/site-packages/kubernetes/client/rest.py", line 238, in request
+    raise ApiException(http_resp=r)
+kubernetes.client.exceptions.ApiException: (409)
+Reason: Conflict
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '6b9d5c33-2dd7-4097-aaca-d15a6fcf6597', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b4eb158a-e883-4244-b45b-b1bcc3e39179', 'X-Kubernetes-Pf-Prioritylevel-Uid': '41a18631-0918-446d-8968-193c64e8e3d8', 'Date': 'Tue, 02 Apr 2024 15:51:03 GMT', 'Content-Length': '236'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"jobs.batch \"mmpretrain-job-c10\" already exists","reason":"AlreadyExists","details":{"name":"mmpretrain-job-c10","group":"batch","kind":"jobs"},"code":409}
+
+
+[2024-04-02 10:51:19,191] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10'}
+[2024-04-02 10:51:19,191] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB']
+[2024-04-02 10:51:19,191] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 10:51:19,192] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 10:51:19,192] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 10:51:19,192] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10
+[2024-04-02 10:51:19,619] (INFO):: Successfully created job: mmpretrain-job-c10
+[2024-04-02 10:51:41,320] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 0}, 'job_name': 'mmpretrain-job-um-0'}
+[2024-04-02 10:51:41,320] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB']
+[2024-04-02 10:51:41,321] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 10:51:41,321] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 10:51:41,321] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 10:51:41,321] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-0
+[2024-04-02 10:51:41,822] (INFO):: Successfully created job: mmpretrain-job-um-0
+[2024-04-02 10:51:41,822] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1}, 'job_name': 'mmpretrain-job-um-1'}
+[2024-04-02 10:51:41,822] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB']
+[2024-04-02 10:51:41,823] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 10:51:41,823] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 10:51:41,823] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 10:51:41,823] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-1
+[2024-04-02 10:51:42,179] (INFO):: Successfully created job: mmpretrain-job-um-1
+[2024-04-02 10:51:42,179] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2}, 'job_name': 'mmpretrain-job-um-2'}
+[2024-04-02 10:51:42,179] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB']
+[2024-04-02 10:51:42,180] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 10:51:42,180] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 10:51:42,180] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 10:51:42,180] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-2
+[2024-04-02 10:51:43,152] (INFO):: Successfully created job: mmpretrain-job-um-2
+[2024-04-02 10:51:43,152] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3}, 'job_name': 'mmpretrain-job-um-3'}
+[2024-04-02 10:51:43,152] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB']
+[2024-04-02 10:51:43,153] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 10:51:43,153] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 10:51:43,153] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 10:51:43,153] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-3
+[2024-04-02 10:51:43,561] (INFO):: Successfully created job: mmpretrain-job-um-3
+[2024-04-02 10:51:43,561] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4}, 'job_name': 'mmpretrain-job-um-4'}
+[2024-04-02 10:51:43,562] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB']
+[2024-04-02 10:51:43,562] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 10:51:43,562] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 10:51:43,562] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 10:51:43,562] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-4
+[2024-04-02 10:51:43,972] (INFO):: Successfully created job: mmpretrain-job-um-4
+[2024-04-02 10:57:59,671] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 0}, 'job_name': 'mmpretrain-job-um-0'}
+[2024-04-02 10:57:59,672] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 10:57:59,672] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 10:57:59,672] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 10:57:59,672] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 10:57:59,672] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-0
+[2024-04-02 10:58:00,205] (INFO):: Successfully created job: mmpretrain-job-um-0
+[2024-04-02 10:58:00,205] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 1}, 'job_name': 'mmpretrain-job-um-1'}
+[2024-04-02 10:58:00,205] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 10:58:00,205] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 10:58:00,206] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 10:58:00,206] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 10:58:00,206] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-1
+[2024-04-02 10:58:00,611] (INFO):: Successfully created job: mmpretrain-job-um-1
+[2024-04-02 10:58:00,611] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2}, 'job_name': 'mmpretrain-job-um-2'}
+[2024-04-02 10:58:00,611] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 10:58:00,611] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 10:58:00,611] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 10:58:00,611] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 10:58:00,612] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-2
+[2024-04-02 10:58:01,009] (INFO):: Successfully created job: mmpretrain-job-um-2
+[2024-04-02 10:58:01,009] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 3}, 'job_name': 'mmpretrain-job-um-3'}
+[2024-04-02 10:58:01,010] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 10:58:01,010] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 10:58:01,010] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 10:58:01,010] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 10:58:01,011] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-3
+[2024-04-02 10:58:02,063] (INFO):: Successfully created job: mmpretrain-job-um-3
+[2024-04-02 10:58:02,063] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 4}, 'job_name': 'mmpretrain-job-um-4'}
+[2024-04-02 10:58:02,063] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 10:58:02,063] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 10:58:02,064] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 10:58:02,064] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 10:58:02,064] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-4
+[2024-04-02 10:58:02,454] (INFO):: Successfully created job: mmpretrain-job-um-4
+[2024-04-02 10:58:09,236] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10'}
+[2024-04-02 10:58:09,236] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 10:58:09,236] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 10:58:09,236] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 10:58:09,236] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 10:58:09,237] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10
+[2024-04-02 10:58:09,728] (INFO):: Successfully created job: mmpretrain-job-c10
+[2024-04-02 11:29:23,943] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 64, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10'}
+[2024-04-02 11:29:23,943] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 11:29:23,943] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 11:29:23,943] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 11:29:23,943] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 11:29:23,943] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10
+[2024-04-02 11:29:24,435] (INFO):: Successfully created job: mmpretrain-job-c10
+[2024-04-02 12:12:16,766] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 64, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10'}
+[2024-04-02 12:12:16,766] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 12:12:16,766] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 12:12:16,767] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 12:12:16,767] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 12:12:16,767] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10
+[2024-04-02 12:12:17,213] (INFO):: Successfully created job: mmpretrain-job-c10
+[2024-04-02 12:14:31,686] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 64, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2}, 'job_name': 'mmpretrain-job-um-2'}
+[2024-04-02 12:14:31,687] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 12:14:31,687] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 12:14:31,687] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 12:14:31,687] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 12:14:31,687] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-2
+[2024-04-02 12:14:32,327] (INFO):: Successfully created job: mmpretrain-job-um-2
+[2024-04-02 12:14:57,592] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'UCMerced_Landuse', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128', 'FOLD_NUM': 2}, 'job_name': 'mmpretrain-job-um-2'}
+[2024-04-02 12:14:57,592] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 12:14:57,592] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 12:14:57,592] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 12:14:57,592] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF', 'FOLD_NUM']
+[2024-04-02 12:14:57,592] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-um-2
+[2024-04-02 12:14:58,044] (INFO):: Successfully created job: mmpretrain-job-um-2
+[2024-04-02 13:03:48,371] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 32, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10'}
+[2024-04-02 13:03:48,371] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 13:03:48,371] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 13:03:48,371] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 13:03:48,372] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 13:03:48,372] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10
+[2024-04-02 13:03:48,859] (INFO):: Successfully created job: mmpretrain-job-c10
+[2024-04-02 13:32:05,025] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 24, 'max_ram': 36, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 512, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:512'}, 'job_name': 'mmpretrain-job-c10-512'}
+[2024-04-02 13:32:05,025] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 13:32:05,026] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 13:32:05,026] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 13:32:05,026] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 13:32:05,026] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10-512
+[2024-04-02 13:32:05,516] (INFO):: Successfully created job: mmpretrain-job-c10-512
+[2024-04-02 16:02:18,836] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 64, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'affinity': {'node_affinity': {'preferred_during_scheduling_ignored_during_execution': None,
+                   'required_during_scheduling_ignored_during_execution': {'node_selector_terms': [{'match_expressions': [{'key': 'nvidia.com/gpu.product',
+                                                                                                                           'operator': 'In',
+                                                                                                                           'values': ['NVIDIA-A100-SXM4-80GB',
+                                                                                                                                      'NVIDIA-A40',
+                                                                                                                                      'NVIDIA-A100-80GB-PCIe',
+                                                                                                                                      'NVIDIA-RTX-A4000']},
+                                                                                                                          {'key': 'zone',
+                                                                                                                           'operator': 'NotIn',
+                                                                                                                           'values': ['sdsc']}],
+                                                                                                    'match_fields': None}]}},
+ 'pod_affinity': None,
+ 'pod_anti_affinity': None}, 'job_name': 'mmpretrain-job-c10-512'}
+[2024-04-02 16:14:12,569] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 64, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10', 'affinity': {'node_affinity': {'preferred_during_scheduling_ignored_during_execution': None,
+                   'required_during_scheduling_ignored_during_execution': {'node_selector_terms': [{'match_expressions': [{'key': 'nvidia.com/gpu.product',
+                                                                                                                           'operator': 'In',
+                                                                                                                           'values': ['NVIDIA-A100-SXM4-80GB',
+                                                                                                                                      'NVIDIA-A40',
+                                                                                                                                      'NVIDIA-A100-80GB-PCIe',
+                                                                                                                                      'NVIDIA-RTX-A4000']},
+                                                                                                                          {'key': 'zone',
+                                                                                                                           'operator': 'NotIn',
+                                                                                                                           'values': ['sdsc']}],
+                                                                                                    'match_fields': None}]}},
+ 'pod_affinity': None,
+ 'pod_anti_affinity': None}}
+[2024-04-02 16:18:43,065] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 64, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10-512'}
+[2024-04-02 16:18:43,066] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 16:18:43,066] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 16:18:43,066] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 16:18:43,066] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 16:18:43,066] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10-512
+[2024-04-02 16:18:43,612] (INFO):: Successfully created job: mmpretrain-job-c10-512
+[2024-04-02 16:29:39,313] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 64, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10'}
+[2024-04-02 16:29:39,313] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 16:29:39,314] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 16:29:39,314] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 16:29:39,314] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 16:29:39,314] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10
+[2024-04-02 16:29:39,790] (INFO):: Successfully created job: mmpretrain-job-c10
+[2024-04-02 16:32:09,220] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 64, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10'}
+[2024-04-02 16:32:09,220] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 16:32:09,220] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 16:32:09,221] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 16:32:09,221] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 16:32:09,221] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10
+[2024-04-02 16:32:09,701] (INFO):: Successfully created job: mmpretrain-job-c10
+[2024-04-02 16:34:06,411] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 64, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10'}
+[2024-04-02 16:34:06,411] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 16:34:06,411] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 16:34:06,411] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 16:34:06,412] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 16:34:06,412] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10
+[2024-04-02 16:34:06,810] (INFO):: Successfully created job: mmpretrain-job-c10
+[2024-04-02 16:36:09,957] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 64, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10'}
+[2024-04-02 16:36:09,957] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 16:36:09,957] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 16:36:09,957] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 16:36:09,957] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 16:36:09,957] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10
+[2024-04-02 16:36:10,442] (INFO):: Successfully created job: mmpretrain-job-c10
+[2024-04-02 16:39:45,006] (DEBUG):: {'image': 'rchristopher27/rc-research-image:mmpretrain2', 'command': ['python3', '/rchristopher/data/src/code/mmpretrain_config_runner.py'], 'workingDir': '/rchristopher/data', 'volumes': {'rc-large-pvc': '/rchristopher/data'}, 'shm': True, 'min_cpu': 2, 'max_cpu': 4, 'min_ram': 12, 'max_ram': 18, 'gpu': 1, 'gpu_types': ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000'], 'env': {'NUM_EPOCHS': 100, 'DATA_NAME': 'CIFAR10', 'MILESTONES': [10, 25, 50], 'VISUALIZE': True, 'OPTIMIZER': 'SGD', 'LEARNING_RATE': 0.001, 'BATCH_SIZE': 64, 'PYTORCH_CUDA_ALLOC_CONF': 'max_split_size_mb:128'}, 'job_name': 'mmpretrain-job-c10'}
+[2024-04-02 16:39:45,007] (DEBUG):: Found gpu_types and GPU > 0. Setting node affinity: ['NVIDIA-A100-SXM4-80GB', 'NVIDIA-A40', 'NVIDIA-A100-80GB-PCIe', 'NVIDIA-RTX-A4000']
+[2024-04-02 16:39:45,007] (DEBUG):: Found volumes for this job. Mounting PVCs: ['rc-large-pvc']
+[2024-04-02 16:39:45,007] (DEBUG):: Found shm = True. Adding dshm volume for PyTorch
+[2024-04-02 16:39:45,007] (DEBUG):: Found environment variables. Adding to container: ['NUM_EPOCHS', 'DATA_NAME', 'MILESTONES', 'VISUALIZE', 'OPTIMIZER', 'LEARNING_RATE', 'BATCH_SIZE', 'PYTORCH_CUDA_ALLOC_CONF']
+[2024-04-02 16:39:45,007] (DEBUG):: Creating job in namespace gp-engine-mu-hpdi-christopher with batchV1 API: mmpretrain-job-c10
+[2024-04-02 16:39:45,508] (INFO):: Successfully created job: mmpretrain-job-c10

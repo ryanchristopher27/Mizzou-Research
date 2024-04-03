@@ -17,7 +17,12 @@ Mizzou Master's Research
     kubectl cp mmpretrain_configs rc-large-pvc-pod:/rchristopher/data/src/
     ```
     Code
-    ```
+                  
+                  
+                  
+                  
+                  
+   ```
     kubectl cp code rc-large-pvc-pod:/rchristopher/data/src/
     ```
 
