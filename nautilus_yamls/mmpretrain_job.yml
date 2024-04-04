@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: mmpretrain-job-new
+  name: mmpretrain-job
 spec:
   template:
     spec:
@@ -30,11 +30,11 @@ spec:
           resources:
             limits:
               memory: 24Gi
-              cpu: 4
+              cpu: 12
               nvidia.com/gpu: '1'
             requests:
               memory: 16Gi
-              cpu: 2
+              cpu: 8
               nvidia.com/gpu: '1'
           volumeMounts:
             - name: rc-large-pvc
