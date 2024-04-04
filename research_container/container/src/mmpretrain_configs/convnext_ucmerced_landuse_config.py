@@ -68,16 +68,16 @@ optim_wrapper=dict(
 
 # max_epochs = 200
 train_cfg=dict(_delete_= True, max_epochs=NUM_EPOCHS, type="EpochBasedTrainLoop")
-param_scheduler = [
-    dict(
-        type="MultiStepLR",
-        begin=0,
-        end=NUM_EPOCHS,
-        by_epoch=True,
-        milestones=MILESTONES,
-        gamma=0.1
-    )
-]
+# param_scheduler = [
+#     dict(
+#         type="MultiStepLR",
+#         begin=0,
+#         end=NUM_EPOCHS,
+#         by_epoch=True,
+#         milestones=MILESTONES,
+#         gamma=0.1
+#     )
+# ]
 
 visualization=dict(type='VisualizationHook', enable=VISUALIZE),
 
