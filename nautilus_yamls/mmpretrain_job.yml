@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: mmpretrain-job-3
+  name: mmpretrain-job
 spec:
   template:
     spec:
@@ -30,11 +30,11 @@ spec:
           resources:
             limits:
               memory: 24Gi
-              cpu: 4
+              cpu: 12
               nvidia.com/gpu: '1'
             requests:
               memory: 16Gi
-              cpu: 2
+              cpu: 8
               nvidia.com/gpu: '1'
           volumeMounts:
             - name: rc-large-pvc
@@ -54,19 +54,33 @@ spec:
             - weight: 1
               preference:
                 matchExpressions:
-                  - key: nvidia.com/gpu.product
+                  # - key: nvidia.com/gpu.product
+                  #   operator: In
+                  #   values:
+                  #     - NVIDIA-A100-SXM4-80GB
+                  #     - NVIDIA-A40
+                  #     - NVIDIA-A100-80GB-PCIe
+                  #     - NVIDIA-RTX-A4000
+                  - key: toplogy.kubernetes.io/region
                     operator: In
                     values:
-                      - "NVIDIA-A100-SXM4-80GB"
-                      - "NVIDIA-A40"
-                      - "NVIDIA-A100-80GB-PCIe"
-                      - "NVIDIA-RTX-A4000"
+                      - us-central
+                      - us-east
+                      - us-west
+                      - us-mountain
                   - key: topology.kubernetes.io/zone
                     operator: NotIn
                     values:
-                      - "ucsd-nrp"
-                      - "ucsd"
-                      - "ucsd-sdsc"
-                      - "ucsd-sdsc-yu"
+                      - ucsd-nrp
+                      - ucsd
+                      - ucsd-sdsc
+                      - ucsd-sdsc-yu
+                      - sdsu-rci
+                  - key: kubernetes.io/hostname
+                    operator: NotIn
+                    values:
+                      - rci-nrp-gpu-07.sdsu.edu
+                      - rincewind.crbs.ucsd.edu
+                      - node-2-1.sdsc.optiputer.net
       restartPolicy: Never
   backoffLimit: 1

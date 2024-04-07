@@ -71,16 +71,16 @@ optim_wrapper=dict(
 
 train_cfg=dict(_delete_= True, max_epochs=NUM_EPOCHS, type="EpochBasedTrainLoop", val_interval=1)
 
-param_scheduler = [
-    dict(
-        type="MultiStepLR",
-        begin=0,
-        end=NUM_EPOCHS,
-        by_epoch=True,
-        milestones=MILESTONES,
-        gamma=0.1
-    )
-]
+# param_scheduler = [
+#     dict(
+#         type="MultiStepLR",
+#         begin=0,
+#         end=NUM_EPOCHS,
+#         by_epoch=True,
+#         milestones=MILESTONES,
+#         gamma=0.1
+#     )
+# ]
 
 default_hooks = dict(
     checkpoint=dict(type='CheckpointHook', interval=10),
