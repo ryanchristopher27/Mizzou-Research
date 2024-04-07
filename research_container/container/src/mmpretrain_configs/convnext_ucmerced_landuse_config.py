@@ -34,9 +34,15 @@ data_preprocessor = dict(num_classes=num_classes)
 
 train_pipeline = [
     {'type': 'LoadImageFromFile'},
-    # {'type': 'RandomFlip', 'prob': 0.5, 'direction': 'horizontal'},
+    {'type': 'Resize', 'scale': 224},
+    {'type': 'CenterCrop', 'crop_size': 224},
+    {'type': 'Normalize', 'mean': [0.485, 0.456, 0.406], 'std': [0.229, 0.224, 0.225]},
     {'type': 'PackInputs'}
 ]
+# train_pipeline = [
+#     {'type': 'LoadImageFromFile'},
+#     {'type': 'PackInputs'}
+# ]
 
 model = dict(
     head=dict(
