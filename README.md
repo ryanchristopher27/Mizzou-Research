@@ -36,7 +36,7 @@ Mizzou Master's Research
     kubectl exec -it rc-large-pvc-pod -- /bin/bash
     ```
 
-- Analysis Took
+- Analysis Tool
     ```console
     cd /Mizzou-Research/research_container/container/src/mmpretrain
     ```

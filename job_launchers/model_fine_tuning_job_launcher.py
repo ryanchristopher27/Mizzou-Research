@@ -1,12 +1,14 @@
 from nautiluslauncher import NautilusJobLauncher
 
 namespace = "gp-engine-mu-hpdi-christopher"
-job_prefix = "dl-"
+job_prefix = "ft-"
 command = ["python3", "/rchristopher/data/src/code/Assorted_DL_Analysis.py"]
 image = "rchristopher27/rc-research-image:generic1"
 pvc_name = "rc-large-pvc"
 
 NUM_FOLDS = 5
+
+dataset = "ucmerced_landuse"
 
 defaults = dict(
     image=image,
@@ -25,50 +27,47 @@ defaults = dict(
         TORCH_NUM_EPOCHS=100,
         TORCH_NUM_FOLDS=NUM_FOLDS,
         WRITE_RESULTS=True,
-        OPTIMIZER="SGD",
+        TORCH_MODEL_NAME="resnet18",
+        TORCH_DATA_NAME=dataset,
+        # OPTIMIZER="SGD",
         LOSS_FUNCTION="CrossEntropy",
         BATCH_SIZE=32,
-        LEARNING_RATE=0.001,
+        # LEARNING_RATE=0.001,
         PYTORCH_CUDA_ALLOC_CONF="max_split_size_mb:128",
         ),
 )
 
 
 # =====================================================================
-# Multiple Jobs Based on Above Models/Datasets
+# Multiple Jobs Based on Different Hyperparameters
 # =====================================================================
-models = ["resnet18", "resnet50", "vit_b_16", "vit_b_32"]
-datasets = ["ucmerced_landuse"] # ['cifar10', 'ucmerced_landuse']
-
-learning_rates = [0.1, 0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001]
+learning_rates = [0.1, 0.01, 0.001, 0.0001]
 optimizers = ["SGD", "Adam", "AdamW"]
 
 jobs = []
 job_counter = 1
-for model in models:
-    for dataset in datasets:
-        if dataset == "cifar10":
+for lr in learning_rates:
+    for optimizer in optimizers:
+        if dataset == "ucmerced_landuse":
+            for fold in range(NUM_FOLDS):
+                temp_dict = dict(job_name=job_prefix + str(job_counter) + "-" + str(fold+1), env=dict(
+                    FOLD_NUM=fold+1,
+                ))
+
+                jobs.append(temp_dict)
+
+                job_counter += 1
+
+        elif dataset == "cifar10":
             temp_dict = dict(job_name=job_prefix + str(job_counter), env=dict(
                 FOLD_NUM=1,
-                TORCH_MODEL_NAME=model,
                 TORCH_DATA_NAME=dataset,
             ))
 
             jobs.append(temp_dict)
 
             job_counter += 1
-        
-        elif dataset == "ucmerced_landuse":
-            for fold in range(NUM_FOLDS):
-                temp_dict = dict(job_name=job_prefix + model.replace("_", "-") + "-" + str(fold+1), env=dict(
-                    FOLD_NUM=fold+1,
-                    TORCH_MODEL_NAME=model,
-                    TORCH_DATA_NAME=dataset,
-                ))
-
-                jobs.append(temp_dict)
-
-                job_counter += 1
+    
 
 # =====================================================================
 # K-Fold Jobs
@@ -100,4 +99,4 @@ launcher = NautilusJobLauncher(
 
 # print(launcher.jobs)
 
-launcher.run()
+launcher.run() 
