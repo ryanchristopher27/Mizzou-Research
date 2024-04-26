@@ -35,9 +35,16 @@ data_preprocessor = dict(num_classes=num_classes)
 #     to_rgb=True,
 # )
 
+# train_pipeline = [
+#     {'type': 'LoadImageFromFile'},
+#     # {'type': 'RandomFlip', 'prob': 0.5, 'direction': 'horizontal'},
+#     {'type': 'PackInputs'}
+# ]
 train_pipeline = [
     {'type': 'LoadImageFromFile'},
-    # {'type': 'RandomFlip', 'prob': 0.5, 'direction': 'horizontal'},
+    {'type': 'Resize', 'scale': 224},
+    {'type': 'CenterCrop', 'crop_size': 224},
+    {'type': 'Normalize', 'mean': [0.485, 0.456, 0.406], 'std': [0.229, 0.224, 0.225]},
     {'type': 'PackInputs'}
 ]
 
@@ -54,7 +61,7 @@ train_dataloader = dict(
         type=data_type,
         data_root=data_root,
         data_prefix="train",
-        # with_label=True,
+        with_label=True,
         pipeline=train_pipeline
     )
 )
@@ -82,10 +89,49 @@ train_cfg=dict(_delete_= True, max_epochs=NUM_EPOCHS, type="EpochBasedTrainLoop"
 #     )
 # ]
 
+# ====================================================
+# New Param Scheduler from Keli
+param_scheduler = [
+    # warm up learning rate scheduler
+    dict(
+        type='LinearLR',
+        start_factor=1e-3,
+        by_epoch=True,
+        end=NUM_EPOCHS,
+        # update by iter
+        convert_to_iter_based=True),
+    # main learning rate scheduler
+    dict(type='CosineAnnealingLR', eta_min=1e-5, by_epoch=True, begin=20)
+]
+# ====================================================
+
+# default_hooks = dict(
+#     checkpoint=dict(type='CheckpointHook', interval=-1),
+#     visualization=dict(type='VisualizationHook', enable=VISUALIZE),
+# )
+
+# ====================================================
+# Default Hooks from Keli
 default_hooks = dict(
-    checkpoint=dict(type='CheckpointHook', interval=10),
-    visualization=dict(type='VisualizationHook', enable=VISUALIZE),
+    # record the time of every iteration.
+    timer=dict(type='IterTimerHook'),
+
+    # print log every 100 iterations.
+    logger=dict(type='LoggerHook', interval=100),
+
+    # enable the parameter scheduler.
+    param_scheduler=dict(type='ParamSchedulerHook'),
+
+    # save checkpoint per epoch.
+    checkpoint=dict(type='CheckpointHook', interval=1, max_keep_ckpts=3),
+
+    # set sampler seed in distributed evrionment.
+    sampler_seed=dict(type='DistSamplerSeedHook'),
+
+    # validation results visualization, set True to enable it.
+    visualization=dict(type='VisualizationHook', enable=False),
 )
+# ====================================================
 
 
 work_dir = "/rchristopher/data/src/mmpretrain_results/cifar10/convnext/"
@@ -98,13 +144,13 @@ val_dataloader = dict(
         type=data_type,
         data_root=data_root,
         data_prefix="test",
-        # with_label=True,
+        with_label=True,
         pipeline=train_pipeline
     )
 )
 
 val_evaluator = [
-    dict(type='Accuracy', topk=(1, 5)),
+    dict(type='Accuracy', topk=(1)),
     dict(type='ConfusionMatrix', num_classes=num_classes),
 ]
 
