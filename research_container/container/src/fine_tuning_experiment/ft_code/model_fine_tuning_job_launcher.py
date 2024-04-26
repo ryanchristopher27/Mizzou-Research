@@ -50,14 +50,15 @@ for lr in learning_rates:
     for optimizer in optimizers:
         if dataset == "ucmerced_landuse":
             for fold in range(NUM_FOLDS):
-                if job_counter == 41:
-                    temp_dict = dict(job_name=job_prefix + str(job_counter) + "-" + str(fold+1), env=dict(
-                        FOLD_NUM=fold+1,
-                        OPTIMIZER=optimizer,
-                        LEARNING_RATE=lr,
-                    ))
+                # if job_counter == 41: # Used for single run
+                temp_dict = dict(job_name=job_prefix + str(job_counter) + "-" + str(fold+1), env=dict(
+                    FOLD_NUM=fold+1,
+                    OPTIMIZER=optimizer,
+                    LEARNING_RATE=lr,
+                    EXPERIMENT=job_counter,
+                ))
 
-                    jobs.append(temp_dict)
+                jobs.append(temp_dict)
 
                 job_counter += 1
 
