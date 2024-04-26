@@ -1,0 +1,100 @@
+{
+    "Experiments": [
+        {
+            "Results": {
+                "Accuracy": "94.7619%",
+                "Precision": "94.3052%",
+                "Recall": "94.9395%",
+                "F-1_Score": "94.4958%",
+                "Best_Epoch": {
+                    "epoch": 70,
+                    "train_loss": "0.0026",
+                    "val_loss": "0.1768",
+                    "train_accuracy": "99.0566%",
+                    "val_accuracy": "89.7321%"
+                },
+                "Hyper_Parameters": {
+                    "Epochs": 100,
+                    "Optimizer": "AdamW",
+                    "Loss_Function": "CrossEntropy",
+                    "Batch_Size": 32,
+                    "Learning_Rate": 0.001
+                }
+            },
+            "Fold_Number": 2,
+            "Experiment_ID": 0
+        },
+        {
+            "Results": {
+                "Accuracy": "71.4286%",
+                "Precision": "70.2762%",
+                "Recall": "75.7053%",
+                "F-1_Score": "70.5127%",
+                "Best_Epoch": {
+                    "epoch": 48,
+                    "train_loss": "0.0117",
+                    "val_loss": "0.9809",
+                    "train_accuracy": "98.8797%",
+                    "val_accuracy": "76.3393%"
+                },
+                "Hyper_Parameters": {
+                    "Epochs": 100,
+                    "Optimizer": "Adam",
+                    "Loss_Function": "CrossEntropy",
+                    "Batch_Size": 32,
+                    "Learning_Rate": 0.01
+                }
+            },
+            "Fold_Number": 2,
+            "Experiment_ID": 1
+        },
+        {
+            "Results": {
+                "Accuracy": "96.1905%",
+                "Precision": "95.8307%",
+                "Recall": "96.3083%",
+                "F-1_Score": "95.9416%",
+                "Best_Epoch": {
+                    "epoch": 68,
+                    "train_loss": "0.0007",
+                    "val_loss": "0.1364",
+                    "train_accuracy": "99.0566%",
+                    "val_accuracy": "90.4018%"
+                },
+                "Hyper_Parameters": {
+                    "Epochs": 100,
+                    "Optimizer": "Adam",
+                    "Loss_Function": "CrossEntropy",
+                    "Batch_Size": 32,
+                    "Learning_Rate": 0.001
+                }
+            },
+            "Fold_Number": 2,
+            "Experiment_ID": 2
+        },
+        {
+            "Results": {
+                "Accuracy": "98.8095%",
+                "Precision": "98.7349%",
+                "Recall": "98.7571%",
+                "F-1_Score": "98.7061%",
+                "Best_Epoch": {
+                    "epoch": 22,
+                    "train_loss": "0.0007",
+                    "val_loss": "0.0367",
+                    "train_accuracy": "99.0566%",
+                    "val_accuracy": "92.8571%"
+                },
+                "Hyper_Parameters": {
+                    "Epochs": 100,
+                    "Optimizer": "SGD",
+                    "Loss_Function": "CrossEntropy",
+                    "Batch_Size": 32,
+                    "Learning_Rate": 0.01
+                }
+            },
+            "Fold_Number": 2,
+            "Experiment_ID": 3
+        }
+    ]
+}
