@@ -224,6 +224,7 @@ def main():
         os.makedirs(file_path)
 
     file_name = f"{TORCH_MODEL_NAME}_{TORCH_DATA_NAME}_results.json"
+    csv_file_name = f"{TORCH_MODEL_NAME}_{TORCH_DATA_NAME}_results.csv"
 
     previous_data = read_json_from_file(file_path + file_name)
 
