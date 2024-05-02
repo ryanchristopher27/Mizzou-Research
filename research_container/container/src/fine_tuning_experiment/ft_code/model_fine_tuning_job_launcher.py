@@ -2,8 +2,8 @@ from nautiluslauncher import NautilusJobLauncher
 
 namespace = "gp-engine-mu-hpdi-christopher"
 job_prefix = "ft-"
-command = ["python3", "/rchristopher/data/src/code/Assorted_DL_Analysis.py"]
-image = "rchristopher27/rc-research-image:generic1"
+command = ["python3", "/rchristopher/data/src/fine_tuning_experiment/ft_code/fine_tuning_experiment.py"]
+image = "rchristopher27/rc-research-image:finetuning1"
 pvc_name = "rc-large-pvc"
 
 NUM_FOLDS = 5
@@ -16,8 +16,8 @@ defaults = dict(
     workingDir="/rchristopher/data",
     volumes={pvc_name: "/rchristopher/data"},
     shm=True,
-    min_cpu=2,
-    max_cpu=4,
+    min_cpu=8,
+    max_cpu=10,
     min_ram=12,
     max_ram=18,
     gpu=1,
@@ -27,7 +27,7 @@ defaults = dict(
         TORCH_NUM_EPOCHS=100,
         TORCH_NUM_FOLDS=NUM_FOLDS,
         WRITE_RESULTS=True,
-        TORCH_MODEL_NAME="resnet18",
+        TORCH_MODEL_NAME="vit_b_16",
         TORCH_DATA_NAME=dataset,
         # OPTIMIZER="SGD",
         LOSS_FUNCTION="CrossEntropy",
@@ -41,8 +41,10 @@ defaults = dict(
 # =====================================================================
 # Multiple Jobs Based on Different Hyperparameters
 # =====================================================================
-learning_rates = [0.1, 0.01, 0.001, 0.0001]
+learning_rates = [0.01, 0.001, 0.0001, 0.00001]
 optimizers = ["SGD", "Adam", "AdamW"]
+
+run_all = False
 
 jobs = []
 job_counter = 1
@@ -50,15 +52,15 @@ for lr in learning_rates:
     for optimizer in optimizers:
         if dataset == "ucmerced_landuse":
             for fold in range(NUM_FOLDS):
-                # if job_counter == 41: # Used for single run
-                temp_dict = dict(job_name=job_prefix + str(job_counter) + "-" + str(fold+1), env=dict(
-                    FOLD_NUM=fold+1,
-                    OPTIMIZER=optimizer,
-                    LEARNING_RATE=lr,
-                    EXPERIMENT=job_counter,
-                ))
+                if job_counter in [4] or run_all: # Used for single run
+                    temp_dict = dict(job_name=job_prefix + str(job_counter) + "-" + str(fold+1), env=dict(
+                        FOLD_NUM=fold+1,
+                        OPTIMIZER=optimizer,
+                        LEARNING_RATE=lr,
+                        EXPERIMENT=job_counter,
+                    ))
+                    jobs.append(temp_dict)
 
-                jobs.append(temp_dict)
 
                 job_counter += 1
 

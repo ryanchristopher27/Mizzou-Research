@@ -9,6 +9,7 @@ from sklearn import metrics
 from sklearn.metrics import precision_recall_fscore_support as evaluate
 import json
 import time
+import csv
 
 from utils.utils import *
 from utils.data import *
@@ -217,9 +218,9 @@ def main():
     }
 
     if kfold:
-        results["Fold_Number"] = FOLD_NUM
+        results["Results"]["Fold_Number"] = FOLD_NUM
 
-    file_path = f"/rchristopher/data/src/ft_results/"
+    file_path = f"/rchristopher/data/src/fine_tuning_experiment/ft_results/"
     if not os.path.exists(file_path):
         os.makedirs(file_path)
 
@@ -231,6 +232,15 @@ def main():
     previous_data['Experiments'].append(results)
 
     data = previous_data
+
+    fieldnames = list(results["Results"].keys())
+    file_exists = os.path.isfile(file_path + csv_file_name)
+    with open(file_path + csv_file_name, mode="a", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        if not file_exists:
+            writer.writeheader()
+
+        writer.writerow(results["Results"])
 
     # if not os.path.exists(file_path + '/plots'):
     #     os.makedirs(file_path + '/plots')

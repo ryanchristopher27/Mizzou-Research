@@ -6,13 +6,14 @@ COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt && apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
-COPY . .
+# COPY . .
 
 # COPY src/data src/data
-# COPY src/mmpretrain src/mmpretrain
 
-# COPY src/results src/results
+COPY src/mmpretrain src/mmpretrain
 
-# COPY src/mmpretrain_configs src/mmpretrain_configs
+COPY src/mmpretrain_configs src/mmpretrain_configs
 
-# COPY src/code src/code
+COPY src/code src/code
+
+COPY src/fine_tuning_experiment src/fine_tuning_experiment

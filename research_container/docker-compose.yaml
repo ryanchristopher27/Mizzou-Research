@@ -6,6 +6,10 @@ services:
     image: rchristopher27/rc-research-image:finetuning1
     build:
       context: container
-    command: "python3 /rchristopher/data/src/fine_tuning_experiment/ft_code/find_tuning_experiment.py"
+    # command: "ls"
+    # command: "/rchristopher/data/"
+    command: "python3 /rchristopher/data/src/fine_tuning_experiment/ft_code/fine_tuning_experiment.py"
+
+
     # command: "python3 /rchristopher/data/src/code/Assorted_DL_Analysis.py"
     # command: "python3 /rchristopher/data/src/code/mmpretrain_config_runner.py"

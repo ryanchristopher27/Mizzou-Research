@@ -1,0 +1,214 @@
+{
+    "Experiments": [
+        {
+            "Results": {
+                "Experiment": 25,
+                "Optimizer": "Adam",
+                "Learning_Rate": 0.01,
+                "Batch_Size": 32,
+                "Accuracy": 0.7047619047619048,
+                "Precision": 0.7305324670607443,
+                "Recall": 0.7534586547014295,
+                "F1": 0.7085209309161152,
+                "Execution_Time": 571.1386408805847
+            },
+            "Fold_Number": 5
+        },
+        {
+            "Results": {
+                "Experiment": 40,
+                "Optimizer": "Adam",
+                "Learning_Rate": 0.001,
+                "Batch_Size": 32,
+                "Accuracy": 0.9452380952380952,
+                "Precision": 0.9480680999873001,
+                "Recall": 0.9444654511597764,
+                "F1": 0.945047192342228,
+                "Execution_Time": 521.528088092804
+            },
+            "Fold_Number": 5
+        },
+        {
+            "Results": {
+                "Experiment": 2,
+                "Optimizer": "SGD",
+                "Learning_Rate": 0.1,
+                "Batch_Size": 32,
+                "Accuracy": 0.8047619047619048,
+                "Precision": 0.7929597057678289,
+                "Recall": 0.8165097384341147,
+                "F1": 0.7950158567656955,
+                "Execution_Time": 581.8376016616821
+            },
+            "Fold_Number": 2
+        },
+        {
+            "Results": {
+                "Experiment": 13,
+                "Optimizer": "AdamW",
+                "Learning_Rate": 0.1,
+                "Batch_Size": 32,
+                "Accuracy": 0.638095238095238,
+                "Precision": 0.6236364653966042,
+                "Recall": 0.6898290019216311,
+                "F1": 0.622030492745695,
+                "Execution_Time": 589.6774604320526
+            },
+            "Fold_Number": 3
+        },
+        {
+            "Results": {
+                "Experiment": 56,
+                "Optimizer": "AdamW",
+                "Learning_Rate": 0.0001,
+                "Batch_Size": 32,
+                "Accuracy": 0.9833333333333333,
+                "Precision": 0.9807967631497043,
+                "Recall": 0.9811469032057267,
+                "F1": 0.9802538148440044,
+                "Execution_Time": 568.5132277011871
+            },
+            "Fold_Number": 1
+        },
+        {
+            "Results": {
+                "Experiment": 59,
+                "Optimizer": "AdamW",
+                "Learning_Rate": 0.0001,
+                "Batch_Size": 32,
+                "Accuracy": 0.9857142857142858,
+                "Precision": 0.9861628709454796,
+                "Recall": 0.9889002267573697,
+                "F1": 0.9869401491257066,
+                "Execution_Time": 369.6005804538727
+            },
+            "Fold_Number": 4
+        },
+        {
+            "Results": {
+                "Experiment": 5,
+                "Optimizer": "SGD",
+                "Learning_Rate": 0.1,
+                "Batch_Size": 32,
+                "Accuracy": 0.780952380952381,
+                "Precision": 0.7971097379771239,
+                "Recall": 0.7869531907916547,
+                "F1": 0.7864267968392634,
+                "Execution_Time": 632.3907849788666
+            },
+            "Fold_Number": 5
+        },
+        {
+            "Results": {
+                "Experiment": 37,
+                "Optimizer": "Adam",
+                "Learning_Rate": 0.001,
+                "Batch_Size": 32,
+                "Accuracy": 0.9619047619047619,
+                "Precision": 0.9591536109393252,
+                "Recall": 0.9603266482123106,
+                "F1": 0.9587426547471762,
+                "Execution_Time": 608.006484746933
+            },
+            "Fold_Number": 2
+        },
+        {
+            "Results": {
+                "Experiment": 3,
+                "Optimizer": "SGD",
+                "Learning_Rate": 0.1,
+                "Batch_Size": 32,
+                "Accuracy": 0.7952380952380952,
+                "Precision": 0.8000927664062484,
+                "Recall": 0.7931853562094124,
+                "F1": 0.7888353017503356,
+                "Execution_Time": 742.1865193843842
+            },
+            "Fold_Number": 3
+        },
+        {
+            "Results": {
+                "Experiment": 9,
+                "Optimizer": "Adam",
+                "Learning_Rate": 0.1,
+                "Batch_Size": 32,
+                "Accuracy": 0.6404761904761904,
+                "Precision": 0.6422032317876306,
+                "Recall": 0.6596430010501434,
+                "F1": 0.6360225736794479,
+                "Execution_Time": 742.624053478241
+            },
+            "Fold_Number": 4
+        },
+        {
+            "Results": {
+                "Experiment": 20,
+                "Optimizer": "SGD",
+                "Learning_Rate": 0.01,
+                "Batch_Size": 32,
+                "Accuracy": 0.9714285714285714,
+                "Precision": 0.9728918958887904,
+                "Recall": 0.971239274465081,
+                "F1": 0.9706814785678358,
+                "Execution_Time": 747.2306485176086
+            },
+            "Fold_Number": 5
+        },
+        {
+            "Results": {
+                "Experiment": 15,
+                "Optimizer": "AdamW",
+                "Learning_Rate": 0.1,
+                "Batch_Size": 32,
+                "Accuracy": 0.5595238095238095,
+                "Precision": 0.5800517306137334,
+                "Recall": 0.6269507953585481,
+                "F1": 0.5578062523096072,
+                "Execution_Time": 758.9650740623474
+            },
+            "Fold_Number": 5
+        },
+        {
+            "Results": {
+                "Experiment": 23,
+                "Optimizer": "Adam",
+                "Learning_Rate": 0.01,
+                "Batch_Size": 32,
+                "Accuracy": 0.7547619047619047,
+                "Precision": 0.7605715868996834,
+                "Recall": 0.7499357968923186,
+                "F1": 0.736253806490219,
+                "Execution_Time": 747.2510106563568
+            },
+            "Fold_Number": 3
+        },
+        {
+            "Results": {
+                "Experiment": 6,
+                "Optimizer": "Adam",
+                "Learning_Rate": 0.1,
+                "Batch_Size": 32,
+                "Accuracy": 0.6547619047619048,
+                "Precision": 0.6631360163177238,
+                "Recall": 0.6677737931895659,
+                "F1": 0.6354019155138264,
+                "Execution_Time": 762.0057208538055
+            },
+            "Fold_Number": 1
+        },
+        {
+            "Results": {
+                "Experiment": 43,
+                "Optimizer": "AdamW",
+                "Learning_Rate": 0.001,
+                "Batch_Size": 32,
+                "Accuracy": 0.8952380952380953,
+                "Precision": 0.9001655718197552,
+                "Recall": 0.898619198965825,
+                "F1": 0.8906251178043444,
+                "Execution_Time": 862.0449769496918
+            },
+            "Fold_Number": 3
+        }
+    ]
+}
