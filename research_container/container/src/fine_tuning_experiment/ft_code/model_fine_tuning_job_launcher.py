@@ -27,11 +27,11 @@ defaults = dict(
         TORCH_NUM_EPOCHS=100,
         TORCH_NUM_FOLDS=NUM_FOLDS,
         WRITE_RESULTS=True,
-        TORCH_MODEL_NAME="vit_b_16",
+        TORCH_MODEL_NAME="vit_b_32",
         TORCH_DATA_NAME=dataset,
         # OPTIMIZER="SGD",
         LOSS_FUNCTION="CrossEntropy",
-        BATCH_SIZE=32,
+        BATCH_SIZE=16,
         # LEARNING_RATE=0.001,
         PYTORCH_CUDA_ALLOC_CONF="max_split_size_mb:128",
         ),
@@ -52,7 +52,7 @@ for lr in learning_rates:
     for optimizer in optimizers:
         if dataset == "ucmerced_landuse":
             for fold in range(NUM_FOLDS):
-                if job_counter in [4] or run_all: # Used for single run
+                if job_counter in [57] or run_all: # Used for single run
                     temp_dict = dict(job_name=job_prefix + str(job_counter) + "-" + str(fold+1), env=dict(
                         FOLD_NUM=fold+1,
                         OPTIMIZER=optimizer,
