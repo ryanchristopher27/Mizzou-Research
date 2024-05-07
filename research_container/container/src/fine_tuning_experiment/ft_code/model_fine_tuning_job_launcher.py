@@ -8,7 +8,7 @@ pvc_name = "rc-large-pvc"
 
 NUM_FOLDS = 5
 
-dataset = "ucmerced_landuse"
+dataset = "cifar10"
 
 defaults = dict(
     image=image,
@@ -27,11 +27,11 @@ defaults = dict(
         TORCH_NUM_EPOCHS=100,
         TORCH_NUM_FOLDS=NUM_FOLDS,
         WRITE_RESULTS=True,
-        TORCH_MODEL_NAME="vit_b_32",
+        TORCH_MODEL_NAME="resnet18",
         TORCH_DATA_NAME=dataset,
         # OPTIMIZER="SGD",
         LOSS_FUNCTION="CrossEntropy",
-        BATCH_SIZE=16,
+        # BATCH_SIZE=16,
         # LEARNING_RATE=0.001,
         PYTORCH_CUDA_ALLOC_CONF="max_split_size_mb:128",
         ),
@@ -43,36 +43,43 @@ defaults = dict(
 # =====================================================================
 learning_rates = [0.01, 0.001, 0.0001, 0.00001]
 optimizers = ["SGD", "Adam", "AdamW"]
+batch_sizes = [16, 32, 64]
 
-run_all = False
+run_all = True
 
 jobs = []
 job_counter = 1
 for lr in learning_rates:
     for optimizer in optimizers:
-        if dataset == "ucmerced_landuse":
-            for fold in range(NUM_FOLDS):
-                if job_counter in [57] or run_all: # Used for single run
-                    temp_dict = dict(job_name=job_prefix + str(job_counter) + "-" + str(fold+1), env=dict(
-                        FOLD_NUM=fold+1,
+        for batch_size in batch_sizes:
+            if dataset == "ucmerced_landuse":
+                for fold in range(NUM_FOLDS):
+                    if job_counter in [57] or run_all: # Used for single run
+                        temp_dict = dict(job_name=job_prefix + str(job_counter) + "-" + str(fold+1), env=dict(
+                            FOLD_NUM=fold+1,
+                            OPTIMIZER=optimizer,
+                            LEARNING_RATE=lr,
+                            BATCH_SIZE=batch_size,
+                            EXPERIMENT=job_counter,
+                        ))
+                        jobs.append(temp_dict)
+
+
+                    job_counter += 1
+
+            elif dataset == "cifar10":
+                if job_counter in [] or run_all:
+                    temp_dict = dict(job_name=job_prefix + str(job_counter), env=dict(
+                        FOLD_NUM=1,
                         OPTIMIZER=optimizer,
                         LEARNING_RATE=lr,
+                        BATCH_SIZE=batch_size,
                         EXPERIMENT=job_counter,
                     ))
+
                     jobs.append(temp_dict)
 
-
                 job_counter += 1
-
-        elif dataset == "cifar10":
-            temp_dict = dict(job_name=job_prefix + str(job_counter), env=dict(
-                FOLD_NUM=1,
-                TORCH_DATA_NAME=dataset,
-            ))
-
-            jobs.append(temp_dict)
-
-            job_counter += 1
     
 
 # =====================================================================
