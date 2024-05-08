@@ -8,7 +8,7 @@ pvc_name = "rc-large-pvc"
 
 NUM_FOLDS = 5
 
-dataset = "cifar10"
+dataset = "ucmerced_landuse"
 
 defaults = dict(
     image=image,
@@ -16,10 +16,10 @@ defaults = dict(
     workingDir="/rchristopher/data",
     volumes={pvc_name: "/rchristopher/data"},
     shm=True,
-    min_cpu=8,
+    min_cpu=4,
     max_cpu=10,
-    min_ram=12,
-    max_ram=18,
+    min_ram=8,
+    max_ram=10,
     gpu=1,
     # gpu_types=["NVIDIA-A100-80GB-PCIe-MIG-1g.10gb"],
     env=dict(
@@ -27,7 +27,7 @@ defaults = dict(
         TORCH_NUM_EPOCHS=100,
         TORCH_NUM_FOLDS=NUM_FOLDS,
         WRITE_RESULTS=True,
-        TORCH_MODEL_NAME="resnet18",
+        TORCH_MODEL_NAME="vit_b_32",
         TORCH_DATA_NAME=dataset,
         # OPTIMIZER="SGD",
         LOSS_FUNCTION="CrossEntropy",
@@ -41,9 +41,9 @@ defaults = dict(
 # =====================================================================
 # Multiple Jobs Based on Different Hyperparameters
 # =====================================================================
-learning_rates = [0.01, 0.001, 0.0001, 0.00001]
+learning_rates = [0.1, 0.01, 0.001, 0.0001, 0.00001]
 optimizers = ["SGD", "Adam", "AdamW"]
-batch_sizes = [16, 32, 64]
+batch_sizes = [16, 32]
 
 run_all = True
 
@@ -54,7 +54,7 @@ for lr in learning_rates:
         for batch_size in batch_sizes:
             if dataset == "ucmerced_landuse":
                 for fold in range(NUM_FOLDS):
-                    if job_counter in [57] or run_all: # Used for single run
+                    if job_counter in [104, 108, 120, 123, 40, 87, 91] or run_all: # Used for single run
                         temp_dict = dict(job_name=job_prefix + str(job_counter) + "-" + str(fold+1), env=dict(
                             FOLD_NUM=fold+1,
                             OPTIMIZER=optimizer,
